@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+  background-image: url('./images/bg/bg1.jpg');
+  background-repeat: no-repeat;
 }
+
+@font-face {
+  font-family: "Cairo-Bold";
+  src: local("Cairo-Bold"),
+   url("./fonts/Cairo-Bold.ttf") format("truetype");
+  font-weight: bold;
+  }
+
