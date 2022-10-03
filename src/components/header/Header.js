@@ -1,7 +1,6 @@
 import React from 'react'
 import './styles.css';
 import logo from '../../images/logo2.png'
-import menu from '../../images/menu-alt.svg'
 
 function Header() {
   return (
@@ -16,7 +15,6 @@ function Header() {
         </p>
       </div>
       <div className='ema-name'>
-        {/* <img src={menu} alt='menu' width='50' height='50' /> */}
         <p>الهيئة العامة للأرصاد الجوية المصرية</p>
       </div>
     </div>

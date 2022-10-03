@@ -24,22 +24,22 @@ const CityComponent = () => {
       };
     
       const cities = [
-        {src: cairo, alt: 'cairo'},
-        {src: alex, alt: 'alex'},
-        {src: sinaa, alt: 'sinaa'},
-        {src: Asyte, alt: 'Asyte'},
-        {src: luxor, alt: 'luxor'},
+        {src: cairo, alt: 'cairo', name: 'القاهرة الكبرى والوجه البحري',},
+        {src: alex, alt: 'alex', name: 'السواحل الشمالية',},
+        {src: sinaa, alt: 'sinaa', name: 'جنوب سيناء وسلاسل جبال البحر الأحمر',},
+        {src: Asyte, alt: 'Asyte', name: "شمال الصعيد",},
+        {src: luxor, alt: 'luxor', name: "جنوب الصعيد",},
       ]
   return (
     <div className='mapComponent-container'>
         <Slider {...settings}>
           {
-            cities.map(({src, alt}, index)=><div className='img-container' key={index}>
+            cities.map(({src, alt, name}, index)=><div className='img-container' key={index}>
               <img src={src} alt={alt} />
               <div className='info-container'>
                 <div className='row city-name-container'>
                   <div className='city-name col-12'>
-                      القاهرة الكبرى والوجه البحري
+                    {name}
                   </div>
                 </div>
                 <div className='row items'>
