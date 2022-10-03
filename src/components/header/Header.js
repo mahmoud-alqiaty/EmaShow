@@ -6,12 +6,12 @@ function Header() {
   return (
     <div className='header-container d-flex justify-content-between align-items-center' >
       <div className='logo'>
-        <img src={logo} alt='logo'  width='270' height='270' />
+        <img src={logo} alt='logo' />
         
       </div>
       <div className='name'>
         <p className='font-weight-bold'>
-          مركز الإنذار المبكر بمخاطر الطقس
+          مركــز الإنــذار المبكــر بمخاطــر الطقــس
         </p>
       </div>
       <div className='ema-name'>

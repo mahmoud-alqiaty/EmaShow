@@ -1,18 +1,18 @@
 import React from 'react'
-import icon from '../../images/weather-icons/sunny.png'
 
-const MainInfoItem = () => {
+const MainInfoItem = ({weatherData, date}) => {
   return (
     <div className='InfoItem-container h-100'>
         <div className='card'>
             <div className=''>
                 <div className='row'>
                     <div className='date-container col-8'>
-                            <p className='day'>الإثنين</p>
-                            <p>3 اكتوبر 2022</p>
+                        <p className='day'>
+                            {date}
+                        </p>
                     </div>
                     <div className='icon-container col-4'>
-                        <img src={icon} alt='icon' />
+                        <img src={weatherData.icon} alt='icon' />
                     </div>
                 </div>
             </div>
@@ -20,11 +20,15 @@ const MainInfoItem = () => {
                 <div className='row d-flex justify-content-between'>
                     <div className='min-temp col-5'>
                         <span>عظمى</span>
-                        <span>35</span>
+                        <span>
+                            {weatherData.maxTemp} <sup>o</sup>c
+                        </span>
                     </div>
                     <div className='max-temp col-5'>
                         <span>صغرى</span>
-                        <span>20</span>
+                        <span>
+                        {weatherData.minTemp} <sup>o</sup>c
+                        </span>
                     </div>
 
                 </div>
