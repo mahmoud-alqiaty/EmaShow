@@ -15,4 +15,16 @@ body {
    url("./fonts/Cairo-Bold.ttf") format("truetype");
   font-weight: bold;
   }
+@font-face {
+  font-family: "Lateef-Bold";
+  src: local("Lateef-Bold"),
+   url("./fonts/Lateef-Bold.ttf") format("truetype");
+  font-weight: bold;
+  }
+@font-face {
+  font-family: "Gulzar-Regular";
+  src: local("Gulzar-Regular"),
+   url("./fonts/Gulzar-Regular.ttf") format("truetype");
+  font-weight: bold;
+  }
 
