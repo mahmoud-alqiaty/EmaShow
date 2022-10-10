@@ -16,8 +16,8 @@ const SecInfoItem = ({weatherData, date}) => {
                   {weatherData.maxTemp} - {weatherData.minTemp} <sup>o</sup>c
                 </p>
             </div>
-            <div className='icon-container col-6'>
-                <img src={weatherData.icon} alt='icon2' />
+            <div className='icon-container col-6 d-flex justify-content-end'>
+                <img src={weatherData.icon} alt='icon2' width='30' height='30' />
             </div>
           </div>
       </div>

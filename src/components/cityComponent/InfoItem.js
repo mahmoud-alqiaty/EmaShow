@@ -3,20 +3,48 @@ import React from 'react'
 const MainInfoItem = ({weatherData, date}) => {
   return (
     <div className='InfoItem-container h-100'>
-        <div className='card'>
+        <div className='card h-100 pt-4'>
             <div className=''>
-                <div className='row'>
-                    <div className='date-container col-8'>
-                        <p className='day'>
-                            {date}
+                <div className='date-container mb-5'>
+                    <p className='day'>
+                        {date}
+                    </p>
+                </div>
+                <div className='icon-container periods-container d-flex align-items-center justify-content-between px-3 row'>
+                    {/* night */}
+                    <div className='col-5 d-flex flex-column align-items-center'>
+                        <div className='period-name'>
+                            <p>ليــلاً</p>
+                        </div>
+                        <img src={weatherData.icon} alt='icon' />
+                        <p>شبورة مائية</p>
+                        <p>
+                            18 <sup>o</sup>c
+                        </p>
+                        <p>
+                            25 km/h
                         </p>
                     </div>
-                    <div className='icon-container col-4'>
+                    <div className='col-1'>
+                        <div className='divider '></div>
+                    </div>
+                    {/* day */}
+                    <div className='col-5 d-flex flex-column align-items-center'>
+                        <div className='period-name'>
+                            <p>نهــاراً</p>
+                        </div>
                         <img src={weatherData.icon} alt='icon' />
+                        <p>غائم جزئي</p>
+                        <p>
+                            29 <sup>o</sup>c
+                        </p>
+                        <p>
+                            20 km/h
+                        </p>
                     </div>
                 </div>
             </div>
-            <div className=''>
+            {/* <div className=''>
                 <div className='row d-flex justify-content-between'>
                     <div className='min-temp col-5'>
                         <span>عظمى</span>
@@ -32,7 +60,7 @@ const MainInfoItem = ({weatherData, date}) => {
                     </div>
 
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
   )

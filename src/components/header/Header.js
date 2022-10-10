@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className='header-container d-flex justify-content-between align-items-center' >
       <div className='logo'>
-        <img src={logo} alt='logo' />
+        <img src={logo} alt='logo' width='270' height='170' />
         
       </div>
       <div className='name'>
