@@ -1,10 +1,11 @@
 import React from 'react'
+import './styles.css'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import sat1 from '../../images/sats/sat1.jpeg'
+import sat1 from '../../images/sats/sat1.gif'
 import sat2 from '../../images/sats/sat2.jpeg'
 import sat3 from '../../images/sats/sat3.jpeg'
 
@@ -24,7 +25,7 @@ const SatComponent = () => {
     {src: sat3, alt: 'sat3'},
   ]
   return (
-    <div className='satComponent-container'>
+    <div className='sat-img-container'>
     <Slider {...settings}>
       {
         sats.map(({src, alt}, index)=><div className='img-container' key={index}>
