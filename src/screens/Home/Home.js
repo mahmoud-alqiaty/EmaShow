@@ -27,6 +27,9 @@ const Home = () => {
           }
         </div>
         <Sidebar onClick={onClick} />
+        <div className='copyright'>
+          <p>الهيئة العامة للأرصاد الجوية  &copy; 2022</p>
+        </div>
     </div>
   )
 }
