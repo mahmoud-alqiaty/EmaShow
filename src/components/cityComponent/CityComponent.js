@@ -27,7 +27,7 @@ const CityComponent = () => {
     const settings = {
         dots: false,
         infinite: false,
-        speed: 100,
+        speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,

@@ -1,4 +1,7 @@
-
+.docComponent-container{
+    background-image: url('../../images/bg/bgSix.png');
+    background-size: cover;
+}
 .slick-slider, .slick-list{
     width: 100%;
     height: 100%;
@@ -16,7 +19,7 @@
 .outer-doc-container{
     width: 100%;
     height: 100%;
-    background-color: #f8edd5;
+    /* background-color: #f8edd5; */
     
 }
 .inner-doc-container{
@@ -24,14 +27,21 @@
     height: 100%;
     background-color: #f8edd5;
 }
+
+
+
+
+
+
 .egy-map-container{
-    width: 70%;
-    height: 90%;
+    width: 70% !important;
+    height: 90% !important;
     position: relative;
 }
 .egy-map-container img{
     height: 100%;
     width: 100%;
+    /* object-fit: cover; */
 }
 
 /* =========================== regions ============== */
@@ -40,7 +50,7 @@
     position: absolute;
     width: 200px;
     height: 100px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
 .region-one{
@@ -68,9 +78,168 @@
     right: 350px;
 }
 
+.region-weather{
+    display: inline-flex !important;
+}
+.region-temp{
+    width: 100px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+}
 
-.side-bar-icon{
+.region-temp .maxTemp, .region-temp .minTemp{
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    color: blue;
+}
+
+.region-temp .divider{
+ width: 100%;
+ height: 3px;
+ background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================tool tip ================ */
+.custom-tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
     position: absolute;
-    top: 0;
-    left: -150px;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .custom-tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .custom-tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  /* =============================text=================== */
+  .doc-overlay {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    width: 900px;
+    background-color: rgb(0, 0, 255, 0.9);
+    padding: 20px;
+    color: white;
+    font-size: 2rem;
+    /* font-family: "MarkaziText-Bold"; */
+    font-family: "Almarai-Bold";
+}
+
+.doc-overlay .head{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background-color: black;
+    font-size: 1.8rem;
+    color: white;
+    /* transform: translateX(20px); */
+    padding-left: 30px;
+}
+
+/* .head::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 15px solid;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    border-top-color: black;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: black;
+} */
+
+.state-list{
+    list-style-type: none;
+}
+
+.state-list li{
+    margin-bottom: 15px;
+}
+.state-list li:last-child p {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.hint{
+    color: #FDD807;
+}
+.state{
+    /* transform: translateY(-50px); */
+    opacity: 0;
+    border-bottom: 2px solid #fff;
+}
+.animate-0{
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+.animate-1{
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
+}
+.animate-2{
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+}
+.animate-3{
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-delay: 10.5s;
+    animation-fill-mode: forwards;
+}
+.animate-4{
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-delay: 14s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+    from{
+        /* transform: translateY(-50px); */
+        opacity: 0;
+
+    }
+    to{
+        /* transform: translateY(0); */
+        opacity: 1;
+    }
 }

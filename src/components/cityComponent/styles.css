@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.img-container img{
+    object-fit: cover ;
+}
+
 .info-container{
     position: absolute;
     width: 50%;

@@ -27,9 +27,9 @@ const Homecpmponent = () => {
     <div className='bg'>
       <img src={bg} alt='bg' />
       <div className='overlay'>
-        {/* <p className='head'>حالة الطقس المتوقعة</p> */}
-        <p className='head'>السمات الرئيسية لحالة الطقس</p>
-        <ul>
+        <p className='head'>حالة الطقس المتوقعة</p>
+        {/* <p className='head'>السمات الرئيسية لحالة الطقس</p> */}
+        <ul className='state-list'>
           {
             weatherState.map((state, index)=>
             <li>

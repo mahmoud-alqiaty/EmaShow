@@ -11,7 +11,6 @@ const Sidebar = ({onClick}) => {
   const icons = [
     {src: homeIcon, alt: 'homeIcon', text: 'home'},
     {src: mapIcon, alt: 'mapIcon', text: 'map'},
-    {src: sat1Icon, alt: 'sat1Icon', text: 'sat'},
     {src: docIcon, alt: 'docIcon', text: 'doc'},
     {src: cityIcon, alt: 'cityIcon', text: 'city'},
   ]
