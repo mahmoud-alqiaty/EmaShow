@@ -30,6 +30,10 @@
     height: 50%;
 }
 
+.temp p {
+    margin-top: 15px !important;
+}
+
 .card-footer{
     height: 70%;
     width: 100%;

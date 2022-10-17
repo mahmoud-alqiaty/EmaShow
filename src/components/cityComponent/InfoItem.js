@@ -1,4 +1,6 @@
 import React from 'react'
+import temperatureIcon  from '../../images/cities/temperature_icon.png';
+
 
 const MainInfoItem = ({weatherData, date}) => {
   return (
@@ -18,8 +20,11 @@ const MainInfoItem = ({weatherData, date}) => {
                         </div>
                         <img src={weatherData.icon} alt='icon' />
                         <p>شبورة مائية</p>
-                        <p>
+                        <p className='city-temp'>
+                            <img src={temperatureIcon} alt='' />
+                            <sapn>
                             18 <sup>o</sup>c
+                            </sapn>
                         </p>
                         <p>
                             25 km/h
@@ -35,8 +40,12 @@ const MainInfoItem = ({weatherData, date}) => {
                         </div>
                         <img src={weatherData.icon} alt='icon' />
                         <p>غائم جزئي</p>
-                        <p>
+                        <p className='city-temp'>
+                            <img src={temperatureIcon} alt='' />
+                            <span>
                             29 <sup>o</sup>c
+
+                            </span>
                         </p>
                         <p>
                             20 km/h

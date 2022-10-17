@@ -12,6 +12,9 @@ import nextIcon from '../../images/arrow-icons/left-circle.svg';
 import prevtIcon from '../../images/arrow-icons/right-circle.svg';
 
 
+import locationIcon  from '../../images/cities/location_icon.png';
+
+
 
 import { cities, dates } from './data';
 
@@ -45,7 +48,10 @@ const CityComponent = () => {
               <div className='info-container'>
                 <div className='row city-name-container mb-2'>
                   <div className='city-name col-12'>
-                    {name}
+                    <img src={locationIcon} alt='' />
+                    <span>
+                     {name}
+                    </span>
                   </div>
                 </div>
                 <div className='row items'>

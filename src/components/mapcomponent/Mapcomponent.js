@@ -54,7 +54,7 @@ const Mapcomponent = () => {
           {
             maps.map(({src, alt}, index)=>
             <div className='map-img-outer-container' key={index}>
-              <div className='map-img-inner-container'>
+              <div className='map-img-inner-container' onClick={next}>
                 <img src={src} alt={alt}  />
               </div>
             </div>)

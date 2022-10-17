@@ -11,7 +11,7 @@ const SecInfoItem = ({weatherData, date}) => {
           </div>
               
           <div className='card-footer row'>
-            <div className='temp col-6'>
+            <div className='temp col-6 d-flex align-items-center'>
                 <p>
                   {weatherData.maxTemp} - {weatherData.minTemp} <sup>o</sup>c
                 </p>
