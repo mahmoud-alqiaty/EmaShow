@@ -127,7 +127,7 @@ const DocCompnent = () => {
                   {drowtempAndIcon(regionsTempPage[1]?.weatherData[StartingDay])}
                   </div>
                   <div className='region region-three'>
-                  {drowtempAndIcon(regionsTempPage[1]?.weatherData[StartingDay])}
+                  {drowtempAndIcon(regionsTempPage[2]?.weatherData[StartingDay])}
                   </div>
                   <div className='region region-four'>
                   {drowtempAndIcon(regionsTempPage[2]?.weatherData[StartingDay])}
