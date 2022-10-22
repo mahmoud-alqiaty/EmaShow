@@ -1,46 +1,50 @@
-import React from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import './styles.css'
 import bg from '../../images/emaOne.jpg'
+// import bgVideo from '../../images/bg/video/first/Clouds-one.mp4'
+// import bgVideo from '../../images/bg/video/first/Cloude-two.mp4'
+// import bgVideo from '../../images/bg/video/first/Sea-one.mp4'
+import bgVideo from '../../images/bg/video/first/Clouds-three.mp4'
+import { AllDataContext } from '../../App'
+// import bgVideo from '../../images/bg/video/first/Cloud-four.mp4'
 
 
 const Homecpmponent = () => {
-  const weatherState = [
-    {
-      state: 'normal',
-      text: 'مائل للحرارة على السواحل الشمالية'
-    },
-    {
-      state: 'normal',
-      text: 'حار على باقي الأنحاء'
-    },
-    {
-      state: 'normal',
-      text: 'مائل للبرودة أخر الليل والصباح الباكر على شمال البلاد',
-    },
-    {
-      state: 'hint',
-      text: 'اعتباراً من السبت حالة عدم استقرار في الأحوال الجوية على شمال البلاد حتى القاهرة',
-    }
-    
-  ]
+  const {generalWeatherState} = useContext(AllDataContext)
+  const [videoPaused, setVideoPaused] = useState(false)
+  const vidRef = useRef(null);
+
+  const pauseVideo = ()=>{
+    vidRef.current.pause();
+    setVideoPaused(true)
+  }
+
   return (
-    <div className='bg'>
-      <img src={bg} alt='bg' />
-      <div className='overlay'>
-        <p className='head'>حالة الطقس المتوقعة</p>
-        {/* <p className='head'>السمات الرئيسية لحالة الطقس</p> */}
-        <ul className='state-list'>
-          {
-            weatherState.map((state, index)=>
-            <li>
-              <p key={index} className={`state animate-${index} ${state.state === 'hint' && "hint"}`}>
-                {state.text}
-              </p>
-            </li>
-            )
-          }
-        </ul>
-      </div>
+    <div className='bg' onClick={pauseVideo}>
+      {/* <img src={bg} alt='bg' /> */}
+      <video autoPlay muted loop  ref={vidRef}>
+        <source  src={bgVideo}  type="video/mp4"/>
+      </video>
+      <p className={`head  ${videoPaused? 'moved' : ""}`}>
+        <span>الحالة</span>
+        <span>الجوية</span>
+      </p>
+      {
+        generalWeatherState? (
+          <ul className={`state-list ${videoPaused? 'showen' : ""}`}>
+        {
+          generalWeatherState.map((state, index)=>
+          <li key={index} style={{animationDelay: `${index + 1}s`}}>
+            <p key={index} className="">
+              {state}
+            </p>
+          </li>
+          )
+        }
+      </ul>
+        ) : null
+      }
+      
     </div>
   )
 }

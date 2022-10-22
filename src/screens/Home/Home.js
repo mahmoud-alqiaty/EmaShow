@@ -8,9 +8,7 @@ import Mapcomponent from '../../components/mapcomponent/Mapcomponent';
 import DocCompnent from '../../components/docComponent/DocCompnent';
 import CityComponent from '../../components/cityComponent/CityComponent';
 
-
 const Home = () => {
-
   const [show, setShow] = useState("home")
 
   const onClick = (screen) =>{

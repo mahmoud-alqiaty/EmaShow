@@ -1,5 +1,5 @@
 .docComponent-container{
-    background-image: url('../../images/bg/diamond-sunset.svg');
+    background-image: url('../../images/bg/img/squerBg.png');
     background-size: cover;
     position: relative;
     direction: rtl !important;
@@ -32,14 +32,14 @@
 }
 
 .egy-map-container{
-    width: 70% !important;
-    height: 90% !important;
+    width: 100% !important;
+    height: 100% !important;
     position: relative;
 }
 .egy-map-container img{
     height: 100%;
     width: 100%;
-    /* object-fit: cover; */
+    object-fit: fill;
 }
 
 /* =========================== regions ============== */
@@ -147,10 +147,11 @@
     text-align: center; 
     position: absolute; 
     bottom: 0; 
-    left: 5.5%; 
+    left: 20%; 
     display: flex; 
     align-items:  center; 
-    flex-direction:  row  
+    flex-direction:  row;
+    z-index: 20000;  
 }
 
 /* ============================doc-text-overlay=================== */
@@ -160,91 +161,88 @@
     top: 10%;
     right: 4%;
     direction: rtl;
-    /* border-bottom: 2px solid rgb(230, 230, 236); */
     color: rgb(230, 230, 236);
 }
 .doc-text-overlay .header{
     display: flex;
     align-items: center;
     color: #fff;
-    /* position: absolute; */
-    
 }
 .doc-text-overlay .header .title{
  background-color: blue;
- padding: 0 50px;
- height: 70px;
- line-height: 70px;
- font-size: 2.4rem;
-
+ height: 80px;
+ line-height: 80px;
+ font-size: 2.7rem;
+ font-family: "Almarai-Bold";
+ width: 570px;
+ text-align: center;
+ transform: translateX(-500px);
+ animation-name: trnaslateTitle;
+ animation-duration: 1.5s;
+ animation-fill-mode: forwards;
 }
+
+@keyframes trnaslateTitle {
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0);
+
+    }
+}
+
 .doc-text-overlay .header .sub-title{
  background-color: #444;
- padding: 0 30px;
- height: 50px;
- line-height: 50px;
- font-size: 2rem;
-
+ font-size: 2.5rem;
+ width: 450px;
+ text-align: center;
+ font-family: "MarkaziText-Bold";
 }
 
 
 .doc-text-overlay .doc-text-body{
- background-color: rgba(0, 0, 255, 0.5);
- font-size: 1.8rem;
  list-style-type: none;
- padding: 40px;
- box-shadow: 5px 10px 15px inset rgb(230, 230, 236), -5px -10px 15px inset rgb(230, 230, 236);
+ padding: 20px 40px;
+ background-image: linear-gradient(to left, rgb(22, 8, 83), rgba(15, 36, 156, 0.3));
+ animation-name: doc-text-body-showen;
+ animation-duration: 2s;
+ animation-fill-mode: forwards;
+ animation-delay: 0.5s;
+ opacity: 0;
+}
+
+@keyframes doc-text-body-showen {
+    from{
+       opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .doc-text-overlay .doc-text-body li{
-    border-bottom: 3px solid rgba(230, 230, 236, 0.5);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 3rem;
+    font-family: "Almarai-Bold";
+    border-bottom: 3px solid #f8edd5;
+    animation-name: li-showen;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
 }
 .doc-text-overlay .doc-text-body li:last-child{
     border-bottom: none;
     margin-bottom: 0;
 }
 
-
-.animate-0{
-    animation-name: animate;
-    animation-duration: 3s;
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
-}
-.animate-1{
-    animation-name: animate;
-    animation-duration: 3s;
-    animation-delay: 3.5s;
-    animation-fill-mode: forwards;
-}
-.animate-2{
-    animation-name: animate;
-    animation-duration: 3s;
-    animation-delay: 7s;
-    animation-fill-mode: forwards;
-}
-.animate-3{
-    animation-name: animate;
-    animation-duration: 3s;
-    animation-delay: 10.5s;
-    animation-fill-mode: forwards;
-}
-.animate-4{
-    animation-name: animate;
-    animation-duration: 3s;
-    animation-delay: 14s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes animate {
+@keyframes li-showen {
     from{
-        transform: translateX(-300px);
-        opacity: 0;
-
+       opacity: 0;
     }
     to{
-        transform: translateX(0);
         opacity: 1;
     }
 }

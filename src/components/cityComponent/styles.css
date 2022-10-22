@@ -8,12 +8,10 @@
 
 .info-container{
     position: absolute;
-    width: 50%;
+    width: 60%;
     height: 50%;
     top: 5%;
-    left: 40%; 
-    /* background-color: rgba(0, 0, 0, 0.4); */
-    /* display: flex; */
+    left: 30%;
 }
 
 .items{
@@ -28,7 +26,7 @@
     width: 100%;
     text-align: center;
     color: white;
-    font-family: "Cairo-Bold";
+    font-family: "Almarai-Bold";
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -47,79 +45,74 @@
     margin-left: 20px;
 }
 
-.InfoItem-container{
-    /* border-radius: 40px; */
-    /* padding: 40px; */
-}
-
-
 .card{
-    /* background-color: rgba(41, 52, 57, 0.29); */
-    background-color: rgb(0, 0, 255, 0.3);
+    /* background-color: rgb(0, 0, 255, 0.3); */
+    background-color: transparent;
+    background-image: linear-gradient( rgba(5, 5, 32, 0.8) ,rgb(0, 0, 255, 0.3));
     border-radius: 20px;
 }
 
-.date-container{
-
-}
 .day{
     font-weight: bold;
     color: white;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.3rem;
 }
 
 .min-temp, .max-temp{
     background-color: #D9D9D9;
-    /* padding: 5px 10px; */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: blue;
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
 .icon-container img{
     width: 80px;
     height: 80px;
+    object-fit: fill;
 }
 
 .periods-container{
     color: #fff;
-    /* background-color: rgb(217, 217, 217); */
-    font-size: 1.3rem;
 }
-
 
 
 .divider{
     height: 250px;
     width: 2px;
-    /* background-color: #D9D9D9; */
     background-color: rgb(217, 217, 217);
 }
 
 .period-name p{
     padding: 3px 50px;
-    /* background-color: #D9D9D9; */
     background-color: rgb(217, 217, 217);
     color: black;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     
 }
 
-.city-temp{
+.city-temp, .city-wind{
     display: flex;
     align-items: center;
 }
 
-.city-temp img{
-    width: 30px;
-    height: 30px;
+.city-temp img, .city-wind img{
+    width: 40px;
+    height: 40px;
     object-fit: contain !important;
+}
+.city-temp span{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.city-wind span{
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import './styles.css'
 
 import Slider from "react-slick";
@@ -16,10 +16,13 @@ import locationIcon  from '../../images/cities/location_icon.png';
 
 
 
-import { cities, dates } from './data';
+import { citiesBgImages } from './data';
+import { AllDataContext } from '../../App';
 
 
 const CityComponent = () => {
+  const {regionsTempPage} = useContext(AllDataContext)
+  console.log("regionsTempPage: ", regionsTempPage);
   let slider = useRef()
   const next = () => {
     slider.slickNext();
@@ -41,41 +44,48 @@ const CityComponent = () => {
      
   return (
     <div className='mapComponent-container'>
-        <Slider ref={c => (slider = c)} {...settings}>
-          {
-            cities.map(({src, alt, name, weatherData}, index)=><div className='img-container' key={index+1}>
-              <img src={src} alt={alt} />
-              <div className='info-container'>
-                <div className='row city-name-container mb-2'>
-                  <div className='city-name col-12'>
-                    <img src={locationIcon} alt='' />
-                    <span>
-                     {name}
-                    </span>
+      {
+        (regionsTempPage && regionsTempPage.length >0) ? (
+          <>
+            <Slider ref={c => (slider = c)} {...settings}>
+              {
+                regionsTempPage.map(({name, weatherData}, index)=><div className='img-container' key={index+1}>
+                  <img src={citiesBgImages[index]} alt='' />
+                  <div className='info-container'>
+                    <div className='row city-name-container mb-2'>
+                      <div className='city-name col-12'>
+                        <img src={locationIcon} alt='' />
+                        <span>
+                        {name}
+                        </span>
+                      </div>
+                    </div>
+                    <div className='row items'>
+                      <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>
+                          <SecInfoItem weatherData={weatherData[2]} />
+                          <SecInfoItem weatherData={weatherData[3]} />
+                          <SecInfoItem weatherData={weatherData[4]} />
+                      </div>
+                      <div className='col-1'></div>
+                      <div className='col-6 p-0'>
+                        <MainInfoItem weatherDay={weatherData[0]} weatherNight={weatherData[1]} date={weatherData[0].date} />
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className='row items'>
-                  <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>
-                      <SecInfoItem weatherData={weatherData[1]} date={dates[1]}  />
-                      <SecInfoItem weatherData={weatherData[2]} date={dates[2]} />
-                      <SecInfoItem weatherData={weatherData[3]} date={dates[3]} />
-                  </div>
-                  <div className='col-1'></div>
-                  <div className='col-6 p-0'>
-                    <MainInfoItem weatherData={weatherData[0]} date={dates[0]} />
-                  </div>
-                </div>
-              </div>
-            </div>)
-          }
-        </Slider>
+                </div>)
+              }
+            </Slider>
 
-        <div style={{ textAlign: "center", position:'absolute', top:'50%', left:'20%', display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
-          <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
-          <div className='' style={{height: '90px', width: '7px', background: '#000'}}></div>
-          {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}
-          <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
-        </div>
+            <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'20%', display: 'flex', alignItems: 'center', flexDirection: 'row',  zIndex: "2000",}}>
+              <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
+              <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
+              {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}
+              <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
+            </div>
+          </>
+        ) : null
+      }
+        
     </div>
   )
 }

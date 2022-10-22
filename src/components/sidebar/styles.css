@@ -1,5 +1,5 @@
 .sidebar-container{
-    background-color: #111;
+    background-color: rgb(192, 192, 226);
     position: absolute;
     left: 50%;
     bottom: 0px;
@@ -14,7 +14,9 @@
 }
 
 .sidebar-item{
-    /* margin-right: 50px; */
+    background-color: rgb(192, 192, 226);
+    margin-right: 5px;
+    width: 100px;
 }
 
 .sidebar-item img{
