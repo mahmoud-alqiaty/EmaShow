@@ -21,7 +21,7 @@ const MainInfoItem = ({weatherDay, weatherNight, date}) => {
                             <p>ليــلاً</p>
                         </div>
                         <img src={weatherIcons[weatherNight?.icon]} alt='icon' />
-                        <p>{weatherNight?.icon}</p>
+                        <p className='Phenomena-name'>{weatherNight?.icon}</p>
                         <p className='city-temp'>
                             <img src={temperatureIcon} alt='' />
                             <span>
@@ -44,7 +44,7 @@ const MainInfoItem = ({weatherDay, weatherNight, date}) => {
                             <p>نهــاراً</p>
                         </div>
                         <img src={weatherIcons[weatherDay?.icon]} alt='icon' />
-                        <p>{weatherDay?.icon}</p>
+                        <p className='Phenomena-name'>{weatherDay?.icon}</p>
                         <p className='city-temp'>
                             <img src={temperatureIcon} alt='' />
                             <span>

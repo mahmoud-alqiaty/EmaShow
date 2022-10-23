@@ -96,6 +96,10 @@
     
 }
 
+.Phenomena-name{
+    font-size: 2rem;
+}
+
 .city-temp, .city-wind{
     display: flex;
     align-items: center;

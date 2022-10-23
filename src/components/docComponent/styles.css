@@ -52,46 +52,55 @@
 }
 
 .region-one{
-    top: 170px;
-    left: 550px;
+    top: 27%;
+    left: 45%;
 }
 .region-two{
-    top: 100px;
-    left: 150px;
+    top: 7%;
+    left: 16%;
 }
 .region-three{
-    top: 90px;
-    right: 300px;
+    top: 10%;
+    right: 25%;
 }
 .region-four{
-    top: 240px;
-    right: 200px;
+    top: 35%;
+    right: 17%;
 }
 .region-five{
-    top: 340px;
-    right: 450px;
+    top: 52%;
+    right: 42%;
 }
 .region-six{
-    top: 500px;
-    right: 350px;
+    top: 70%;
+    right: 30%;
 }
 
 .region-weather{
-    display: inline-flex !important;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 100px;
+    display: flex !important;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .region-temp{
-    width: 100px;
-    height: 80px;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background-color: azure;
 }
 
+.region-weather img{
+    width: 100px !important;
+    width: 100px !important;
+    object-fit: fill;
+}
+
 .region-temp .maxTemp, .region-temp .minTemp{
     width: 100%;
+    height: 50%;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     color: blue;
 }
