@@ -1,6 +1,7 @@
 .docComponent-container{
-    background-image: url('../../images/bg/img/squerBg.png');
+    background-image: url('../../images/bg/img/flash.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
     direction: rtl !important;
 }
@@ -23,6 +24,7 @@
     height: 100%;
     /* background-color: #f8edd5; */
     direction: rtl !important;
+    position: relative;
     
 }
 .inner-doc-container{
@@ -80,7 +82,7 @@
     width: 200px;
     height: 100px;
     display: flex !important;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 .region-temp{
     width: 50%;
@@ -108,7 +110,7 @@
 .region-temp .divider{
  width: 100%;
  height: 3px;
- background-color: rgba(0, 0, 0, 0.5);
+ background-color: rgba(0, 0, 0, 0.9);
 }
 
 
@@ -173,6 +175,38 @@
     direction: rtl;
     color: rgb(230, 230, 236);
 }
+
+.img-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scale(1, 1);
+    /* animation-name: bgScale; */
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    transform-origin: 65% 25%;
+}
+
+.img-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+@keyframes bgScale {
+    from{
+        transform: scale(1, 1);
+    }
+
+    to{
+        transform: scale(2, 2);
+        
+    }
+    
+}
 .doc-text-overlay .header{
     display: flex;
     align-items: center;
@@ -219,15 +253,17 @@
  animation-duration: 2s;
  animation-fill-mode: forwards;
  animation-delay: 0.5s;
- opacity: 0;
+ /* opacity: 0; */
+ transform: scale(0, 0);
+ transform-origin: right top;
 }
 
 @keyframes doc-text-body-showen {
     from{
-       opacity: 0;
+        transform: scale(0, 0);
     }
     to{
-        opacity: 1;
+        transform: scale(1, 1);
     }
 }
 

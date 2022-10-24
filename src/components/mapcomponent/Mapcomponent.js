@@ -1,4 +1,6 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useCallback, useRef, useState } from 'react'
+import QuickPinchZoom, { make3dTransformValue } from "react-quick-pinch-zoom";
+
 import './styles.css'
 
 import Slider from "react-slick";
@@ -9,9 +11,16 @@ import nextIcon from '../../images/arrow-icons/left-circle.svg';
 import prevtIcon from '../../images/arrow-icons/right-circle.svg';
 import { AllDataContext } from '../../App';
 
-
 const Mapcomponent = () => {
   const {mapsArray} = useContext(AllDataContext)
+  const imgRef = useRef();
+
+  const [zoomed, setZoomed] = useState(false)
+  const [client, setclient] = useState([0, 0])
+
+  const zoomIn = (clientX, clientY) => {
+
+  }
   let slider = useRef()
   const next = () => {
     slider.slickNext();
@@ -37,6 +46,16 @@ const Mapcomponent = () => {
     arrows: false,
   };
 
+  const onUpdate = useCallback(({ x, y, scale }) => {
+    const { current: img } = imgRef;
+
+    if (img) {
+      const value = make3dTransformValue({ x, y, scale });
+
+      img.style.setProperty("transform", value);
+    }
+  }, []);
+
  
   return (
       <div>
@@ -45,7 +64,10 @@ const Mapcomponent = () => {
             mapsArray?.map((src, index)=>
             <div className='map-img-outer-container' key={index}>
               <div className='map-img-inner-container' onClick={next}>
-                <img src={src} alt=''  />
+                  <img ref={imgRef} src={src} alt=''  />
+                {/* <QuickPinchZoom onUpdate={onUpdate}>
+                  <img ref={imgRef} src={src} alt=''  />
+                </QuickPinchZoom> */}
               </div>
             </div>)
           }

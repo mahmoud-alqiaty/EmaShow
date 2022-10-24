@@ -1,6 +1,9 @@
 import React, { useContext, useRef } from 'react'
 import './styles.css'
 
+import earthBg  from '../../images/bg/img/earth.png'
+import thunderBg  from '../../images/bg/img/flash.jpg'
+
 import {weatherIcons} from '../../constants/weatherIcons'
 
 
@@ -70,8 +73,12 @@ const DocCompnent = () => {
 
           {
             (allSpcWeatherPoints && allSpcWeatherPoints.length>0)? (
-              <div className='outer-doc-container'>
+              <div className='outer-doc-container '>
+                <div className='img-bg'>
+                  <img alt='' src={thunderBg} />
+                </div>
               <div className='doc-text-overlay'>
+                
                 <div className='header'>
                   <p className='title'>
                     {mainTitle}

@@ -50,6 +50,20 @@
     background-color: transparent;
     background-image: linear-gradient( rgba(5, 5, 32, 0.8) ,rgb(0, 0, 255, 0.3));
     border-radius: 20px;
+    /* transform: scale(1, 0);
+    transform-origin: top;
+    animation-name: cardAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; */
+}
+
+@keyframes  cardAnimation {
+    from{
+        transform: scale(1, 0);
+    }
+    to{
+        transform: scale(1, 1);
+    }
 }
 
 .day{
