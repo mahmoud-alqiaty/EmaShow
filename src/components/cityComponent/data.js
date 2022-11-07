@@ -1,6 +1,6 @@
 import cairo from '../../images/cities/cairo/cairo-pyramidTwo.jpg'
 // import alex from '../../images/cities/N/alex-stanley-bridge.jpg'
-import alex from '../../images/cities/N/sky-two.jpg'
+import alex from '../../images/cities/N/alex.jpg'
 import portsaid from '../../images/cities/N/alexTwo.jpg'
 import sinaa from '../../images/cities/Sinaa/sinai.jpg'
 // import Asyte from '../../images/cities/Asyte.jpg'

@@ -4,6 +4,7 @@
 
 .img-container img{
     object-fit: cover ;
+    /* filter: blur(5px); */
 }
 
 .info-container{
@@ -25,7 +26,9 @@
 .city-name{
     width: 100%;
     text-align: center;
-    color: white;
+    color: #FDD807;
+    /* color: white; */
+    /* color: #c2aa23; */
     font-family: "Almarai-Bold";
     font-size: 2.5rem;
     font-weight: bold;
@@ -36,7 +39,30 @@
     align-items: center;
     justify-content: center;
     direction: rtl;
-    
+    position: relative;
+    /* height: 85px; */
+    /* margin-bottom: 20px !important; */
+}
+
+.city-name::after{
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-top: 5px solid #FDD807;
+    border-left: 5px solid #FDD807;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.city-name::before{
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-bottom: 5px solid #FDD807;
+    border-right: 5px solid #FDD807;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
 
 .city-name img{
@@ -48,7 +74,7 @@
 .card{
     /* background-color: rgb(0, 0, 255, 0.3); */
     background-color: transparent;
-    background-image: linear-gradient( rgba(5, 5, 32, 0.8) ,rgb(0, 0, 255, 0.3));
+    background-image: linear-gradient( rgba(5, 5, 32, 0.8) ,rgb(0, 0, 255, 0.7));
     border-radius: 20px;
     /* transform: scale(1, 0);
     transform-origin: top;
@@ -69,9 +95,22 @@
 .day{
     font-weight: bold;
     color: white;
+    /* color: #c2aa23; */
     text-align: center;
     font-size: 2.3rem;
+    position: relative;
 }
+
+/* .day::after{
+    content: "";
+    width: 200px;
+    height: 3px;
+    background-color: #FDD807;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+} */
 
 .min-temp, .max-temp{
     background-color: #D9D9D9;
@@ -90,13 +129,19 @@
     object-fit: fill;
 }
 
+.temperatureIcon{
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: fill !important;
+}
+
 .periods-container{
     color: #fff;
 }
 
 
 .divider{
-    height: 250px;
+    height: 300px;
     width: 2px;
     background-color: rgb(217, 217, 217);
 }
@@ -104,6 +149,8 @@
 .period-name p{
     padding: 3px 50px;
     background-color: rgb(217, 217, 217);
+    /* background-color: #FDD807; */
+    /* background-color: #c2aa23; */
     color: black;
     text-align: center;
     font-size: 1.7rem;
@@ -112,6 +159,7 @@
 
 .Phenomena-name{
     font-size: 2rem;
+    /* line-height: 1; */
 }
 
 .city-temp, .city-wind{

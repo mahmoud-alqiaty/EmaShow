@@ -1,11 +1,12 @@
 .home-container{
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 90px);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     font-family: "Cairo-Bold";
+    overflow: hidden;
 }
 .home-content{
     width: 100%;

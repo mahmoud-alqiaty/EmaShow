@@ -22,16 +22,204 @@
 .outer-doc-container{
     width: 100%;
     height: 100%;
-    /* background-color: #f8edd5; */
+    /* background-color: #f7f7f7; */
     direction: rtl !important;
     position: relative;
+}
+
+
+/* ============================doc-text-overlay=================== */
+.doc-text-overlay{
+    width: 70%;
+    position: absolute;
+    top: 10%;
+    right: 4%;
+    direction: rtl;
+    color: rgb(230, 230, 236);
+}
+
+.img-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scale(1, 1);
+    /* animation-name: bgScale; */
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    transform-origin: 65% 25%;
+}
+
+.img-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+@keyframes bgScale {
+    from{
+        transform: scale(1, 1);
+    }
+
+    to{
+        transform: scale(2, 2);
+        
+    }
     
 }
+
+.doc-text-overlay .header{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.doc-text-overlay .header .title{
+ background-color: blue;
+ height: 80px;
+ line-height: 80px;
+ font-size: 2.7rem;
+ font-family: "Almarai-Bold";
+ /* width: 570px; */
+ padding: 0 20px !important;
+ text-align: center;
+ transform: translateX(-500px);
+ animation-name: trnaslateTitle;
+ animation-duration: 1.5s;
+ animation-fill-mode: forwards;
+ animation-delay: 1s;
+}
+
+@keyframes trnaslateTitle {
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0);
+
+    }
+}
+
+.doc-text-overlay .header .sub-title{
+ background-color: #444;
+ font-size: 2.5rem;
+ width: 450px;
+ text-align: center;
+ font-family: "MarkaziText-Bold";
+}
+
+.doc-text-overlay .doc-text-body{
+ list-style-type: none;
+ padding: 20px 40px;
+ background-image: linear-gradient(to left, rgb(22, 8, 83), rgba(15, 36, 156, 0.3));
+ animation-name: doc-text-body-showen;
+ animation-duration: 2s;
+ animation-fill-mode: forwards;
+ animation-delay: 1.5s;
+ /* opacity: 0; */
+ transform: scale(0, 0);
+ transform-origin: right top;
+}
+
+@keyframes doc-text-body-showen {
+    from{
+        transform: scale(0, 0);
+    }
+    to{
+        transform: scale(1, 1);
+    }
+}
+
+.doc-text-overlay .doc-text-body li{
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 3rem;
+    font-family: "Almarai-Bold";
+    border-bottom: 3px solid #f8edd5;
+    animation-name: li-showen;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+.doc-text-overlay .doc-text-body li:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+@keyframes li-showen {
+    from{
+       opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+/* ============================case-maps=================== */
+
+.case-maps-container{
+    width: 100% !important;
+    height: 100%;
+    background-color: #f7f7f7;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    /* border: 3px solid #000; */
+}
+
 .inner-doc-container{
     width: 100%;
     height: 100%;
     background-color: #f8edd5;
 }
+
+.case-maps-container .map-img-outer-container{
+    width: 49.7% !important;
+    height: 49% !important;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    
+}
+
+.case-maps-container .map-img-outer-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.case-maps-container .map-img-outer-container.img-full-screen{
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* animation-name: img-full-screen-animi;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; */
+}
+@keyframes img-full-screen-animi {
+    from{
+        width: 49.7% !important;
+        height: 49% !important;
+    }
+    to{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.window-icon{
+    position: absolute;
+    bottom: 1%;
+    left: 25%;
+    z-index: 20000;
+}
+
+
+/* ============================egy-map=================== */
 
 .egy-map-container{
     width: 100% !important;
@@ -44,7 +232,66 @@
     object-fit: fill;
 }
 
-/* =========================== regions ============== */
+.day-container{
+    position: absolute; 
+    top: 20px; 
+    right: 0px; 
+    z-index: 40000;
+    background-color: #444;
+    font-size: 2.8rem;
+    width: 0px;
+    height: 93px;
+    /* line-height: 90px; */
+    overflow: hidden;
+    text-align: center;
+    font-family: "MarkaziText-Bold";
+    color: white;
+    /* padding: 10px 0px; */
+    border-radius: 40px 0 0 40px;
+    border: 3px solid rgb(197, 164, 164);
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-container p{
+    margin: 0;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+.slick-slide.slick-active.slick-current .day-container{
+    animation-name: show-date-on-map;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show-date-on-map {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 400px;
+    }
+}
+
+.slick-slide.slick-active.slick-current .day-container p{
+    animation-name: show-date-p;
+    animation-duration: 1s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+}
+@keyframes show-date-p{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* --------- regions ---------- */
 
 .region {
     position: absolute;
@@ -54,28 +301,28 @@
 }
 
 .region-one{
-    top: 27%;
-    left: 45%;
+    top: 21%;
+    left: 42%;
 }
 .region-two{
-    top: 7%;
-    left: 16%;
+    top: 11%;
+    left: 22%;
 }
 .region-three{
-    top: 10%;
-    right: 25%;
+    top: 11%;
+    right: 30%;
 }
 .region-four{
     top: 35%;
-    right: 17%;
+    right: 25%;
 }
 .region-five{
-    top: 52%;
-    right: 42%;
+    top: 45%;
+    right: 46%;
 }
 .region-six{
-    top: 70%;
-    right: 30%;
+    top: 68%;
+    right: 35%;
 }
 
 .region-weather{
@@ -95,7 +342,7 @@
 .region-weather img{
     width: 100px !important;
     width: 100px !important;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .region-temp .maxTemp, .region-temp .minTemp{
@@ -158,137 +405,13 @@
 .docComponent-container .arrow-controller{ 
     text-align: center; 
     position: absolute; 
-    bottom: 0; 
-    left: 20%; 
+    left: calc(60% - 320px);
+    bottom: 0px;
+    transform: translateX(-50%);
     display: flex; 
     align-items:  center; 
     flex-direction:  row;
     z-index: 20000;  
 }
 
-/* ============================doc-text-overlay=================== */
-.doc-text-overlay{
-    width: 70%;
-    position: absolute;
-    top: 10%;
-    right: 4%;
-    direction: rtl;
-    color: rgb(230, 230, 236);
-}
 
-.img-bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transform: scale(1, 1);
-    /* animation-name: bgScale; */
-    animation-duration: 6s;
-    animation-fill-mode: forwards;
-    transform-origin: 65% 25%;
-}
-
-.img-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
-@keyframes bgScale {
-    from{
-        transform: scale(1, 1);
-    }
-
-    to{
-        transform: scale(2, 2);
-        
-    }
-    
-}
-.doc-text-overlay .header{
-    display: flex;
-    align-items: center;
-    color: #fff;
-}
-.doc-text-overlay .header .title{
- background-color: blue;
- height: 80px;
- line-height: 80px;
- font-size: 2.7rem;
- font-family: "Almarai-Bold";
- width: 570px;
- text-align: center;
- transform: translateX(-500px);
- animation-name: trnaslateTitle;
- animation-duration: 1.5s;
- animation-fill-mode: forwards;
-}
-
-@keyframes trnaslateTitle {
-    from{
-        transform: translateX(-500px);
-    }
-    to{
-        transform: translateX(0);
-
-    }
-}
-
-.doc-text-overlay .header .sub-title{
- background-color: #444;
- font-size: 2.5rem;
- width: 450px;
- text-align: center;
- font-family: "MarkaziText-Bold";
-}
-
-
-.doc-text-overlay .doc-text-body{
- list-style-type: none;
- padding: 20px 40px;
- background-image: linear-gradient(to left, rgb(22, 8, 83), rgba(15, 36, 156, 0.3));
- animation-name: doc-text-body-showen;
- animation-duration: 2s;
- animation-fill-mode: forwards;
- animation-delay: 0.5s;
- /* opacity: 0; */
- transform: scale(0, 0);
- transform-origin: right top;
-}
-
-@keyframes doc-text-body-showen {
-    from{
-        transform: scale(0, 0);
-    }
-    to{
-        transform: scale(1, 1);
-    }
-}
-
-.doc-text-overlay .doc-text-body li{
-    margin-bottom: 20px;
-    padding: 10px 15px;
-    font-size: 3rem;
-    font-family: "Almarai-Bold";
-    border-bottom: 3px solid #f8edd5;
-    animation-name: li-showen;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-
-}
-.doc-text-overlay .doc-text-body li:last-child{
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-@keyframes li-showen {
-    from{
-       opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}

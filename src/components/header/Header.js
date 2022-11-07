@@ -5,16 +5,18 @@ import logo from '../../images/logo2.png'
 function Header() {
   return (
     <div className='header-container' >
-      <div className='logo'>
-        <img src={logo} alt='logo' width='100' height='100' />
-      </div>
-      <div className='name'>
-        <p className='font-weight-bold'>
-          مركــز الإنــذار المبكــر بمخاطــر الطقــس
-        </p>
-      </div>
-      <div className='ema-name'>
-        <p>الهيئة العامة للأرصاد الجوية المصرية</p>
+      <div className='row w-100'>
+        <div className='logo col-3'>
+          <img src={logo} alt='logo' width='120' height='100' />
+        </div>
+        <div className='name col-6'>
+          <p className='font-weight-bold'>
+            مركــز الإنــذار المبكــر بمخاطــر الطقــس
+          </p>
+        </div>
+        <div className='ema-name col-3'>
+          <p>الهيئة العامة للأرصاد الجوية المصرية</p>
+        </div>
       </div>
 
       {/* <div className='name'>

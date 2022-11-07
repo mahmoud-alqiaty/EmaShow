@@ -16,6 +16,12 @@ body {
   font-weight: bold;
   }
 @font-face {
+  font-family: "Cairo-ExtraBold";
+  src: local("Cairo-ExtraBold"),
+   url("./fonts/Cairo-ExtraBold.ttf") format("truetype");
+  /* font-weight: bold; */
+  }
+@font-face {
   font-family: "Lateef-Bold";
   src: local("Lateef-Bold"),
    url("./fonts/Lateef-Bold.ttf") format("truetype");

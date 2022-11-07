@@ -10,14 +10,11 @@ import SecInfoItem from './SecInfoItem';
 
 import nextIcon from '../../images/arrow-icons/left-circle.svg';
 import prevtIcon from '../../images/arrow-icons/right-circle.svg';
-
-
 import locationIcon  from '../../images/cities/location_icon.png';
-
-
 
 import { citiesBgImages } from './data';
 import { AllDataContext } from '../../App';
+import Overlay from '../overlay/Overlay';
 
 
 const CityComponent = () => {
@@ -30,17 +27,17 @@ const CityComponent = () => {
   const previous = () => {
     slider.slickPrev();
   }
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 800,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        touchMove: true,
-        // nextArrow: <NextArrow />,
-        // prevArrow: <PrevArrow />
-      };
+  const settings = {
+      dots: false,
+      infinite: false,
+      speed: 800,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      touchMove: true,
+      // nextArrow: <NextArrow />,
+      // prevArrow: <PrevArrow />
+  };
      
   return (
     <div className='mapComponent-container'>
@@ -68,7 +65,7 @@ const CityComponent = () => {
                       </div>
                       <div className='col-1'></div>
                       <div className='col-6 p-0'>
-                        <MainInfoItem weatherDay={weatherData[0]} weatherNight={weatherData[1]} date={weatherData[0].date} />
+                        <MainInfoItem isRegionCairo={index === 0} weatherDay={weatherData[0]} weatherNight={weatherData[1]} date={weatherData[0].date} />
                       </div>
                     </div>
                   </div>
@@ -76,7 +73,7 @@ const CityComponent = () => {
               }
             </Slider>
 
-            <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'20%', display: 'flex', alignItems: 'center', flexDirection: 'row',  zIndex: "2000",}}>
+            <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', flexDirection: 'row',  zIndex: "2000",}}>
               <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
               <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
               {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}
@@ -85,6 +82,8 @@ const CityComponent = () => {
           </>
         ) : null
       }
+
+      <Overlay />
         
     </div>
   )

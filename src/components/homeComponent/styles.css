@@ -117,3 +117,25 @@
 .hint{
     color: #FDD807;
 }
+
+.bg .arrow-controller{ 
+    text-align: center; 
+    position: absolute; 
+    bottom: 0; 
+    left: 33%; 
+    display: flex; 
+    align-items:  center; 
+    flex-direction:  row;
+    z-index: 20000;  
+}
+
+
+
+/* ================================================= */
+.first-days-container{
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    /* align-items: ; */
+}

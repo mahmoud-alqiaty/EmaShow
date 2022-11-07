@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import nextIcon from '../../images/arrow-icons/left-circle.svg';
 import prevtIcon from '../../images/arrow-icons/right-circle.svg';
 import { AllDataContext } from '../../App';
+import Overlay from '../overlay/Overlay';
 
 const Mapcomponent = () => {
   const {mapsArray} = useContext(AllDataContext)
@@ -31,7 +32,7 @@ const Mapcomponent = () => {
   const settings = {
     customPaging: function(i) {
       return (
-        <a >
+        <a>
           <img src={mapsArray && mapsArray[i]} alt='' />
         </a>
       );
@@ -59,6 +60,7 @@ const Mapcomponent = () => {
  
   return (
       <div>
+        <Overlay />
         <Slider ref={c => (slider = c)} {...settings}>
           {
             mapsArray?.map((src, index)=>
