@@ -244,7 +244,7 @@ const DocCompnent = () => {
 
       </Slider>
 
-      <div className='arrow-controller d-none' >
+      <div className='arrow-controller' >
         <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
         {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
