@@ -48,6 +48,7 @@ const CityComponent = () => {
               {
                 regionsTempPage.map(({name, weatherData}, index)=><div className='img-container' key={index+1}>
                   <img src={citiesBgImages[index]} alt='' />
+                  {/* <div className='overlay' /> */}
                   <div className='info-container'>
                     <div className='row city-name-container mb-2'>
                       <div className='city-name col-12'>

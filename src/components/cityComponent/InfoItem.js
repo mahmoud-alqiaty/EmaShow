@@ -21,7 +21,11 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                             <p>ليــلاً</p>
                         </div>
                         <img src={weatherIcons[weatherNight?.icon]} alt='icon' />
-                        <p className='Phenomena-name' style={{lineHeight: weatherNight?.icon == "ممطر"&& 1}}>{weatherNight?.icon} {weatherNight?.icon == "ممطر" ? <span style={{fontSize: "1.8rem", color: "#ddcd6f"}}>%40</span> : null } <br /> {weatherNight?.icon == "ممطر" ? <span style={{fontSize: "1.3rem", color: "#ddcd6f"}}>(خفيف:متوسط)</span> : null }</p>
+                        <p className='Phenomena-name' style={{lineHeight: weatherNight?.icon == "ممطر"&& 1}}>{weatherNight?.icon} {(weatherNight?.icon == "ممطر" || weatherNight?.icon == "مطر رعدي") ? <span style={{fontSize: "1.8rem", color: "#ddcd6f"}}>%{weatherNight?.rainPercentage}</span> : null } 
+                        <br /> 
+                        {(weatherNight?.icon == "ممطر" || weatherNight?.icon == "مطر رعدي") ? <span style={{fontSize: "1.3rem", color: "#ddcd6f"}}>{weatherNight?.rainingWeight
+                        }</span> : null }
+                        </p>
                         
                         
                         <p className='city-temp'>
@@ -47,7 +51,11 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                             <p>نهــاراً</p>
                         </div>
                         <img src={weatherIcons[weatherDay?.icon]} alt='icon' />
-                        <p className='Phenomena-name' style={{lineHeight: weatherNight?.icon == "ممطر"&& 1}}>{weatherDay?.icon} {weatherNight?.icon == "ممطر" ? <span style={{fontSize: "1.7rem", color: "#ddcd6f"}}>%40</span> : null } <br /> {weatherNight?.icon == "ممطر" ? <span style={{fontSize: "1.3rem", color: "#ddcd6f"}}>(خفيف:متوسط)</span> : null}</p>
+                        <p className='Phenomena-name' style={{textAlign: 'center',lineHeight: weatherDay?.icon == "ممطر"&& 1}}>{weatherDay?.icon} {(weatherDay?.icon == "ممطر" || weatherDay?.icon == "مطر رعدي") ? <span style={{fontSize: "1.7rem", color: "#ddcd6f"}}>%{weatherDay?.rainPercentage}</span> : null } 
+                        <br /> 
+                        {(weatherDay?.icon == "ممطر" || weatherDay?.icon == "مطر رعدي") ? <span style={{fontSize: "1.3rem", color: "#ddcd6f"}}>{weatherDay?.rainingWeight
+                        }</span> : null }
+                        </p>
                         <p className='city-temp'>
                             <img src={temperatureIcon} className='temperatureIcon' alt='' />
                             <span>
@@ -61,14 +69,14 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                             <span style={{fontSize: "2.4rem", marginRight: "5px"}}>
                                 {weatherDay?.wind}
                             </span>
-                            <span style={{color: "#ddcd6f", marginLeft: "5px", fontSize: "2.4rem"}}> km/h</span>
+                            <span style={{color: "#aadd6f", marginLeft: "5px", fontSize: "2.4rem"}}> km/h</span>
                         </p>
                     </div>
                 </div>
                 {
-                    isRegionCairo? (
-                        <div className='note  mx-2 mb-2' style={{textAlign: 'right'}}>
-                            <span style={{color: '#fff', fontSize: "1.4rem", fontWeight:'bold' }}>أمطار خفيفة قد تكون متوسطة 40% على شمال الوجه البحري تصل خفيفة لمناطق من جنوب الوجه البحري</span>
+                    weatherDay.notes? (
+                        <div className='note mx-4 mb-3' style={{textAlign: 'right'}}>
+                            <span style={{color: '#FDD807', fontSize: "1.4rem", fontWeight:'bold' }}>{ weatherDay.notes}</span>
                         </div>
                     ):null
                 }
