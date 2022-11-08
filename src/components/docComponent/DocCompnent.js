@@ -42,26 +42,26 @@ const DocCompnent = () => {
     slider.slickPrev();
   }
   const settings = {
-    customPaging: function(i) {
-      return (
-        <a>
-          {
-            i == 0 ? (
-              <img src={thunderBg} alt='' />
-            ) : i == 1 ? (
-              <img src={spcMaps[1]} alt='' />
-            ) : i == 2 ?(
-              <img src={egyptMap} alt='' />
-            ) : i==3 ? (
-              <img src={warning} alt='' />
-            ) : null
-          }
+    // customPaging: function(i) {
+    //   return (
+    //     <a>
+    //       {
+    //         i == 0 ? (
+    //           <img src={thunderBg} alt='' />
+    //         ) : i == 1 ? (
+    //           <img src={spcMaps[1]} alt='' />
+    //         ) : i == 2 ?(
+    //           <img src={egyptMap} alt='' />
+    //         ) : i==3 ? (
+    //           <img src={warning} alt='' />
+    //         ) : null
+    //       }
           
-        </a>
-      );
-    },
-    dots: true,
-    dotsClass: "slick-dots slick-thumb",
+    //     </a>
+    //   );
+    // },
+    // dots: true,
+    // dotsClass: "slick-dots slick-thumb",
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -69,23 +69,35 @@ const DocCompnent = () => {
     arrows: false
   };
 
-  const drowtempAndIcon = (dayData)=>{
+  const drowtempAndIcon = (dayData, name)=>{
     return(
-      <div className='region-weather custom-tooltip'>
-        <img src={weatherIcons[dayData?.icon]} alt='icon' />
-        <div className='region-temp'>
-          <span className='maxTemp' >
-            {dayData?.maxTemp}<sup>o</sup>c
+      <>
+        <div className='region-name'>
+          <span>
+            {name == "جنوب سيناء وسلاسل جبال البحر الأحمر" ? "جنوب سيناء والبحر الأحمر" : name}
           </span>
-          <span className='divider'></span>
-          <span className='minTemp'>
-            {dayData?.minTemp}<sup>o</sup>c
-            </span>
         </div>
-        {/* <span class="tooltiptext">
-        لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة 
-        </span> */}
-      </div>
+        <div className='region-weather custom-tooltip'>
+          {/* <br /> */}
+          <div className='d-flex mx-2'>
+            {(dayData?.icon == "ممطر" || dayData?.icon == "مطر رعدي")? <span style={{fontSize: "1.8rem", color: "#ddcd6f"}}>{dayData.rainPercentage}%</span> : null }
+            <img src={weatherIcons[dayData?.icon]} alt='icon' style={{objectFit: dayData?.icon == "مشمس"? "contain" : "cover"}} />
+
+          </div>
+          <div className='region-temp'>
+            <span className='maxTemp' >
+              {dayData?.maxTemp}<sup>o</sup>c
+            </span>
+            <span className='divider'></span>
+            <span className='minTemp'>
+              {dayData?.minTemp}<sup>o</sup>c
+              </span>
+          </div>
+          {/* <span class="tooltiptext">
+          لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة 
+          </span> */}
+        </div>
+      </>
     )
   }
 
@@ -173,22 +185,22 @@ const DocCompnent = () => {
               <div className='egy-map-container mx-auto'>
                 <img src={egyptMap} alt="egyptMap" />
                 <div className='region region-one'>
-                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[StartingDay])}
+                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[StartingDay], regionsTempPage[0]?.name)}
                 </div>
                 <div className='region region-two'>
-                {drowtempAndIcon(regionsTempPage[1]?.weatherData[StartingDay])}
+                {drowtempAndIcon(regionsTempPage[1]?.weatherData[StartingDay], regionsTempPage[1]?.name)}
                 </div>
                 <div className='region region-three'>
-                {drowtempAndIcon(regionsTempPage[2]?.weatherData[StartingDay])}
+                {drowtempAndIcon(regionsTempPage[2]?.weatherData[StartingDay], regionsTempPage[2]?.name)}
                 </div>
                 <div className='region region-four'>
-                {drowtempAndIcon(regionsTempPage[3]?.weatherData[StartingDay])}
+                {drowtempAndIcon(regionsTempPage[3]?.weatherData[StartingDay], regionsTempPage[3]?.name)}
                 </div>
                 <div className='region region-five'>
-                {drowtempAndIcon(regionsTempPage[4]?.weatherData[StartingDay])}
+                {drowtempAndIcon(regionsTempPage[4]?.weatherData[StartingDay], regionsTempPage[4]?.name)}
                 </div>
                 <div className='region region-six'>
-                {drowtempAndIcon(regionsTempPage[5]?.weatherData[StartingDay])}
+                {drowtempAndIcon(regionsTempPage[5]?.weatherData[StartingDay], regionsTempPage[5]?.name)}
                 </div>
               </div>
             </div>
@@ -232,7 +244,7 @@ const DocCompnent = () => {
 
       </Slider>
 
-      <div className='arrow-controller' >
+      <div className='arrow-controller d-none' >
         <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
         {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>

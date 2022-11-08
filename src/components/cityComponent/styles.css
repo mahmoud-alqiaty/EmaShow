@@ -13,7 +13,7 @@
     height: 100%;
     top: 0%;
     left: 0%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
     /* z-index: 10000; */
 }
 
@@ -170,6 +170,12 @@
 .Phenomena-name{
     font-size: 2rem;
     /* line-height: 1; */
+    text-align: center;
+}
+
+.Phenomena-name .rain-percentage{
+    font-size: 1.7rem; 
+    color: #ddcd6f
 }
 
 .city-temp, .city-wind{
@@ -191,6 +197,14 @@
     font-weight: bold;
 }
 
+.note{
+    text-align: right;
+    color: #FDD807; 
+    font-size: 1.4rem; 
+    /* fontWeight:bold */
+    /* font-family: "Almarai-Bold"; */
+    font-family: "Almarai-ExtraBold";
+}
 
 
 /* ************************************* */

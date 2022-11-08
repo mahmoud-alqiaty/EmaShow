@@ -45,4 +45,10 @@ body {
    url("./fonts/Almarai-Bold.ttf") format("truetype");
   font-weight: bold;
   }
+@font-face {
+  font-family: "Almarai-ExtraBold";
+  src: local("Almarai-ExtraBold"),
+   url("./fonts/Almarai-ExtraBold.ttf") format("truetype");
+  font-weight: bolder;
+  }
 

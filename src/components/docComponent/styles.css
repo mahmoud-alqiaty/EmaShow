@@ -247,7 +247,7 @@
     font-family: "MarkaziText-Bold";
     color: white;
     /* padding: 10px 0px; */
-    border-radius: 40px 0 0 40px;
+    border-radius: 15px 0 0 15px;
     border: 3px solid rgb(197, 164, 164);
     border-right: none;
     display: flex;
@@ -301,16 +301,16 @@
 }
 
 .region-one{
-    top: 21%;
-    left: 42%;
+    top: 19%;
+    left: 43%;
 }
 .region-two{
-    top: 11%;
+    top: 12%;
     left: 22%;
 }
 .region-three{
-    top: 11%;
-    right: 30%;
+    top: 12%;
+    right: 28%;
 }
 .region-four{
     top: 35%;
@@ -321,15 +321,30 @@
     right: 46%;
 }
 .region-six{
-    top: 68%;
+    top: 70%;
     right: 35%;
 }
 
 .region-weather{
-    width: 200px;
+    width: 250px;
     height: 100px;
     display: flex !important;
-    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: space-between;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    background-color: #444;
+}
+
+.region-name{
+    width: 250px;
+    background-color: rgb(217, 217, 217) !important;
+    text-align: center;
+    color: blue;
+    font-family: "Almarai-Bold";
+    padding: 3px 0;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #444;
+    
+
 }
 .region-temp{
     width: 50%;
@@ -341,8 +356,8 @@
 
 .region-weather img{
     width: 100px !important;
-    width: 100px !important;
-    object-fit: cover;
+    height: 100px !important;
+    /* object-fit: cover; */
 }
 
 .region-temp .maxTemp, .region-temp .minTemp{
@@ -357,7 +372,8 @@
 .region-temp .divider{
  width: 100%;
  height: 3px;
- background-color: rgba(0, 0, 0, 0.9);
+ /* background-color: rgba(0, 0, 0, 0.9); */
+ background-color: #444;
 }
 
 
