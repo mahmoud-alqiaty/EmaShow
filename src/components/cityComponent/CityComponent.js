@@ -60,13 +60,18 @@ const CityComponent = () => {
                     </div>
                     <div className='row items'>
                       <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>
+                        <div>
                           <SecInfoItem weatherData={weatherData[2]} />
                           <SecInfoItem weatherData={weatherData[3]} />
                           <SecInfoItem weatherData={weatherData[4]} />
+                        </div>
                       </div>
-                      <div className='col-1'></div>
-                      <div className='col-6 p-0'>
-                        <MainInfoItem isRegionCairo={index === 0} weatherDay={weatherData[0]} weatherNight={weatherData[1]} date={weatherData[0].date} />
+                      {/* <div className='col-1'></div> */}
+                      <div className='col-7 p-0'>
+                        <div className='pl-2'>
+                          <MainInfoItem isRegionCairo={index === 0} weatherDay={weatherData[0]} weatherNight={weatherData[1]} date={weatherData[0].date} />
+
+                        </div>
                       </div>
                     </div>
                   </div>

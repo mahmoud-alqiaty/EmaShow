@@ -3,7 +3,8 @@
 }
 
 .img-container img{
-    object-fit: cover ;
+    /* object-fit: cover ; */
+    object-fit: fill ;
     /* filter: blur(5px); */
 }
 
@@ -212,7 +213,7 @@
  @media only screen and (max-width: 600px) {
     .info-container{
         width: 90%;
-        height: 70%;
+        height: 50%;
         top: 3%;
         left: 5%;
     }
