@@ -139,3 +139,11 @@
     padding: 20px;
     /* align-items: ; */
 }
+
+
+@media only screen and (max-width: 600px){
+    .head span{
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+}

@@ -2,7 +2,7 @@
     background-color: rgb(192, 192, 226);
     position: absolute;
     left: 60%;
-    bottom: -20px;
+    bottom: 0px;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
@@ -28,4 +28,21 @@
     top: -58px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 600px){
+    .sidebar-container{
+        padding: 5px 5px;
+        border-radius: 5px;
+    }
+
+    .sidebar-item{
+        width: 50px;
+        margin-right: 5px;
+    }
+
+    .sidebar-item img{
+        width: 30px;
+        height: 30px;
+    }
 }

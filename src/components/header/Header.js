@@ -7,7 +7,7 @@ function Header() {
     <div className='header-container' >
       <div className='row w-100'>
         <div className='logo col-3'>
-          <img src={logo} alt='logo' width='120' height='100' />
+          <img src={logo} alt='logo' />
         </div>
         <div className='name col-6'>
           <p className='font-weight-bold'>

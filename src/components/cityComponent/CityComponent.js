@@ -50,7 +50,7 @@ const CityComponent = () => {
                   <img src={citiesBgImages[index]} alt='' />
                   <div className='overlay' />
                   <div className='info-container'>
-                    <div className='row city-name-container mb-2'>
+                    <div className='row city-name-container mb-0 mb-lg-2'>
                       <div className='city-name col-12'>
                         <img src={locationIcon} alt='' />
                         <span>

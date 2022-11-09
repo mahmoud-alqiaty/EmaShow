@@ -36,10 +36,10 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                         </p>
                         <p className='city-wind'>
                         {/* <img src={windIcon} alt='' /> */}
-                        <span style={{fontSize: "2.4rem", marginRight: "5px"}}>
+                        <span>
                             {weatherNight?.wind}
                         </span>
-                        <span style={{color: "#ddcd6f", marginLeft: "5px", fontSize: "2.4rem"}}>km/h</span>
+                        <span style={{color: "#ddcd6f", marginLeft: "5px"}}>km/h</span>
                         </p>
                     </div>
                     <div className='col-1'>
@@ -66,16 +66,16 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                         </p>
                         <p className='city-wind'>
                             {/* <img src={windIcon} alt='' /> */}
-                            <span style={{fontSize: "2.4rem", marginRight: "5px"}}>
+                            <span>
                                 {weatherDay?.wind}
                             </span>
-                            <span style={{color: "#aadd6f", marginLeft: "5px", fontSize: "2.4rem"}}> km/h</span>
+                            <span style={{color: "#aadd6f", marginLeft: "5px"}}> km/h</span>
                         </p>
                     </div>
                 </div>
                 {
                     weatherDay.notes? (
-                        <div className='note mx-4 mb-3'>
+                        <div className='note mx-1 mx-lg-4 mb-3'>
                             <span>{ weatherDay.notes}</span>
                         </div>
                     ):null

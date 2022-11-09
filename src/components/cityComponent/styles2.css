@@ -58,3 +58,40 @@
     object-fit: cover;
     
 }
+
+
+@media only screen and (max-width: 600px){
+    .InfoItem-container2{
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    
+    
+    .date-container2 .day{
+        font-size: 0.8rem;
+    }
+    .temp{
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 0 !important;
+    }
+    
+    .temp p {
+        margin: 0px !important;
+    }
+    
+    .card-footer{
+       
+        padding: 0 0 0 0px;
+        
+    }
+    
+    .card-footer .icon-container{
+        padding: 0 !important;
+    }
+    .icon-container img{
+        width: 40px;
+        height: 40px;
+        
+    }
+}

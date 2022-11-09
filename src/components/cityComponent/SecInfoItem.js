@@ -6,13 +6,13 @@ const SecInfoItem = ({weatherData}) => {
     return (
       <div className='InfoItem-container2'>
           <div className='date-container2 row'>
-              <p className='col-12 day mb-2'>
+              <p className='col-12 day mb-1 mb-lg-2'>
                 {weatherData?.date}
               </p>
           </div>
               
-          <div className='card-footer row'>
-            <div className='temp col-6 d-flex align-items-center'>
+          <div className='card-footer row mx-0'>
+            <div className='temp col-8 col-lg-6 d-flex align-items-center'>
                 <p>
                   <span style={{color: 'red'}}>{weatherData?.maxTemp}</span>
                   <span style={{color: "#000"}}> -</span>
@@ -21,7 +21,7 @@ const SecInfoItem = ({weatherData}) => {
                   
                 </p>
             </div>
-            <div className='icon-container col-6 d-flex justify-content-end'>
+            <div className='icon-container col-4 col-lg-6 d-flex justify-content-end'>
                 {(weatherData?.icon == "ممطر" || weatherData?.icon == "مطر رعدي")? <span style={{fontSize: "1.8rem", color: "#ddcd6f"}}>{weatherData.rainPercentage}%</span> : null }
                 <img src={weatherIcons[weatherData?.icon]} alt='icon2' width='30' height='30' />
             </div>

@@ -4,12 +4,10 @@
     background-color: hsl(240, 100%, 30%);
     font-family: Cairo-Bold;
     padding: 0 30px;
-    /* padding-bottom: 15px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px -1px 2px #fff inset;
-    /* border-bottom: 1px solid #fff; */
 }
 
 .name{
@@ -45,3 +43,40 @@
     text-align: center;
     text-align: start;
 }
+
+.logo img{
+    width: 120px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-container{
+        padding: 0 5px;
+        height: 60px;
+    }
+    .name{
+        font-size: 0.65rem; 
+
+    }
+    .name p{
+        margin: 0 !important;
+
+    }
+
+    .ema-name{
+        font-size: 0.65rem;
+        padding: 0 !important;
+
+    }
+
+    /* .ema-name p{
+        font-size: 0.4rem;
+        padding: 0 !important;
+
+    } */
+
+    .logo img{
+        width: 40px;
+        height: 40px;
+    }
+  }

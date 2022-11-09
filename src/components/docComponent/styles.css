@@ -332,6 +332,7 @@
     justify-content: space-between;
     /* background-color: rgba(0, 0, 0, 0.9); */
     background-color: #444;
+    position: relative;
 }
 
 .region-name{
@@ -360,6 +361,14 @@
     /* object-fit: cover; */
 }
 
+.region-weather .rain-percentage {
+    font-size: 1.8rem;
+    color: #ddcd6f;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .region-temp .maxTemp, .region-temp .minTemp{
     width: 100%;
     height: 50%;
@@ -374,6 +383,96 @@
  height: 3px;
  /* background-color: rgba(0, 0, 0, 0.9); */
  background-color: #444;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .day-container{
+        top: 5px; 
+        font-size: 1rem;
+        height: 33px;
+        border-radius: 5px 0 0 5px;
+        border: 2px solid rgb(197, 164, 164);
+    }
+    
+    .day-container p{
+        margin: 0;
+        margin-left: 10px;
+        opacity: 0;
+    }
+
+    @keyframes show-date-on-map {
+        from{
+            width: 0px;
+        }
+        to{
+            width: 150px;
+        }
+    }
+
+    .region {
+        width: 100px;
+        height: 50px;
+        /* border: 1px solid #000; */
+    }
+
+    .region-one{
+        top: 19%;
+        left: 36%;
+    }
+    .region-two{
+        top: 12%;
+        left: 10%;
+    }
+    .region-three{
+        top: 12%;
+        right: 15%;
+    }
+    .region-four{
+        top: 35%;
+        right: 15%;
+    }
+    .region-five{
+        top: 45%;
+        right: 38%;
+    }
+    .region-six{
+        top: 72%;
+        right: 26%;
+    }
+
+    .region-weather{
+        width: 85px;
+        height: 35px;
+    }
+    
+    .region-name{
+        width: 85px;
+        padding: 2px 0;
+        font-size: 0.43rem;
+        
+    
+    }
+    
+    .region-weather img{
+        width: 35px !important;
+        height: 35px !important;
+        /* object-fit: cover; */
+    }
+
+    .region-weather .rain-percentage {
+        font-size: 0.8rem;
+        right: 2px;
+    }
+    
+    .region-temp .maxTemp, .region-temp .minTemp{
+        font-size: 0.7rem;
+    }
+    
+    .region-temp .divider{
+     height: 1px;
+    }
+    
 }
 
 

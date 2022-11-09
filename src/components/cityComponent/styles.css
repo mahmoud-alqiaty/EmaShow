@@ -208,3 +208,107 @@
 
 
 /* ************************************* */
+
+ @media only screen and (max-width: 600px) {
+    .info-container{
+        width: 90%;
+        height: 70%;
+        top: 3%;
+        left: 5%;
+    }
+    
+    .city-name-container{
+        height: 45px;
+    }
+    
+    .city-name{
+        font-size: 1.3rem;
+        line-height: 25px;
+    }
+    
+    .city-name::after{
+        width: 15px;
+        height: 15px;
+        border-top: 2px solid #FDD807;
+        border-left: 2px solid #FDD807;
+        top: 2px;
+        left: 2px;
+    }
+    .city-name::before{
+        width: 15px;
+        height: 15px;
+        border-bottom: 2px solid #FDD807;
+        border-right: 2px solid #FDD807;
+        bottom: 2px;
+        right: 2px;
+    }
+    
+    .city-name img{
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+    }
+
+    .card{
+        border-radius: 10px;
+    }
+
+    .date-container{
+        margin: 0 !important;
+    }
+    
+    .day{
+        font-size: 0.9rem;
+    }
+
+    .icon-container img{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .temperatureIcon{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .divider{
+        height: 200px;
+    }
+    
+    .period-name p{
+        padding: 1px 10px;
+        font-size: 0.7rem;
+        
+    }
+    
+    .Phenomena-name{
+        font-size: 0.9rem;
+
+    }
+    
+    .Phenomena-name .rain-percentage{
+        font-size: 0.7rem; 
+    }
+
+    .min-temp, .max-temp{
+        border-radius: 2px;
+        font-size: 1rem;
+    }
+    
+    .city-temp img, .city-wind img{
+        width: 20px !important;
+        height: 30px !important;
+        object-fit: contain !important;
+    }
+    .city-temp span{
+        font-size: 1.7rem;
+    }
+    .city-wind span{
+        font-size: 1.3rem;
+        /* margin-right: 5px; */
+    }
+    
+    .note{
+        font-size: 0.7rem; 
+    }
+}

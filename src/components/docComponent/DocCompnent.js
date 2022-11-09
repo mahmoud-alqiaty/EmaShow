@@ -11,7 +11,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import egyptMap from '../../images/Egypt-map-three.jpg'
+// import egyptMap from '../../images/Egypt-map-three.jpg'
+import egyptMap from '../../images/Egypt-map-mobile.jpg'
 
 
 import nextIcon from '../../images/arrow-icons/left-circle.svg';
@@ -80,7 +81,7 @@ const DocCompnent = () => {
         <div className='region-weather custom-tooltip'>
           {/* <br /> */}
           <div className='d-flex mx-2'>
-            {(dayData?.icon == "ممطر" || dayData?.icon == "مطر رعدي")? <span style={{fontSize: "1.8rem", color: "#ddcd6f"}}>{dayData.rainPercentage}%</span> : null }
+            {(dayData?.icon == "ممطر" || dayData?.icon == "مطر رعدي")? <span className='rain-percentage'>{dayData.rainPercentage}%</span> : null }
             <img src={weatherIcons[dayData?.icon]} alt='icon' style={{objectFit: dayData?.icon == "مشمس"? "contain" : "cover"}} />
 
           </div>
