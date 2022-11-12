@@ -20,7 +20,7 @@ import { citiesBgImages } from '../cityComponent/data';
 
 
 const Homecpmponent = () => {
-  const {regionsTempPage} = useContext(AllDataContext)
+  const {regionsTempPage, showSidebar} = useContext(AllDataContext)
 
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
@@ -98,7 +98,7 @@ const Homecpmponent = () => {
 
       </Slider>
 
-      <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', flexDirection: 'row',  zIndex: "2000",}}>
+      <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', alignItems: 'center', flexDirection: 'row',  zIndex: "2000", display: showSidebar? "flex":"none"}}>
         <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
         {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}

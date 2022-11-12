@@ -2,10 +2,10 @@
     border-radius: 20px;
     padding: 10px;
     /* background-color: rgb(0, 0, 255, 0.3); */
-    background-image: linear-gradient(to left,rgba(5, 5, 36, 0.8), rgb(0, 0, 255, 0.7));
+    background-image: linear-gradient(to left,rgba(5, 5, 36, 0.9), rgba(0, 0, 255, 0.8));
     margin-bottom: 25px;
     width: 100%;
-    box-shadow: 0 5px 5px rgba(5, 5, 36, 0.5);
+    box-shadow: -10px 10px inset #2E335A;
 }
 
 .InfoItem-container2:last-child{
@@ -59,6 +59,8 @@
     
 }
 
+.card-footer .rain-percentage{font-size: 1.8rem; color: #ddcd6f}
+
 
 @media only screen and (max-width: 600px){
     .InfoItem-container2{
@@ -88,10 +90,13 @@
     
     .card-footer .icon-container{
         padding: 0 !important;
+        position: relative;
     }
     .icon-container img{
         width: 40px;
         height: 40px;
         
     }
+
+    .card-footer .rain-percentage{font-size: 0.8rem; position: absolute; left: 10px; top: 0px;}
 }

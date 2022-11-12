@@ -18,7 +18,7 @@ import Overlay from '../overlay/Overlay';
 
 
 const CityComponent = () => {
-  const {regionsTempPage} = useContext(AllDataContext)
+  const {regionsTempPage, showSidebar} = useContext(AllDataContext)
   console.log("regionsTempPage: ", regionsTempPage);
   let slider = useRef()
   const next = () => {
@@ -48,7 +48,7 @@ const CityComponent = () => {
               {
                 regionsTempPage.map(({name, weatherData}, index)=><div className='img-container' key={index+1}>
                   <img src={citiesBgImages[index]} alt='' />
-                  <div className='overlay' />
+                  <div className='overlay d-none' />
                   <div className='info-container'>
                     <div className='row city-name-container mb-0 mb-lg-2'>
                       <div className='city-name col-12'>
@@ -58,17 +58,17 @@ const CityComponent = () => {
                         </span>
                       </div>
                     </div>
-                    <div className='row items'>
+                    <div className='row items px-0'>
                       <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>
-                        <div>
+                        <div className='w-100 h-100 d-flex flex-column justify-content-between align-items-center'>
                           <SecInfoItem weatherData={weatherData[2]} />
                           <SecInfoItem weatherData={weatherData[3]} />
                           <SecInfoItem weatherData={weatherData[4]} />
                         </div>
                       </div>
                       {/* <div className='col-1'></div> */}
-                      <div className='col-7 p-0'>
-                        <div className='pl-2'>
+                      <div className='col-7 big-card'>
+                        <div className='h-100'>
                           <MainInfoItem isRegionCairo={index === 0} weatherDay={weatherData[0]} weatherNight={weatherData[1]} date={weatherData[0].date} />
 
                         </div>
@@ -79,7 +79,7 @@ const CityComponent = () => {
               }
             </Slider>
 
-            <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', flexDirection: 'row',  zIndex: "2000",}}>
+            <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', alignItems: 'center', flexDirection: 'row',  zIndex: "2000", display: showSidebar? "flex":"none"}}>
               <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
               <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
               {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}

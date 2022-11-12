@@ -3,8 +3,8 @@
 }
 
 .img-container img{
-    /* object-fit: cover ; */
-    object-fit: fill ;
+    object-fit: cover ;
+    /* object-fit: fill ; */
     /* filter: blur(5px); */
 }
 
@@ -17,7 +17,10 @@
     background-color: rgba(0, 0, 0, 0.4);
     /* z-index: 10000; */
 }
-
+.big-card{
+    padding: 0 !important;
+    padding-left: 45px !important;
+}
 .info-container{
     position: absolute;
     width: 60%;
@@ -85,13 +88,19 @@
 .card{
     /* background-color: rgb(0, 0, 255, 0.3); */
     background-color: transparent;
-    background-image: linear-gradient( rgba(5, 5, 32, 0.8) ,rgb(0, 0, 255, 0.7));
+    background-image: linear-gradient( rgba(18, 18, 70, 0.9) ,rgb(0, 0, 255, 0.9));
+    /* background-image: linear-gradient(to top, rgba(69, 39, 139, 0.8) ,rgba(49, 43, 91, 0.8)); */
+    /* box-shadow: -10px -10px inset rgba(5, 5, 36, 0.8); */
     border-radius: 20px;
     /* transform: scale(1, 0);
     transform-origin: top;
     animation-name: cardAnimation;
     animation-duration: 1s;
     animation-fill-mode: forwards; */
+}
+
+.card .all-day{
+    height: 90%;
 }
 
 @keyframes  cardAnimation {
@@ -169,12 +178,16 @@
 }
 
 .Phenomena-name{
-    font-size: 2rem;
+    font-size: 2.5rem;
     /* line-height: 1; */
     text-align: center;
 }
 
 .Phenomena-name .rain-percentage{
+    font-size: 1.7rem; 
+    color: #ddcd6f
+}
+.Phenomena-name .raining-weight{
     font-size: 1.7rem; 
     color: #ddcd6f
 }
@@ -185,23 +198,23 @@
 }
 
 .city-temp img, .city-wind img{
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     object-fit: contain !important;
 }
 .city-temp span{
-    font-size: 3rem;
+    font-size: 3.3rem;
     font-weight: bold;
 }
 .city-wind span{
-    font-size: 2rem;
+    font-size: 2.7rem;
     font-weight: bold;
 }
 
 .note{
     text-align: right;
     color: #FDD807; 
-    font-size: 1.4rem; 
+    font-size: 1.7rem; 
     /* fontWeight:bold */
     /* font-family: "Almarai-Bold"; */
     font-family: "Almarai-ExtraBold";
@@ -288,7 +301,10 @@
     }
     
     .Phenomena-name .rain-percentage{
-        font-size: 0.7rem; 
+        font-size: 1rem; 
+    }
+    .Phenomena-name .raining-weight{
+        font-size: 0.9rem; 
     }
 
     .min-temp, .max-temp{
@@ -310,6 +326,6 @@
     }
     
     .note{
-        font-size: 0.7rem; 
+        font-size: 0.8rem; 
     }
 }

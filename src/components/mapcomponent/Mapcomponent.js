@@ -13,7 +13,7 @@ import { AllDataContext } from '../../App';
 import Overlay from '../overlay/Overlay';
 
 const Mapcomponent = () => {
-  const {mapsArray} = useContext(AllDataContext)
+  const {mapsArray, showSidebar} = useContext(AllDataContext)
   const imgRef = useRef();
 
   const [zoomed, setZoomed] = useState(false)
@@ -37,7 +37,7 @@ const Mapcomponent = () => {
         </a>
       );
     },
-    dots: true,
+    dots: showSidebar,
     dotsClass: "slick-dots slick-thumb",
     infinite: false,
     fade: true,
@@ -76,7 +76,7 @@ const Mapcomponent = () => {
         </Slider>
 
         
-        <div className='arrow-controller' >
+        <div className='arrow-controller' style={{display: showSidebar? "flex":"none"}} >
           <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
           {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
           <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>

@@ -10,6 +10,7 @@ export const AllDataContext = createContext()
 function App() {
 
   const [allData, setAllData] = useState({})
+  const [showSidebar, setShowSidebar] = useState(true)
 
   
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
 
 
   return (
-    <AllDataContext.Provider value={allData}>
+    <AllDataContext.Provider value={{...allData, showSidebar, setShowSidebar}}>
       <div className="App">
       <Header />
       <Home />

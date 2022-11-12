@@ -11,8 +11,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
+import egyptMap from '../../images/Egypt-map-8.jpg'
 // import egyptMap from '../../images/Egypt-map-three.jpg'
-import egyptMap from '../../images/Egypt-map-mobile.jpg'
+// import egyptMap from '../../images/Egypt-map-mobile.jpg'
 
 
 import nextIcon from '../../images/arrow-icons/left-circle.svg';
@@ -24,7 +25,7 @@ import Overlay from '../overlay/Overlay'
 
 
 const DocCompnent = () => {
-  const {regionsTempPage, spacCasePage: {
+  const {showSidebar, regionsTempPage, spacCasePage: {
     mainTitle,
     subTitle,
     StartingDay,
@@ -32,6 +33,8 @@ const DocCompnent = () => {
     allSpcWeatherPoints,
     spcMaps,
   }} = useContext(AllDataContext) 
+
+  console.log("StartingDay: ", StartingDay);
 
   const [imgFullScreenIndex, setImgFullScreenIndex] = useState(-1)
   
@@ -43,26 +46,26 @@ const DocCompnent = () => {
     slider.slickPrev();
   }
   const settings = {
-    // customPaging: function(i) {
-    //   return (
-    //     <a>
-    //       {
-    //         i == 0 ? (
-    //           <img src={thunderBg} alt='' />
-    //         ) : i == 1 ? (
-    //           <img src={spcMaps[1]} alt='' />
-    //         ) : i == 2 ?(
-    //           <img src={egyptMap} alt='' />
-    //         ) : i==3 ? (
-    //           <img src={warning} alt='' />
-    //         ) : null
-    //       }
+    customPaging: function(i) {
+      return (
+        <a>
+          {
+            i == 0 ? (
+              <img src={thunderBg} alt='' />
+            ) : i == 1 ? (
+              <img src={spcMaps[1]} alt='' />
+            ) : i == 2 ?(
+              <img src={egyptMap} alt='' />
+            ) : i==3 ? (
+              <img src={warning} alt='' />
+            ) : null
+          }
           
-    //     </a>
-    //   );
-    // },
-    // dots: true,
-    // dotsClass: "slick-dots slick-thumb",
+        </a>
+      );
+    },
+    dots: showSidebar,
+    dotsClass: "slick-dots slick-thumb",
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -80,7 +83,7 @@ const DocCompnent = () => {
         </div>
         <div className='region-weather custom-tooltip'>
           {/* <br /> */}
-          <div className='d-flex mx-2'>
+          <div className='d-flex mx-2 w-50 justify-content-center'>
             {(dayData?.icon == "ممطر" || dayData?.icon == "مطر رعدي")? <span className='rain-percentage'>{dayData.rainPercentage}%</span> : null }
             <img src={weatherIcons[dayData?.icon]} alt='icon' style={{objectFit: dayData?.icon == "مشمس"? "contain" : "cover"}} />
 
@@ -159,20 +162,6 @@ const DocCompnent = () => {
           }
           {/* <img src={window} alt='' className='window-icon' width='70' height='70' onClick={()=>setImgFullScreenIndex(-1)} /> */}
         </div>
-
-        {
-          // (spcMaps && spcMaps.length > 0)? 
-          // spcMaps.map((singleMap, index)=>
-          //   <div className='outer-doc-container' key={index}>
-          //     <div className='map-img-outer-container'>
-          //       <div className='map-img-inner-container'>
-          //         <img src={singleMap} alt=''  />
-          //       </div>
-          //     </div>
-          //   </div>
-          // )
-          // : null
-        }
         
         {
           (regionsTempPage && regionsTempPage.length>0)? (
@@ -185,6 +174,51 @@ const DocCompnent = () => {
               </div>
               <div className='egy-map-container mx-auto'>
                 <img src={egyptMap} alt="egyptMap" />
+                <div className='ms'>
+                  <div className='ms-B'>
+                    <div className='ms-wind-group'>
+                      <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[1]?.weatherData[StartingDay].ms.windDirection}deg)`}} />
+                      <span>
+                        {regionsTempPage[1]?.weatherData[StartingDay].ms.windStart} {" "}
+                        {regionsTempPage[1]?.weatherData[StartingDay].ms.windEnd? `: ${regionsTempPage[1]?.weatherData[StartingDay].ms.windEnd}` : null} {" "}
+                         كم/س
+                        </span>
+                    </div>
+                    <div className='ms-wave-group'>
+                      <img src={weatherIcons.waveIcon} alt='' />
+                      <span> 
+                        {regionsTempPage[1]?.weatherData[StartingDay].ms.waveStart} {" "}
+                        {regionsTempPage[1]?.weatherData[StartingDay].ms.waveEnd? `: ${regionsTempPage[1]?.weatherData[StartingDay].ms.waveEnd}` : null} {" "} متر</span>
+                    </div>
+                  </div>
+                  <div className='ms-C d-none'>
+                    <div className='ms-wind-group'>
+                      <img src={weatherIcons.navigationIcon} alt='' />
+                      <span>25 : 30 كم/س</span>
+                    </div>
+                    <div className='ms-wave-group'>
+                      <img src={weatherIcons.waveIcon} alt='' />
+                      <span>1 : 1.5 متر</span>
+                    </div>
+                  </div>
+                </div>
+                <div className='rs'>
+                  <div className='ms-wind-group'>
+                    <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[2]?.weatherData[StartingDay].rs.windDirection}deg)`}} />
+                    <span>
+                      {regionsTempPage[2]?.weatherData[StartingDay].rs.windStart} {" "}
+                      {regionsTempPage[2]?.weatherData[StartingDay].rs.windEnd? `: ${regionsTempPage[2]?.weatherData[StartingDay].rs.windEnd}` : null} {" "}
+                         كم/س
+                    </span>
+                  </div>
+                  <div className='ms-wave-group'>
+                    <img src={weatherIcons.waveIcon} alt='' />
+                    <span>
+                      {regionsTempPage[2]?.weatherData[StartingDay].rs.waveStart} {" "}
+                        {regionsTempPage[2]?.weatherData[StartingDay].rs.waveEnd? `: ${regionsTempPage[2]?.weatherData[StartingDay].rs.waveEnd}` : null} {" "} متر
+                    </span>
+                  </div>
+                </div>
                 <div className='region region-one'>
                   {drowtempAndIcon(regionsTempPage[0]?.weatherData[StartingDay], regionsTempPage[0]?.name)}
                 </div>
@@ -245,7 +279,7 @@ const DocCompnent = () => {
 
       </Slider>
 
-      <div className='arrow-controller d-none' >
+      <div className='arrow-controller' style={{display: showSidebar? "flex":"none"}} >
         <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
         {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
