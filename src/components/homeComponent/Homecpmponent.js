@@ -53,7 +53,6 @@ const Homecpmponent = () => {
 
   return (
     <div>
-      <Slider ref={c => (slider = c)} {...settings}>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
         <video autoPlay muted loop  ref={vidRef}>
@@ -88,17 +87,16 @@ const Homecpmponent = () => {
         
       </div>
 
-      <div className='first-days-container'>
+      {/* <div className='first-days-container'>
         {
           regionsTempPage?.map(({name, weatherData}, index)=>
             <FirstDay weatherDay={weatherData[0]} weatherNight={weatherData[1]} name={name} bg={citiesBgImages[index]} />
           )
         }
-      </div>
+      </div> */}
 
-      </Slider>
 
-      <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', alignItems: 'center', flexDirection: 'row',  zIndex: "2000", display: showSidebar? "flex":"none"}}>
+      <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', alignItems: 'center', flexDirection: 'row',  zIndex: "2000", display: showSidebar? "none":"none"}}>
         <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
         {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}

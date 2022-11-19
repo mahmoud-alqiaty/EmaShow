@@ -17,7 +17,7 @@ const SecInfoItem = ({weatherData}) => {
                   <span style={{color: 'red'}}>{weatherData?.maxTemp}</span>
                   <span style={{color: "#000"}}> -</span>
                   <span> {weatherData?.minTemp}</span>
-                  <span style={{color: "#c2aa23", marginLeft: "5px"}}><sup> o</sup>c</span>
+                  <span style={{color: "#003651", marginLeft: "5px"}}><sup> o</sup>c</span>
                   
                 </p>
             </div>

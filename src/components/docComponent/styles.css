@@ -75,7 +75,7 @@
     align-items: center;
     color: #fff;
 }
-.doc-text-overlay .header .title{
+.slick-slide.slick-active.slick-current .doc-text-overlay .header .title{
  background-color: blue;
  height: 80px;
  line-height: 80px;
@@ -109,7 +109,7 @@
  font-family: "MarkaziText-Bold";
 }
 
-.doc-text-overlay .doc-text-body{
+.slick-slide.slick-active.slick-current .doc-text-overlay .doc-text-body{
  list-style-type: none;
  padding: 20px 40px;
  background-image: linear-gradient(to left, rgb(22, 8, 83), rgba(15, 36, 156, 0.3));
@@ -184,21 +184,40 @@
     
 }
 
+
 .case-maps-container .map-img-outer-container img{
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
 
+.case-maps-container .map-img-outer-container.not-img-full-screen{
+    /* animation-name: not-img-full-screen-animi;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; */
+    width: 0 !important;
+    height: 0 !important;
+    /* width: 49.7% !important;
+    height: 49% !important; */
+}
+
+.zoomIn{
+    transform: scale(1.5);
+}
+.zoomOut{
+    transform: scale(1);
+}
+
+
 .case-maps-container .map-img-outer-container.img-full-screen{
     width: 100% !important;
     height: 100% !important;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
-    /* animation-name: img-full-screen-animi;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; */
+    left: 0; */
+    animation-name: img-full-screen-animi;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 @keyframes img-full-screen-animi {
     from{
@@ -208,6 +227,18 @@
     to{
         width: 100% !important;
         height: 100% !important;
+    }
+}
+
+@keyframes not-img-full-screen-animi {
+    from{
+       
+        width: 49.7% !important;
+        height: 49% !important;
+    }
+    to{
+        width: 0 !important;
+        height: 0 !important;
     }
 }
 
@@ -616,7 +647,7 @@
 .docComponent-container .arrow-controller{ 
     text-align: center; 
     position: absolute; 
-    left: calc(60% - 320px);
+    left: 28%;
     bottom: 0px;
     transform: translateX(-50%);
     display: flex; 

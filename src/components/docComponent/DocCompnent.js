@@ -20,23 +20,27 @@ import nextIcon from '../../images/arrow-icons/left-circle.svg';
 import prevtIcon from '../../images/arrow-icons/right-circle.svg';
 import window from '../../images/arrow-icons/window.svg';
 import warning from '../../images/arrow-icons/warning-alt.svg';
+import homeIcon from '../../images/sidebar-icons/home.svg'
+
 import { AllDataContext } from '../../App';
 import Overlay from '../overlay/Overlay'
+import Homecpmponent from '../homeComponent/Homecpmponent'
 
 
 const DocCompnent = () => {
-  const {showSidebar, regionsTempPage, spacCasePage: {
-    mainTitle,
-    subTitle,
-    StartingDay,
-    allSpcWarningPoints,
-    allSpcWeatherPoints,
-    spcMaps,
-  }} = useContext(AllDataContext) 
+  const {showSidebar, regionsTempPage, spacCasePage} = useContext(AllDataContext)
 
-  console.log("StartingDay: ", StartingDay);
+  // const{ mainTitle,
+  //   subTitle,
+  //   spacCasePage?.StartingDay,
+  //   spacCasePage?.allSpcWarningPoints,
+  //   allSpcWeatherPoints,
+  //   spcMaps,} = spacCasePage
+
+  // console.log("StartingDay: ", StartingDay);
 
   const [imgFullScreenIndex, setImgFullScreenIndex] = useState(-1)
+  const [zoomin, setZoomin] = useState(false)
   
   let slider = useRef()
   const next = () => {
@@ -50,13 +54,16 @@ const DocCompnent = () => {
       return (
         <a>
           {
-            i == 0 ? (
+            i==0? (
+              <img src={homeIcon} alt='' />
+            ) :
+            i == 1 ? (
+              <img src={spacCasePage?.spcMaps[1]} alt='' />
+              ) : i == 2 ? (
               <img src={thunderBg} alt='' />
-            ) : i == 1 ? (
-              <img src={spcMaps[1]} alt='' />
-            ) : i == 2 ?(
+            ) : i == 3 ?(
               <img src={egyptMap} alt='' />
-            ) : i==3 ? (
+            ) : i==4 ? (
               <img src={warning} alt='' />
             ) : null
           }
@@ -110,8 +117,37 @@ const DocCompnent = () => {
       <Overlay />
       <Slider ref={c => (slider = c)} {...settings}>
 
+        <Homecpmponent />
+
+        <div className='outer-doc-container case-maps-container'>
+          {
+            (spacCasePage?.spcMaps && spacCasePage?.spcMaps.length > 0)? 
+            spacCasePage?.spcMaps.map((singleMap, index)=> 
+              <div 
+                className={`${imgFullScreenIndex==-1? "map-img-outer-container": imgFullScreenIndex == index? "map-img-outer-container img-full-screen" : "map-img-outer-container not-img-full-screen"}`} key={index} 
+                onClick={()=>{
+                  imgFullScreenIndex == index? setImgFullScreenIndex(-1) : setImgFullScreenIndex(index)
+                  setZoomin(false)
+                }}
+                // style={{height: `{$(2/spcMaps.length)*100}%`}}
+                
+              >
+                <img 
+                  src={singleMap} 
+                  alt='' 
+                  onDoubleClick={()=>setZoomin(!zoomin)} 
+                  className={(imgFullScreenIndex == index&&zoomin)? "zoomIn":"zoomOut"} 
+                  
+                />
+              </div>
+            )
+            : null
+          }
+          {/* <img src={window} alt='' className='window-icon' width='70' height='70' onClick={()=>setImgFullScreenIndex(-1)} /> */}
+        </div>
+
         {
-          (allSpcWeatherPoints && allSpcWeatherPoints.length>0)? (
+          (spacCasePage?.allSpcWeatherPoints && spacCasePage?.allSpcWeatherPoints.length>0)? (
             <div className='outer-doc-container '>
               <div className='img-bg'>
                 <img alt='' src={thunderBg} />
@@ -120,17 +156,17 @@ const DocCompnent = () => {
               
               <div className='header'>
                 <p className='title'>
-                  {mainTitle}
+                  {spacCasePage?.mainTitle}
                 </p>
                 <p className='sub-title'>
-                  {subTitle}
+                  {spacCasePage?.subTitle}
                 </p>
               </div>
               {
-                allSpcWeatherPoints? (
+                spacCasePage?.allSpcWeatherPoints? (
                   <ul className='doc-text-body'>
                   {
-                    allSpcWeatherPoints.map((state, stateIndex)=>
+                    spacCasePage?.allSpcWeatherPoints.map((state, stateIndex)=>
                     <li key={stateIndex} style={{animationDelay: `${stateIndex*1.5 + 3}s`}}>
                       <p>
                         {state}
@@ -146,22 +182,7 @@ const DocCompnent = () => {
           ):null
         }
 
-        <div className='outer-doc-container case-maps-container'>
-          {
-            (spcMaps && spcMaps.length > 0)? 
-            spcMaps.map((singleMap, index)=>
-              <div 
-                className={`${imgFullScreenIndex == index? "img-full-screen" : ""} map-img-outer-container`} key={index} 
-                onClick={()=>{imgFullScreenIndex == index? setImgFullScreenIndex(-1) : setImgFullScreenIndex(index)}}
-                // style={{height: `{$(2/spcMaps.length)*100}%`}}
-              >
-                <img src={singleMap} alt=''  />
-              </div>
-            )
-            : null
-          }
-          {/* <img src={window} alt='' className='window-icon' width='70' height='70' onClick={()=>setImgFullScreenIndex(-1)} /> */}
-        </div>
+       
         
         {
           (regionsTempPage && regionsTempPage.length>0)? (
@@ -169,7 +190,7 @@ const DocCompnent = () => {
             <div className='d-flex justify-content-between h-100'>
               <div className='day-container'>
                 <p className='date'>
-                  {regionsTempPage[0]?.weatherData[StartingDay]?.date}
+                  {regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay]?.date}
                 </p>
               </div>
               <div className='egy-map-container mx-auto'>
@@ -177,18 +198,18 @@ const DocCompnent = () => {
                 <div className='ms'>
                   <div className='ms-B'>
                     <div className='ms-wind-group'>
-                      <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[1]?.weatherData[StartingDay].ms.windDirection}deg)`}} />
+                      <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windDirection}deg)`}} />
                       <span>
-                        {regionsTempPage[1]?.weatherData[StartingDay].ms.windStart} {" "}
-                        {regionsTempPage[1]?.weatherData[StartingDay].ms.windEnd? `: ${regionsTempPage[1]?.weatherData[StartingDay].ms.windEnd}` : null} {" "}
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windStart} {" "}
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windEnd? `: ${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windEnd}` : null} {" "}
                          كم/س
                         </span>
                     </div>
                     <div className='ms-wave-group'>
                       <img src={weatherIcons.waveIcon} alt='' />
                       <span> 
-                        {regionsTempPage[1]?.weatherData[StartingDay].ms.waveStart} {" "}
-                        {regionsTempPage[1]?.weatherData[StartingDay].ms.waveEnd? `: ${regionsTempPage[1]?.weatherData[StartingDay].ms.waveEnd}` : null} {" "} متر</span>
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveStart} {" "}
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveEnd? `: ${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveEnd}` : null} {" "} متر</span>
                     </div>
                   </div>
                   <div className='ms-C d-none'>
@@ -204,38 +225,38 @@ const DocCompnent = () => {
                 </div>
                 <div className='rs'>
                   <div className='ms-wind-group'>
-                    <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[2]?.weatherData[StartingDay].rs.windDirection}deg)`}} />
+                    <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windDirection}deg)`}} />
                     <span>
-                      {regionsTempPage[2]?.weatherData[StartingDay].rs.windStart} {" "}
-                      {regionsTempPage[2]?.weatherData[StartingDay].rs.windEnd? `: ${regionsTempPage[2]?.weatherData[StartingDay].rs.windEnd}` : null} {" "}
+                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windStart} {" "}
+                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windEnd? `: ${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windEnd}` : null} {" "}
                          كم/س
                     </span>
                   </div>
                   <div className='ms-wave-group'>
                     <img src={weatherIcons.waveIcon} alt='' />
                     <span>
-                      {regionsTempPage[2]?.weatherData[StartingDay].rs.waveStart} {" "}
-                        {regionsTempPage[2]?.weatherData[StartingDay].rs.waveEnd? `: ${regionsTempPage[2]?.weatherData[StartingDay].rs.waveEnd}` : null} {" "} متر
+                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveStart} {" "}
+                        {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveEnd? `: ${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveEnd}` : null} {" "} متر
                     </span>
                   </div>
                 </div>
                 <div className='region region-one'>
-                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[StartingDay], regionsTempPage[0]?.name)}
+                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[0]?.name)}
                 </div>
                 <div className='region region-two'>
-                {drowtempAndIcon(regionsTempPage[1]?.weatherData[StartingDay], regionsTempPage[1]?.name)}
+                {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[1]?.name)}
                 </div>
                 <div className='region region-three'>
-                {drowtempAndIcon(regionsTempPage[2]?.weatherData[StartingDay], regionsTempPage[2]?.name)}
+                {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[2]?.name)}
                 </div>
                 <div className='region region-four'>
-                {drowtempAndIcon(regionsTempPage[3]?.weatherData[StartingDay], regionsTempPage[3]?.name)}
+                {drowtempAndIcon(regionsTempPage[3]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[3]?.name)}
                 </div>
                 <div className='region region-five'>
-                {drowtempAndIcon(regionsTempPage[4]?.weatherData[StartingDay], regionsTempPage[4]?.name)}
+                {drowtempAndIcon(regionsTempPage[4]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[4]?.name)}
                 </div>
                 <div className='region region-six'>
-                {drowtempAndIcon(regionsTempPage[5]?.weatherData[StartingDay], regionsTempPage[5]?.name)}
+                {drowtempAndIcon(regionsTempPage[5]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[5]?.name)}
                 </div>
               </div>
             </div>
@@ -245,7 +266,7 @@ const DocCompnent = () => {
 
 
         {
-          (allSpcWarningPoints && allSpcWarningPoints.length>0)? (
+          (spacCasePage?.allSpcWarningPoints && spacCasePage?.allSpcWarningPoints.length>0)? (
             <div className='outer-doc-container'>
             <div className='doc-text-overlay'>
               <div className='header'>
@@ -257,10 +278,10 @@ const DocCompnent = () => {
                 </p> */}
               </div>
               {
-                allSpcWarningPoints? (
+                spacCasePage?.allSpcWarningPoints? (
                   <ul className='doc-text-body'>
                   {
-                    allSpcWarningPoints.map((state, stateIndex)=>
+                    spacCasePage?.allSpcWarningPoints.map((state, stateIndex)=>
                     <li key={stateIndex} style={{animationDelay: `${stateIndex + 1}s`}}>
                       <p>
                         {state}
@@ -278,6 +299,7 @@ const DocCompnent = () => {
         
 
       </Slider>
+      
 
       <div className='arrow-controller' style={{display: showSidebar? "flex":"none"}} >
         <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />

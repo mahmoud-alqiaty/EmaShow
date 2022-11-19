@@ -23,8 +23,8 @@
     position: relative;
 }
 .slick-dots{
-    max-width: 300px;
-    right: 70%;
+    max-width: 400px;
+    right:40%;
     top: calc(100vh - 160px);
     transform: translateX(50%);
     /* text-align: left !important; */

@@ -1,7 +1,7 @@
 .sidebar-container{
     background-color: rgb(192, 192, 226);
     position: absolute;
-    left: 60%;
+    left: 40%;
     bottom: 0px;
     transform: translateX(-50%);
     display: flex;

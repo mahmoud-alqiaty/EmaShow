@@ -1,7 +1,8 @@
 .header-container{
     width: 100%;
     height: 90px;
-    background-color: hsl(240, 100%, 30%);
+    /* background-color: hsl(240, 100%, 30%); */
+    background-color: #004e9e;
     font-family: Cairo-Bold;
     padding: 0 30px;
     display: flex;

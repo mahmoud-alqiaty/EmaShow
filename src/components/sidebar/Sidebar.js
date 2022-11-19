@@ -11,8 +11,8 @@ const Sidebar = ({onClick}) => {
   const {showSidebar} = useContext(AllDataContext)
   const icons = [
     {src: homeIcon, alt: 'homeIcon', text: 'home'},
-    {src: mapIcon, alt: 'mapIcon', text: 'map'},
-    {src: docIcon, alt: 'docIcon', text: 'doc'},
+    // {src: mapIcon, alt: 'mapIcon', text: 'map'},
+    // {src: docIcon, alt: 'docIcon', text: 'doc'},
     {src: cityIcon, alt: 'cityIcon', text: 'city'},
   ]
   

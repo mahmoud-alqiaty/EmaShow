@@ -13,7 +13,7 @@ import { AllDataContext } from '../../App';
 
 
 const Home = () => {
-  const [show, setShow] = useState("home")
+  const [show, setShow] = useState("doc")
   const {showSidebar, setShowSidebar} = useContext(AllDataContext)
 
   const onClick = (screen) =>{
@@ -24,7 +24,7 @@ const Home = () => {
     <div className='home-container'>
         <div className='home-content'>
           {
-            show === "home"? <Homecpmponent /> :
+            show === "home"? <DocCompnent /> :
             show === "map"? <Mapcomponent /> :
             show === "doc"? <DocCompnent /> : <CityComponent />
           }

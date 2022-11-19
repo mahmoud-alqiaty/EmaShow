@@ -1,36 +1,64 @@
 
-//weather-icons
+//Day-weather-icons
 
-import cloudyIcon from '../images/weather-icons/static/cloudy.png'
-import pCloudyIcon from '../images/weather-icons/static/p-cloudy.png'
-// import rainyIcon from '../images/weather-icons/static/rainy.png'
-// import rainyIcon from '../images/weather-icons/static/downpour.png'
-import rainyIcon from '../images/weather-icons/static/sun-cloud-rain.png'
-// import rainynightIcon from '../images/weather-icons/static/night-rain.png'
-// import rainyIcon from '../images/weather-icons/static/rain.png'
-import sunnyIcon from '../images/weather-icons/static/sunny.png'
-import thundercon from '../images/weather-icons/static/thunder.png'
-import thunerRainIcon from '../images/weather-icons/static/thuner-rain.png'
-// import fogIcon from '../images/weather-icons/static/fog.png'
-import fogIcon from '../images/weather-icons/static/fog-2.png'
+import sunnyIcon from '../images/weather-icons/static/day/sunny.png'
+import cloudyIcon from '../images/weather-icons/static/day/cloudy.png'
+import pCloudyIcon from '../images/weather-icons/static/day/SunnyWithCloud.png'
+import daySunnyMist from '../images/weather-icons/static/day/day-sunny-mist.png'
+import dayCloudyMist from '../images/weather-icons/static/day/day-Pcloudy-mist.png'
+import rainyIcon from '../images/weather-icons/static/day/sun-cloud-rain.png'
+import thundercon from '../images/weather-icons/static/day/thunder.png'
+import thunerRainIcon from '../images/weather-icons/static/day/thuner-rain.png'
+import dayPcloudyWindy from '../images/weather-icons/static/day/day-Pcloudy-windy.png'
+import sunWindy from '../images/weather-icons/static/day/sun-windy.png'
+
 import windIcon from '../images/weather-icons/static/wind-one.png'
-import nightIcon from '../images/weather-icons/static/night.svg'
+
 import waveIcon from '../images/weather-icons/static/wave.png'
 import navigationIcon from '../images/weather-icons/static/navigation.png'
 
+
+
+
+// night
+import nightIcon from '../images/weather-icons/static/night/night.png'
+import nightCloudy from '../images/weather-icons/static/night/nightCloudy.png'
+import nightClearMist from '../images/weather-icons/static/night/night-clear-mist.png'
+import nightCloudyMist from '../images/weather-icons/static/night/night-cloudy-mist.png'
+import nightRainyIcon from '../images/weather-icons/static/night/night-rain.png'
+import nightThunder from '../images/weather-icons/static/night/thunder.png'
+import nightThunerRainIcon from '../images/weather-icons/static/night/thuner-rain.png'
+import nightHaze from '../images/weather-icons/static/night/haze-night.png'
+import nightWindyCloudy from '../images/weather-icons/static/night/nightWindyCloudy.png'
+
 export const weatherIcons = {
+    'مشمس': sunnyIcon,
     'غائم': cloudyIcon,
     'غائم جزئي': pCloudyIcon,
-    // 'ممطر': rainyIcon,
+    'شبورة صباحاً + غائم جزئي': dayCloudyMist,
+    'شبورة صباحاً + مشمس': daySunnyMist,
     'ممطر': rainyIcon ,
     'رعدي': thundercon,
     'مطر رعدي': thunerRainIcon,
-    'رمال مثارة': windIcon,
-    'شبورة': fogIcon,
-    'ضباب': fogIcon,
-    'مشمس': sunnyIcon,
-    'صافي': nightIcon,
+    'رمال مثارة': daySunnyMist,
+    'شبورة': daySunnyMist,
+    'ضباب': daySunnyMist,
+    'أتربة عالقة': daySunnyMist,
+    'نشاط رياح + مشمس': sunWindy,
+    'نشاط رياح + غائم جزئي': dayPcloudyWindy,
     navigationIcon,
     waveIcon
 
+}
+export const nightWeatherIcons = {
+    'صافي': nightIcon,
+    'غائم': nightCloudy,
+    'غائم جزئي': nightCloudy,
+    'ممطر': nightRainyIcon ,
+    'رعدي': nightThunder,
+    'مطر رعدي': nightThunerRainIcon,
+    'رمال مثارة': nightHaze,
+    'شبورة': nightHaze,
+    'ضباب': nightCloudyMist,
+    'نشاط رياح + غائم جزئي': nightWindyCloudy,
 }
