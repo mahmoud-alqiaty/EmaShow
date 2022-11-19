@@ -131,7 +131,7 @@
     }
 }
 
-.doc-text-overlay .doc-text-body li{
+.slick-slide.slick-active.slick-current .doc-text-overlay .doc-text-body li{
     margin-bottom: 20px;
     padding: 10px 15px;
     font-size: 3rem;
