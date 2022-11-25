@@ -201,11 +201,35 @@
     height: 49% !important; */
 }
 
-.zoomIn{
-    transform: scale(1.5);
-}
-.zoomOut{
+.slick-slide.slick-active.slick-current .zoomIn{
+    /* transform: scale(2); */
     transform: scale(1);
+    animation-name: zoomInAnimi;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.slick-slide.slick-active.slick-current .zoomOut{
+    /* transform: scale(1); */
+    animation-name: zoomOutAnimi;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnimi {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(2);
+    }
+}
+@keyframes zoomOutAnimi {
+    from{
+        transform: scale(2);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 
 
@@ -245,7 +269,7 @@
 .window-icon{
     position: absolute;
     bottom: 1%;
-    left: 25%;
+    left: 47%;
     z-index: 20000;
 }
 
@@ -411,7 +435,7 @@
 
 .region-one{
     top: 19%;
-    left: 41%;
+    left: 40%;
 }
 .region-two{
     top: 12%;
@@ -472,7 +496,7 @@
 
 .region-weather .rain-percentage {
     font-size: 1.8rem;
-    color: #ddcd6f;
+    color: #FDD807;
     position: absolute;
     right: 0;
     top: 0;
@@ -484,11 +508,11 @@
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
-    color: blue;
+    color: red;
 }
 
 .region-temp .minTemp{
-    color: red;
+    color: blue;
 }
 
 .region-temp .divider{

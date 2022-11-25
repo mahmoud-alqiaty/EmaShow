@@ -24,7 +24,7 @@
 }
 .slick-dots{
     max-width: 400px;
-    right:40%;
+    right:37%;
     top: calc(100vh - 160px);
     transform: translateX(50%);
     /* text-align: left !important; */

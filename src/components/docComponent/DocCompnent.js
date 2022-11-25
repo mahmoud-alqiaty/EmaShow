@@ -41,6 +41,8 @@ const DocCompnent = () => {
 
   const [imgFullScreenIndex, setImgFullScreenIndex] = useState(-1)
   const [zoomin, setZoomin] = useState(false)
+  const [clientX, setClientX] = useState(0)
+  const [clientY, setClientY] = useState(0)
   
   let slider = useRef()
   const next = () => {
@@ -112,6 +114,9 @@ const DocCompnent = () => {
     )
   }
 
+  console.log("x: ", clientX);
+  console.log("y: ", clientY);
+
   return (
     <div className='docComponent-container'>
       <Overlay />
@@ -125,25 +130,32 @@ const DocCompnent = () => {
             spacCasePage?.spcMaps.map((singleMap, index)=> 
               <div 
                 className={`${imgFullScreenIndex==-1? "map-img-outer-container": imgFullScreenIndex == index? "map-img-outer-container img-full-screen" : "map-img-outer-container not-img-full-screen"}`} key={index} 
-                onClick={()=>{
-                  imgFullScreenIndex == index? setImgFullScreenIndex(-1) : setImgFullScreenIndex(index)
-                  setZoomin(false)
+                onClick={(e)=>{
+                  imgFullScreenIndex == index? setZoomin(!zoomin) : setImgFullScreenIndex(index)
+                  setClientX(e.clientX);
+                  setClientY(e.clientY);
+                  // setZoomin(false)
                 }}
+                // onClick={()=>{
+                //   imgFullScreenIndex == index? setImgFullScreenIndex(-1) : setImgFullScreenIndex(index)
+                //   setZoomin(false)
+                // }}
                 // style={{height: `{$(2/spcMaps.length)*100}%`}}
                 
               >
                 <img 
                   src={singleMap} 
                   alt='' 
-                  onDoubleClick={()=>setZoomin(!zoomin)} 
-                  className={(imgFullScreenIndex == index&&zoomin)? "zoomIn":"zoomOut"} 
+                  // onDoubleClick={()=>setZoomin(!zoomin)} 
+                  className={(imgFullScreenIndex == index && zoomin)? "zoomIn":"zoomOut"} 
+                  style={{transformOrigin: `${clientX}px ${clientY}px`}}
                   
                 />
               </div>
             )
             : null
           }
-          {/* <img src={window} alt='' className='window-icon' width='70' height='70' onClick={()=>setImgFullScreenIndex(-1)} /> */}
+          <img src={window} alt='' className='window-icon' width='70' height='70' onClick={()=>setImgFullScreenIndex(-1)} />
         </div>
 
         {
