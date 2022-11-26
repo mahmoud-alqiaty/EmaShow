@@ -50,6 +50,10 @@
     align-items: center;
 }
 
+.card-footer .icon-container{
+    position: relative;
+}
+
 .icon-container img{
     width: 90px;
     height: 90px;
@@ -57,7 +61,13 @@
     
 }
 
-.card-footer .rain-percentage{font-size: 1.8rem; color: #FDD807}
+.card-footer .rain-percentage{
+    font-size: 1.8rem; 
+    color: #FDD807;
+    position: absolute; 
+    right: 60px; 
+    top: -5px;
+}
 
 
 @media only screen and (max-width: 600px){

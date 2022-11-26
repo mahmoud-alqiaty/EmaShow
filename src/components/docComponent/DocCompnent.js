@@ -114,8 +114,16 @@ const DocCompnent = () => {
     )
   }
 
-  console.log("x: ", clientX);
-  console.log("y: ", clientY);
+  const handleZoomeInOut = (e, index)=>{
+    if(imgFullScreenIndex == index){
+      setZoomin(!zoomin)
+      setClientX(e.clientX);
+      setClientY(e.clientY);
+    } else{
+      setImgFullScreenIndex(index)
+      setZoomin(false)
+    }
+  }
 
   return (
     <div className='docComponent-container'>
@@ -130,12 +138,13 @@ const DocCompnent = () => {
             spacCasePage?.spcMaps.map((singleMap, index)=> 
               <div 
                 className={`${imgFullScreenIndex==-1? "map-img-outer-container": imgFullScreenIndex == index? "map-img-outer-container img-full-screen" : "map-img-outer-container not-img-full-screen"}`} key={index} 
-                onClick={(e)=>{
-                  imgFullScreenIndex == index? setZoomin(!zoomin) : setImgFullScreenIndex(index)
-                  setClientX(e.clientX);
-                  setClientY(e.clientY);
-                  // setZoomin(false)
-                }}
+                onClick={(e)=>handleZoomeInOut(e, index)}
+                // onClick={(e)=>{
+                //   imgFullScreenIndex == index? setZoomin(!zoomin) : setImgFullScreenIndex(index)
+                //   setClientX(e.clientX);
+                //   setClientY(e.clientY);
+                //   // setZoomin(false)
+                // }}
                 // onClick={()=>{
                 //   imgFullScreenIndex == index? setImgFullScreenIndex(-1) : setImgFullScreenIndex(index)
                 //   setZoomin(false)

@@ -37,7 +37,7 @@ export const weatherIcons = {
     'غائم جزئي': pCloudyIcon,
     'شبورة صباحاً + غائم جزئي': dayCloudyMist,
     'شبورة صباحاً + مشمس': daySunnyMist,
-    'ممطر': rainyIcon ,
+    'أمطار': rainyIcon ,
     'رعدي': thundercon,
     'مطر رعدي': thunerRainIcon,
     'رمال مثارة': daySunnyMist,
@@ -48,8 +48,10 @@ export const weatherIcons = {
     'نشاط رياح + غائم جزئي': dayPcloudyWindy,
     navigationIcon,
     waveIcon
+    // 'نشاط رياح + أمطار',
 
 }
+
 export const nightWeatherIcons = {
     'صافي': nightIcon,
     'غائم': nightCloudy,
