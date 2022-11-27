@@ -35,7 +35,7 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
 
                             <div className='Phenomena-name-container'>
                                 <p className='Phenomena-name' 
-                                    style={{lineHeight: weatherNight?.icon == "ممطر"&& 1}}
+                                    style={{lineHeight: weatherNight?.icon == "أمطار"&& 1}}
                                 >
                                     {weatherNight?.icon.includes("+")? (
                                     <span>
@@ -48,9 +48,9 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                                         }
                                     </span>) : weatherNight?.icon 
                                     } 
-                                    {(weatherNight?.icon == "ممطر" || weatherNight?.icon == "مطر رعدي") ? <span className='rain-percentage'>%{weatherNight?.rainPercentage}</span> : null } 
+                                    {(weatherNight?.icon == "أمطار" || weatherNight?.icon == "مطر رعدي") ? <span className='rain-percentage'>%{weatherNight?.rainPercentage}</span> : null } 
                                     <br /> 
-                                     {(weatherNight?.icon == "ممطر" || weatherNight?.icon == "مطر رعدي") ? <span className='raining-weight'>{weatherNight?.rainingWeight
+                                     {(weatherNight?.icon == "أمطار" || weatherNight?.icon == "مطر رعدي") ? <span className='raining-weight'>{weatherNight?.rainingWeight
                                     }</span> : "" }
                                 </p>
                             </div>
@@ -89,8 +89,8 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                                >
                                 <p className='Phenomena-name' 
                                 style={{
-                                    lineHeight: weatherDay?.icon == "ممطر"&& 1,
-                                    fontSize: (weatherDay?.icon == "ممطر" || weatherDay?.icon == "مطر رعدي" || weatherDay?.icon == "شبورة صباحاً + غائم جزئي" || weatherDay?.icon == "شبورة صباحاً + مشمس") ? "2rem" : "2.5rem"
+                                    lineHeight: weatherDay?.icon == "أمطار"&& 1,
+                                    fontSize: (weatherDay?.icon == "أمطار" || weatherDay?.icon == "مطر رعدي" || weatherDay?.icon == "شبورة صباحاً + غائم جزئي" || weatherDay?.icon == "شبورة صباحاً + مشمس") ? "2rem" : "2.5rem"
                                 }}>
                                      {weatherDay?.icon.includes("+")? (
                                     <span>
@@ -104,11 +104,11 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                                         }
                                     </span>) : weatherDay?.icon 
                                     }  
-                                    {(weatherDay?.icon == "ممطر" || weatherDay?.icon == "مطر رعدي") ? <span className='rain-percentage'>
+                                    {(weatherDay?.icon == "أمطار" || weatherDay?.icon == "مطر رعدي") ? <span className='rain-percentage'>
                                         %{weatherDay?.rainPercentage}
                                         </span> : null } 
                                     <br /> 
-                                    {(weatherDay?.icon == "ممطر" || weatherDay?.icon == "مطر رعدي") ? <span className='raining-weight'>{weatherDay?.rainingWeight
+                                    {(weatherDay?.icon == "أمطار" || weatherDay?.icon == "مطر رعدي") ? <span className='raining-weight'>{weatherDay?.rainingWeight
                                     }</span> : <span> </span> }
                                 </p>
                             </div>

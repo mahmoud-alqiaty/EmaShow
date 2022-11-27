@@ -93,7 +93,7 @@ const DocCompnent = () => {
         <div className='region-weather custom-tooltip'>
           {/* <br /> */}
           <div className='d-flex mx-2 w-50 justify-content-center'>
-            {(dayData?.icon == "ممطر" || dayData?.icon == "مطر رعدي")? <span className='rain-percentage'>{dayData.rainPercentage}%</span> : null }
+            {(dayData?.icon == "أمطار" || dayData?.icon == "مطر رعدي")? <span className='rain-percentage'>{dayData.rainPercentage}%</span> : null }
             <img src={weatherIcons[dayData?.icon]} alt='icon' style={{objectFit: dayData?.icon == "مشمس"? "contain" : "cover"}} />
 
           </div>

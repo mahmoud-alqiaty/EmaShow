@@ -56,7 +56,7 @@ export const nightWeatherIcons = {
     'صافي': nightIcon,
     'غائم': nightCloudy,
     'غائم جزئي': nightCloudy,
-    'ممطر': nightRainyIcon ,
+    'أمطار': nightRainyIcon ,
     'رعدي': nightThunder,
     'مطر رعدي': nightThunerRainIcon,
     'رمال مثارة': nightHaze,
