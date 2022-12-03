@@ -20,6 +20,14 @@ import Overlay from '../overlay/Overlay';
 const CityComponent = () => {
   const {regionsTempPage, showSidebar} = useContext(AllDataContext)
   console.log("regionsTempPage: ", regionsTempPage);
+  const regionCities = {
+    'القاهرة وجنوب الوجه البحري ومدن القناة' : "القاهرة - الجيزة - القليوبية - المنوفية - الغربية - الشرقية - الإسماعلية - السويس",
+    'السواحل الشمالية الغر بية وشمال الوجه البحري': "الإسكندرية - مطروح - البحيرة - كفر الشيخ - الدقهلية",
+    'السواحل الشمالية الشرقية ووسط سيناء': "دمياط - بورسعيد - شمال سيناء",
+    'جنوب سيناء وسلاسل جبال البحر الأحمر': "جنوب سيناء - البحر الأحمر",
+    'شمال الصعيد': "الفيوم -بني سويف - المنيا - أسيوط - سوهاج",
+    'جنوب الصعيد': "قنا - الأقصر - أسوان - أبوسمبل -الوادي الجديد",
+  }
   let slider = useRef()
   const next = () => {
     slider.slickNext();
@@ -38,7 +46,8 @@ const CityComponent = () => {
       // nextArrow: <NextArrow />,
       // prevArrow: <PrevArrow />
   };
-     
+  const name = 'القاهرة وجنوب الوجه البحري ومدن القناة'
+     console.log("city: ", regionCities[name]);
   return (
     <div className='mapComponent-container'>
       {
@@ -57,6 +66,9 @@ const CityComponent = () => {
                         {name == "السواحل الشمالية الشرقية"? "السواحل الشمالية الشرقية ووسط سيناء" : name }
                         </span>
                       </div>
+                        <p className='region-cities col-12'>
+                        {regionCities[name]}
+                        </p>
                     </div>
                     <div className='row items px-0  px-0'>
                       <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>

@@ -15,7 +15,7 @@ function App() {
   
   useEffect(() => {
     const getallData = async () =>{
-      axios.get("https://ema-show-backend.herokuapp.com/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
+      axios.get("https://ema-show-backend.onrender.com/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
       .then(res=>{
         console.log("res: ", res.data);
         setAllData(res.data)
