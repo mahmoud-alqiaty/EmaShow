@@ -28,7 +28,10 @@ function App() {
         "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546961/ueohfbppyztunegxgpby.png",
         "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546970/jl8qf2wcjyulrrls04ab.png",
         "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546991/ff5giaswaeifbqsy4q1l.png",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689547014/cupbbogczwdqfnwkummm.png"
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546991/ff5giaswaeifbqsy4q1l.png",
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689547014/cupbbogczwdqfnwkummm.png",
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546961/ueohfbppyztunegxgpby.png",
+        
       ]
     },
     "_id": "635259f5f3b78e569fbbeb62",

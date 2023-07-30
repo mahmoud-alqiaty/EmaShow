@@ -66,7 +66,7 @@ const Mapcomponent = () => {
             mapsArray?.map((src, index)=>
             <div className='map-img-outer-container' key={index}>
               <div className='map-img-inner-container' onClick={next}>
-                  <img ref={imgRef} src={src} alt=''  />
+                  {/* <img ref={imgRef} src={src} alt=''  /> */}
                 {/* <QuickPinchZoom onUpdate={onUpdate}>
                   <img ref={imgRef} src={src} alt=''  />
                 </QuickPinchZoom> */}

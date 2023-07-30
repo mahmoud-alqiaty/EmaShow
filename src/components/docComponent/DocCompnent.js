@@ -216,7 +216,7 @@ const DocCompnent = () => {
               </div>
               <div className='egy-map-container mx-auto'>
                 <img src={egyptMap} alt="egyptMap" />
-                <div className='ms'>
+                <div className='ms' style={{animationDelay: "18s"}}>
                   <div className='ms-B'>
                     <div className='ms-wind-group'>
                       <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windDirection}deg)`}} />
@@ -244,7 +244,7 @@ const DocCompnent = () => {
                     </div>
                   </div>
                 </div>
-                <div className='rs'>
+                <div className='rs' style={{animationDelay: "20s"}}>
                   <div className='ms-wind-group'>
                     <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windDirection}deg)`}} />
                     <span>
@@ -261,22 +261,25 @@ const DocCompnent = () => {
                     </span>
                   </div>
                 </div>
-                <div className='region region-one'>
-                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[0]?.name)}
+                <div className='region region-one' style={{animationDelay: "1s"}} >
+                  {/* {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[0]?.name)} */}
+                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], "القاهرة الكبرى")}
                 </div>
-                <div className='region region-two'>
-                {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[1]?.name)}
+                <div className='region region-two' style={{animationDelay: "3.5s"}}>
+                {/* {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[1]?.name)} */}
+                {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], "السواحل الشمالية الغربية")}
                 </div>
-                <div className='region region-three'>
-                {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[2]?.name)}
+                <div className='region region-three' style={{animationDelay: "6s"}}>
+                {/* {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[2]?.name)} */}
+                {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], "السواحل الشمالية الشرقية")}
                 </div>
-                <div className='region region-four'>
+                <div className='region region-four' style={{animationDelay: "9s"}}>
                 {drowtempAndIcon(regionsTempPage[3]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[3]?.name)}
                 </div>
-                <div className='region region-five'>
+                <div className='region region-five' style={{animationDelay: "12s"}}>
                 {drowtempAndIcon(regionsTempPage[4]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[4]?.name)}
                 </div>
-                <div className='region region-six'>
+                <div className='region region-six' style={{animationDelay: "15s"}}>
                 {drowtempAndIcon(regionsTempPage[5]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[5]?.name)}
                 </div>
               </div>

@@ -25,6 +25,7 @@
     /* background-color: #f7f7f7; */
     direction: rtl !important;
     position: relative;
+    overflow: auto !important;
 }
 
 
@@ -347,7 +348,7 @@
     }
 }
 
-.ms{
+.slick-slide.slick-active.slick-current .ms{
     position: absolute;
     top: 22px;
     left: 0%;
@@ -357,6 +358,12 @@
     /* justify-content: space-between; */
     color: #fff;
     font-size: 2rem;
+    opacity: 0;
+
+    animation-name: region-anim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 .ms > div
@@ -381,7 +388,7 @@
 }
 
 
-.rs{
+.slick-slide.slick-active.slick-current .rs{
     position: absolute;
     top: 50%;
     right:16%;
@@ -393,6 +400,12 @@
     color: #fff;
     font-size: 2rem;
     text-align: center;
+    opacity: 0;
+
+    animation-name: region-anim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 .rs > div
@@ -426,22 +439,28 @@
 
 /* --------- regions ---------- */
 
-.region {
+.slick-slide.slick-active.slick-current .region {
     position: absolute;
     /* width: 280px; */
     height: 110px;
     /* border: 1px solid #000; */
+    opacity: 0;
+
+    animation-name: region-anim;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
-.region-one{
+.slick-slide.slick-active.slick-current .region-one{
     top: 19%;
     left: 43%;
 }
-.region-two{
+.slick-slide.slick-active.slick-current .region-two{
     top: 11%;
-    left: 27.4%;
+    left: 24%;
 }
-.region-three{
+.slick-slide.slick-active.slick-current .region-three{
     top: 11%;
     right: 26%;
 }
@@ -456,6 +475,16 @@
 .region-six{
     top: 70%;
     right: 35%;
+}
+
+/* Regions-animations */
+@keyframes region-anim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .region-weather{
@@ -475,7 +504,7 @@
     color: blue;
     /* font-family: "Almarai-Bold"; */
     padding: 3px 0;
-    font-size: 1.52rem;
+    font-size: 1.4rem;
     border-bottom: 1px solid #444;
     
 

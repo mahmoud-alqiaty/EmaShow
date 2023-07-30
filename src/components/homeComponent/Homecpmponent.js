@@ -5,12 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import bg from '../../images/emaOne.jpg'
-// import bgVideo from '../../images/bg/video/first/Clouds-one.mp4'
-// import bgVideo from '../../images/bg/video/first/Cloude-two.mp4'
-// import bgVideo from '../../images/bg/video/first/Sea-one.mp4'
-// import bgVideo from '../../images/bg/video/first/Clouds-three.mp4'
-// import bgVideo from '../../images/bg/video/first/africa.mp4'
-import bgVideo from '../../images/bg/video/first/global2.mp4'
+
+import bgVideo_One from '../../images/bg/video/first/Clouds-three.mp4'
+import bgVideo_Two from '../../images/bg/video/first/africa.mp4'
+import bgVideo_Three from '../../images/bg/video/first/global2.mp4'
 import { AllDataContext } from '../../App'
 // import bgVideo from '../../images/bg/video/first/Cloud-four.mp4'
 
@@ -26,6 +24,8 @@ const Homecpmponent = () => {
 
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
+  const [displayedVideo, setDisplayedVideo] = useState(2)
+
   const vidRef = useRef(null);
 
   let slider = useRef()
@@ -53,12 +53,14 @@ const Homecpmponent = () => {
     setVideoPaused(true)
   }
 
+  const srcVideo = displayedVideo == 1? bgVideo_One : displayedVideo == 2? bgVideo_Two : displayedVideo == 3? bgVideo_Three : bgVideo_Two
+
   return (
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay muted loop  ref={vidRef}>
-          <source  src={bgVideo}  type="video/mp4"/>
+        <video autoPlay muted  ref={vidRef}>
+          <source  src={srcVideo}  type="video/mp4"/>
         </video>
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
           <span>الحالة</span>
@@ -85,6 +87,10 @@ const Homecpmponent = () => {
         {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
         <img src={nextIcon} alt='nextIcon' width='75' height='75' />
+        </div>
+
+        <div className='home-settings d-none'>
+          <input type='number' min={1} max={3} onChange={e=> setDisplayedVideo(e.target.value)} />
         </div>
         
       </div>
