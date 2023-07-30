@@ -9,7 +9,8 @@ import bg from '../../images/emaOne.jpg'
 // import bgVideo from '../../images/bg/video/first/Cloude-two.mp4'
 // import bgVideo from '../../images/bg/video/first/Sea-one.mp4'
 // import bgVideo from '../../images/bg/video/first/Clouds-three.mp4'
-import bgVideo from '../../images/bg/video/first/africa.mp4'
+// import bgVideo from '../../images/bg/video/first/africa.mp4'
+import bgVideo from '../../images/bg/video/first/global2.mp4'
 import { AllDataContext } from '../../App'
 // import bgVideo from '../../images/bg/video/first/Cloud-four.mp4'
 
@@ -56,7 +57,7 @@ const Homecpmponent = () => {
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay muted  ref={vidRef}>
+        <video autoPlay muted loop  ref={vidRef}>
           <source  src={bgVideo}  type="video/mp4"/>
         </video>
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
