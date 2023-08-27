@@ -25,12 +25,10 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546961/ueohfbppyztunegxgpby.png",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546970/jl8qf2wcjyulrrls04ab.png",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546991/ff5giaswaeifbqsy4q1l.png",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546991/ff5giaswaeifbqsy4q1l.png",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689547014/cupbbogczwdqfnwkummm.png",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1689546961/ueohfbppyztunegxgpby.png",
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144394/g92fadfopjfhqqnebxdo.jpg",
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144425/f6tgd3zcvdefmuffegta.jpg",
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144462/y68qnc9laffylwyngfyp.jpg",
+        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144484/yw4wdkjizi5hu3rmqppn.jpg"
         
       ]
     },
@@ -781,31 +779,31 @@ console.log("commoing_data: ", commoing_data);
   const [showSidebar, setShowSidebar] = useState(true)
 
   
-  useEffect(() => {
-    const getallData = async () =>{
-      // axios.get("https://ema-show-backend.onrender.com/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
-      axios.get("https://web-production-474c.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
-      .then(res=>{
-        console.log("res: ", res.data);
-        setAllData(res.data)
-      })
-      .catch(err=>{
-        axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
-        .then(res=>{
-          console.log("res: ", res.data);
-          setAllData(res.data)
-        })
-        .catch(err=>{
-          console.log(err.message);
+  // useEffect(() => {
+  //   const getallData = async () =>{
+  //     // axios.get("https://ema-show-backend.onrender.com/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
+  //     axios.get("https://web-production-474c.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
+  //     .then(res=>{
+  //       console.log("res: ", res.data);
+  //       setAllData(res.data)
+  //     })
+  //     .catch(err=>{
+  //       axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
+  //       .then(res=>{
+  //         console.log("res: ", res.data);
+  //         setAllData(res.data)
+  //       })
+  //       .catch(err=>{
+  //         console.log(err.message);
 
-        })
+  //       })
         
-        console.log(err.message);
-      })
-    }
+  //       console.log(err.message);
+  //     })
+  //   }
 
-    getallData()
-  }, [])
+  //   getallData()
+  // }, [])
 
 console.log("allData: ", allData);
   return (
