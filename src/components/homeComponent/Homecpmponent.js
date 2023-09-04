@@ -24,7 +24,7 @@ const Homecpmponent = () => {
 
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(2)
+  const [displayedVideo, setDisplayedVideo] = useState(3)
 
   const vidRef = useRef(null);
 
@@ -89,9 +89,9 @@ const Homecpmponent = () => {
         <img src={nextIcon} alt='nextIcon' width='75' height='75' />
         </div>
 
-        <div className='home-settings d-none'>
+        {/* <div className='home-settings'>
           <input type='number' min={1} max={3} onChange={e=> setDisplayedVideo(e.target.value)} />
-        </div>
+        </div> */}
         
       </div>
 
@@ -110,6 +110,7 @@ const Homecpmponent = () => {
         {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}
         <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
       </div>
+      
     </div>
   )
 }

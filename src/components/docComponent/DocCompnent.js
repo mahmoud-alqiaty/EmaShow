@@ -331,6 +331,11 @@ const DocCompnent = () => {
         <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
         <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
       </div>
+      <div className='arrow-controller' style={{ display: showSidebar? "flex":"none",  left: "10%"}}>
+          <input type='number' min={1} max={3} 
+          // onChange={e=> setDisplayedVideo(e.target.value)} 
+          />
+        </div>
     </div>
   )
 }
