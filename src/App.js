@@ -774,41 +774,99 @@ function App() {
     "__v": 0
   }
 
-console.log("commoing_data: ", commoing_data);
-  const [allData, setAllData] = useState({...commoing_data})
+// console.log("commoing_data: ", commoing_data);
+  // const [allData, setAllData] = useState({...commoing_data})
+  const [allData, setAllData] = useState({})
   const [showSidebar, setShowSidebar] = useState(true)
 
-  
   useEffect(() => {
     const getallData = async () =>{
-      // axios.get("https://ema-show-backend.onrender.com/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
-      axios.get("https://web-production-474c.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
+      axios.get("http://192.168.60.17:8080/getdata")
+      // axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
       .then(res=>{
-        console.log("res: ", res.data);
-        setAllData(res.data)
+        console.log("res: ", res);
+        setAllData(res)
       })
-      .catch(err=>{
-        axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
-        .then(res=>{
-          console.log("res: ", res.data);
-          setAllData(res.data)
-        })
-        .catch(err=>{
-          console.log(err.message);
-
-        })
-        
+      .catch(err=>{        
         console.log(err.message);
       })
+
+      // fetch('http://192.168.60.17:8080/getdata', {
+      //   mode: "no-cors",
+      //   method: "GET",
+      //   headers: {
+      //     "Accept": "application/json"
+      //   }
+      // }).then((response) => {
+      //   console.log("response: ", response); // null
+       
+      // })
+      // .catch(error => { console.log('request failed', error); });
+
+
+
+      // fetch('http://192.168.60.17:8080/getdata', {
+      //     mode: "no-cors",
+      //     method: "GET",
+      //     headers: {
+      //       "Accept": "application/json"
+      //     }
+      //   })
+      //   .then(response => response.text())
+      //   .then((response) => {
+      //     console.log("response: ", response); // returns empty string
+         
+      //   })
+      //   .catch(error => { console.log('request failed', error); });
+
+
+      // fetch('http://192.168.60.17:8080/getdata', {
+      //     // mode: 'no-cors',
+      //     method: 'GET',
+      //     headers: {
+      //       Accept: 'application/json',
+      //       'Access-Control-Allow-Origin': '*',
+      //     },
+      //   },
+      //   ).then(response => {
+      //     if (response.ok) {
+      //       response.json().then(json => {
+      //         console.log(json);
+      //       });
+      //     }
+      //   });
+
+
+      // fetch('http://192.168.60.17:8080/getdata', {
+      //       // mode: 'no-cors',
+      //       method: 'GET',
+      //       headers: {
+      //         Accept: 'application/json',
+      //         'Content-Type': 'application/json',
+      //         'Access-Control-Allow-Origin': '*',
+      //       },
+      //     },)
+      //   .then((response) => {
+      //       return response.json();
+      //   })
+      //   .then((myJson) => {
+      //       this.setState({
+      //         isLoaded: true,
+      //         posts: myJson,
+      //       });
+      //       console.log(myJson);
+      //   });
     }
 
     getallData()
   }, [])
 
-console.log("allData: ", allData);
   return (
     <AllDataContext.Provider value={{...allData, showSidebar, setShowSidebar}}>
       <div className="App">
+        {
+          allData? allData.data : "no"
+        }
       <Header />
       <Home />
       </div>
