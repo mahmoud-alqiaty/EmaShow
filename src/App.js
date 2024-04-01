@@ -781,11 +781,12 @@ function App() {
 
   useEffect(() => {
     const getallData = async () =>{
-      axios.get("http://192.168.60.17:8080/getdata")
+      // axios.get("http://192.168.60.17:8090/getdata")
+      axios.get("http://212.103.189.111:8090/getdata")
       // axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
       .then(res=>{
         console.log("res: ", res);
-        setAllData(res)
+        setAllData(res.data)
       })
       .catch(err=>{        
         console.log(err.message);
@@ -823,10 +824,10 @@ function App() {
       // fetch('http://192.168.60.17:8080/getdata', {
       //     // mode: 'no-cors',
       //     method: 'GET',
-      //     headers: {
-      //       Accept: 'application/json',
-      //       'Access-Control-Allow-Origin': '*',
-      //     },
+      //     // headers: {
+      //     //   Accept: 'application/json',
+      //     //   // 'Access-Control-Allow-Origin': '*',
+      //     // },
       //   },
       //   ).then(response => {
       //     if (response.ok) {
