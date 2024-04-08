@@ -25,10 +25,10 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144394/g92fadfopjfhqqnebxdo.jpg",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144425/f6tgd3zcvdefmuffegta.jpg",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144462/y68qnc9laffylwyngfyp.jpg",
-        "http://res.cloudinary.com/dryhuprvx/image/upload/v1693144484/yw4wdkjizi5hu3rmqppn.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712546549/i4wseani7oxcvulrmuxo.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712546556/leszohbxcduzx2e1fiqb.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712546560/jrvg1r49msl5n2d6tpqi.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712546564/ceekixxbnzpq8erx4qah.jpg"
         
       ]
     },
@@ -776,7 +776,7 @@ function App() {
 
 // console.log("commoing_data: ", commoing_data);
   // const [allData, setAllData] = useState({...commoing_data})
-  const [allData, setAllData] = useState({})
+  const [allData, setAllData] = useState({...commoing_data})
   const [showSidebar, setShowSidebar] = useState(true)
 
   useEffect(() => {
