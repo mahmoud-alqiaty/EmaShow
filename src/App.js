@@ -59,10 +59,10 @@ function App() {
               "waveEnd": "2.5"
             },
             "icon": "غائم جزئي",
-            "maxTemp": 31,
-            "minTemp": 21,
+            "maxTemp": 26,
+            "minTemp": 17,
             "wind": 25,
-            "date": "الإثنين 17 يوليو 2023",
+            "date": "الأربعاء 10 ابريل 2024",
             "notes": "",
             "_id": "6364162fee90783cda08aba3"
           },
@@ -161,15 +161,15 @@ function App() {
         "_id": "6364162fee90783cda08ab9e"
       },
       {
-        "name": "السواحل الشمالية الغر بية وشمال الوجه البحري",
+        "name": "السواحل الشمالية الغربية وشمال الوجه البحري",
         "weatherData": [
           {
             "ms": {
               "windStart": 30,
               "windEnd": 35,
-              "windDirection": 135,
+              "windDirection": 290,
               "waveStart": "1.5",
-              "waveEnd": "2"
+              "waveEnd": "2.25"
             },
             "rs": {
               "windStart": 0,
@@ -179,10 +179,10 @@ function App() {
               "waveEnd": "2.5"
             },
             "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 0,
-            "minTemp": 19,
+            "maxTemp": 23,
+            "minTemp": 16,
             "wind": 26,
-            "date": "الإثنين 17 يوليو 2023",
+             "date": "الأربعاء 10 ابريل 2024",
             "rainPercentage": "40",
             "notes": "طقس مائل للبرودة فى الصباح الباكر، معتدل الحرارة نهاراً،\nمائل للبرودة أول الليل بارد فى اخر، وفرص أمطار خفيفة",
             "rainingWeight": "خفيف",
@@ -303,9 +303,9 @@ function App() {
               "waveStart": "2",
               "waveEnd": "3"
             },
-            "icon": "غائم جزئي",
-            "maxTemp": 27,
-            "minTemp": 10,
+            "icon": "أمطار",
+            "maxTemp": 24,
+            "minTemp": 16,
             "wind": 13,
             "date": "الإثنين 17 يوليو 2023",
             "rainPercentage": "40",
@@ -421,15 +421,15 @@ function App() {
               "waveEnd": "2.5"
             },
             "rs": {
-              "windStart": 0,
-              "windEnd": 0,
+              "windStart": 30,
+              "windEnd": 35,
               "windDirection": 0,
               "waveStart": "1.5",
-              "waveEnd": "2.5"
+              "waveEnd": "2"
             },
             "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 23,
-            "minTemp": 13,
+            "maxTemp": 27,
+            "minTemp": 16,
             "wind": 19,
             "date": "الإثنين 17 يوليو 2023",
             "notes": "طقس حـــار نهاراً، لطيف ليلاً وفي الصباح البــاكر",
@@ -548,9 +548,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "شبورة صباحاً + غائم جزئي",
-            "maxTemp": 18,
-            "minTemp": 6,
+            "icon": "غائم جزئي",
+            "maxTemp": 27,
+            "minTemp": 14,
             "wind": 19,
             "date": "الإثنين 17 يوليو 2023",
             "notes": "شبورة مائية مع طقس مائل للبرودة فى الصباح الباكر، وطقس معتدل الحرارة نهاراً،  بارد ليلاً",
@@ -668,9 +668,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "أمطار",
-            "maxTemp": 23,
-            "minTemp": 9,
+            "icon": "غائم جزئي",
+            "maxTemp": 31,
+            "minTemp": 18,
             "wind": 17,
             "date": "الإثنين 17 يوليو 2023",
             "rainPercentage": "20",
