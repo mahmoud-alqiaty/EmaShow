@@ -12,20 +12,20 @@ function App() {
   let commoing_data = 
   {
     "spacCasePage": {
-      "mainTitle": "متابعة حالة عدم الإستقرار",
-      "subTitle": "الإثنين 06 فبرابر 2023",
+      "mainTitle": "متابعة الحالة الجوية",
+      "subTitle": "الثلاثاء 09 ابريل 2024",
       "StartingDay": 2,
       "allSpcWeatherPoints": [
-        "انخفاض ملحوظ في درجات الحرارة",
-        "نشاط الرياح على كافة الأنحاء",
-        "أمطار تصل لغزيرة على مناطق من السواحل الشمالية"
+        "انخفاض  في درجات الحرارة",
+        "نشاط الرياح على أغلب الأنحاء",
+        "أمطار تصل لمتوسطة ورعدية"
       ],
       "allSpcWarningPoints": [
         "متابعة النشرات",
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633285/f5y5i2ii5cdhoqnf9wsz.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712665288/mgenwrrsuvhxcq6bktok.jpg",
         "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633272/nmrfszi5kkznjaffat2m.jpg",
         "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633297/zdzfal2oihkyak8ei2el.jpg",
         "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633305/ucgs6kngeuyct2wtnzsp.jpg"
