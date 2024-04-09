@@ -786,7 +786,7 @@ function App() {
                       'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
                        }
       // axios.get("http://192.168.60.17:8090/getdata")
-      axios.get("http://212.103.189.111:8090/getdata",{headers})
+      axios.get("/getdata",{headers})
       // axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
       .then(res=>{
         console.log("res: ", res);
