@@ -59,7 +59,7 @@ const Homecpmponent = () => {
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay muted  ref={vidRef}>
+        <video autoPlay loop muted  ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
