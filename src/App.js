@@ -25,16 +25,16 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712665288/mgenwrrsuvhxcq6bktok.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633272/nmrfszi5kkznjaffat2m.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633297/zdzfal2oihkyak8ei2el.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1712633305/ucgs6kngeuyct2wtnzsp.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140152/ogy0ynlf7icdxakosu2w.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140157/fqvfa6xlnyj1jniqci3v.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140162/epno56vz9jvwn6tnnbez.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140167/exb1rbic0tlfnkihuesp.jpg"
         
       ]
     },
     "_id": "635259f5f3b78e569fbbeb62",
     "generalWeatherState": [
-      "استقرار في الأحوال الجوية",
+      "ارتفاع درجات الحرارة والذروة الأربعاء",
       "شبورة مائية صباحا",
       "نشاط رياح أحياناً على مناطق متفرقة"
     ],
