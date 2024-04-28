@@ -59,7 +59,7 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "نشاط رياح",
+            "icon": "مشمس",
             "maxTemp": 30,
             "minTemp": 17,
             "wind": 25,
@@ -548,7 +548,7 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-             "icon": "نشاط رياح",
+             "icon": "مشمس",
             "maxTemp": 31,
             "minTemp": 16,
             "wind": 26,
