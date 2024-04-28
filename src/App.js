@@ -25,17 +25,18 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140152/ogy0ynlf7icdxakosu2w.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140157/fqvfa6xlnyj1jniqci3v.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140162/epno56vz9jvwn6tnnbez.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1713140167/exb1rbic0tlfnkihuesp.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1714342894/dcri9xuo2xafwc8igab4.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1714342887/cdvugm02oevxajmvsiv4.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1714342910/ozmsewtvqrxlvwml3isj.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1714342905/xfz1rx3zcvsldwvciwq1.jpg"
         
       ]
     },
     "_id": "635259f5f3b78e569fbbeb62",
     "generalWeatherState": [
-      "ارتفاع درجات الحرارة والذروة الأربعاء",
+      "طقس ربيعي مائل للحرارة نهاراً مائل للبرودة ليلاً",
       "شبورة مائية صباحا",
+      "أمطار رعدية على سلاسل البحر الأحمر وجنوب سيناء",
       "نشاط رياح أحياناً على مناطق متفرقة"
     ],
     "mapsArray": [],
@@ -58,11 +59,11 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "غائم جزئي",
-            "maxTemp": 26,
+            "icon": "نشاط رياح",
+            "maxTemp": 30,
             "minTemp": 17,
             "wind": 25,
-            "date": "الأربعاء 10 ابريل 2024",
+            "date": "الثلاثاء 30 ابريل 2024",
             "notes": "",
             "_id": "6364162fee90783cda08aba3"
           },
@@ -182,10 +183,9 @@ function App() {
             "maxTemp": 23,
             "minTemp": 16,
             "wind": 26,
-             "date": "الأربعاء 10 ابريل 2024",
-            "rainPercentage": "40",
+             "date": "الثلاثاء 30 ابريل 2024",
+            "rainPercentage": "0",
             "notes": "طقس مائل للبرودة فى الصباح الباكر، معتدل الحرارة نهاراً،\nمائل للبرودة أول الليل بارد فى اخر، وفرص أمطار خفيفة",
-            "rainingWeight": "خفيف",
             "_id": "6364162fee90783cda08aba9"
           },
           {
@@ -303,11 +303,11 @@ function App() {
               "waveStart": "2",
               "waveEnd": "3"
             },
-            "icon": "أمطار",
+             "icon": "نشاط رياح + غائم جزئي",
             "maxTemp": 24,
-            "minTemp": 16,
-            "wind": 13,
-            "date": "الإثنين 17 يوليو 2023",
+            "minTemp": 17,
+            "wind": 26,
+             "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "40",
             "notes": "طقس مائل للبرودة فى الصباح الباكر، معتدل الحرارة نهاراً،\nمائل للبرودة أول الليل بارد فى اخره\n\n ",
             "_id": "6364162fee90783cda08abaf"
@@ -427,11 +427,11 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2"
             },
-            "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 27,
-            "minTemp": 16,
-            "wind": 19,
-            "date": "الإثنين 17 يوليو 2023",
+             "icon": "نشاط رياح + غائم جزئي",
+            "maxTemp": 33,
+            "minTemp": 23,
+            "wind": 26,
+            "date": "الثلاثاء 30 ابريل 2024",
             "notes": "طقس حـــار نهاراً، لطيف ليلاً وفي الصباح البــاكر",
             "_id": "6364162fee90783cda08abb5"
           },
@@ -548,11 +548,11 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "غائم جزئي",
-            "maxTemp": 27,
-            "minTemp": 14,
-            "wind": 19,
-            "date": "الإثنين 17 يوليو 2023",
+             "icon": "نشاط رياح",
+            "maxTemp": 31,
+            "minTemp": 16,
+            "wind": 26,
+             "date": "الثلاثاء 30 ابريل 2024",
             "notes": "شبورة مائية مع طقس مائل للبرودة فى الصباح الباكر، وطقس معتدل الحرارة نهاراً،  بارد ليلاً",
             "_id": "6364162fee90783cda08abbb"
           },
@@ -668,11 +668,11 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "غائم جزئي",
-            "maxTemp": 31,
-            "minTemp": 18,
-            "wind": 17,
-            "date": "الإثنين 17 يوليو 2023",
+             "icon": "مشمس",
+            "maxTemp": 36,
+            "minTemp": 22,
+            "wind": 26,
+             "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "20",
             "notes": "طقس مائل للبرودة فى الصباح الباكر، حـــار نهاراً،\nمائل للبرودة أول الليل بارد فى اخره",
             "_id": "6364162fee90783cda08abc1"
