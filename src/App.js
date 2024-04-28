@@ -14,7 +14,7 @@ function App() {
     "spacCasePage": {
       "mainTitle": "متابعة الحالة الجوية",
       "subTitle": "الثلاثاء 09 ابريل 2024",
-      "StartingDay": 1,
+      "StartingDay": 0,
       "allSpcWeatherPoints": [
         "انخفاض  في درجات الحرارة",
         "نشاط الرياح على أغلب الأنحاء",
