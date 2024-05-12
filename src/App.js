@@ -25,10 +25,10 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715079704/ydmruno6eviljuvnagrh.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715079714/bn1wxyeobnln0zgresk6.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715079722/takpdtf8lkvgxhqbl7lw.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715079730/p3xtbm3afitvcvg7uycs.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552787/ejwsvqfukjavfrtdcv6a.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552792/rn0yqhcxm36szrhp4qcs.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552798/jjrn2a3fwerwsk7b7sux.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552801/cvgzdj5ufnr10zrk0nzo.jpg"
         
       ]
     },
@@ -63,7 +63,7 @@ function App() {
             "maxTemp": 30,
             "minTemp": 17,
             "wind": 25,
-            "date": "الثلاثاء 30 ابريل 2024",
+            "date": "الثلاثاء 14 مايو 2024",
             "notes": "",
             "_id": "6364162fee90783cda08aba3"
           },
