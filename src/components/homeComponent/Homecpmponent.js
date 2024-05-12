@@ -24,7 +24,7 @@ const Homecpmponent = () => {
 
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(3)
+  const [displayedVideo, setDisplayedVideo] = useState(1)
 
   const vidRef = useRef(null);
 
