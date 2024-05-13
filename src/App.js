@@ -59,7 +59,7 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "نشاط رياح",
+            "icon": "نشاط رياح + غائم جزئي",
             "maxTemp": 29,
             "minTemp": 18,
             "wind": 25,
@@ -303,7 +303,7 @@ function App() {
               "waveStart": "2",
               "waveEnd": "3"
             },
-             "icon": "غائم جزئي",
+             "icon": "نشاط رياح + غائم جزئي",
             "maxTemp": 24,
             "minTemp": 18,
             "wind": 26,
@@ -427,7 +427,7 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-             "icon": "نشاط رياح",
+             "icon": "نشاط رياح + غائم جزئي",
             "maxTemp": 32,
             "minTemp": 22,
             "wind": 26,
@@ -548,7 +548,7 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-             "icon": "نشاط رياح",
+             "icon": "مشمس",
             "maxTemp": 30,
             "minTemp": 18,
             "wind": 26,
