@@ -59,9 +59,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "مشمس",
-            "maxTemp": 30,
-            "minTemp": 17,
+            "icon": "نشاط رياح",
+            "maxTemp": 29,
+            "minTemp": 18,
             "wind": 25,
             "date": "الثلاثاء 14 مايو 2024",
             "notes": "",
@@ -167,8 +167,8 @@ function App() {
           {
             "ms": {
               "windStart": 30,
-              "windEnd": 35,
-              "windDirection": 290,
+              "windEnd": 40,
+              "windDirection": 300,
               "waveStart": "1.5",
               "waveEnd": "2.25"
             },
@@ -180,7 +180,7 @@ function App() {
               "waveEnd": "2.5"
             },
             "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 23,
+            "maxTemp": 24,
             "minTemp": 16,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
@@ -303,9 +303,9 @@ function App() {
               "waveStart": "2",
               "waveEnd": "3"
             },
-             "icon": "نشاط رياح + غائم جزئي",
+             "icon": "غائم جزئي",
             "maxTemp": 24,
-            "minTemp": 17,
+            "minTemp": 18,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "40",
@@ -422,14 +422,14 @@ function App() {
             },
             "rs": {
               "windStart": 30,
-              "windEnd": 35,
-              "windDirection": 0,
+              "windEnd": 45,
+              "windDirection": 300,
               "waveStart": "1.5",
-              "waveEnd": "2"
+              "waveEnd": "2.5"
             },
-             "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 33,
-            "minTemp": 23,
+             "icon": "نشاط رياح",
+            "maxTemp": 32,
+            "minTemp": 22,
             "wind": 26,
             "date": "الثلاثاء 30 ابريل 2024",
             "notes": "طقس حـــار نهاراً، لطيف ليلاً وفي الصباح البــاكر",
@@ -548,9 +548,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-             "icon": "مشمس",
-            "maxTemp": 31,
-            "minTemp": 16,
+             "icon": "نشاط رياح",
+            "maxTemp": 30,
+            "minTemp": 18,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "notes": "شبورة مائية مع طقس مائل للبرودة فى الصباح الباكر، وطقس معتدل الحرارة نهاراً،  بارد ليلاً",
@@ -669,8 +669,8 @@ function App() {
               "waveEnd": "2.5"
             },
              "icon": "مشمس",
-            "maxTemp": 36,
-            "minTemp": 22,
+            "maxTemp": 34,
+            "minTemp": 23,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "20",
