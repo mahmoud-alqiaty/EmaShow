@@ -25,18 +25,17 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552787/ejwsvqfukjavfrtdcv6a.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552792/rn0yqhcxm36szrhp4qcs.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552798/jjrn2a3fwerwsk7b7sux.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1715552801/cvgzdj5ufnr10zrk0nzo.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159105/pgr5z4aqeipm5wbwrjke.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159118/nscqt5oc1cdwprzujg7q.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159127/hethng4dcacvmyhmcmwb.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159133/t3fbpfjulyq0d5ox1ozv.jpg"
         
       ]
     },
     "_id": "635259f5f3b78e569fbbeb62",
     "generalWeatherState": [
-      "طقس ربيعي مائل للحرارة نهاراً مائل للبرودة ليلاً",
-      "شبورة مائية صباحا",
-      "أمطار رعدية على سلاسل البحر الأحمر وجنوب سيناء",
+      "استمرار ارتفاع درجات الحرارة",
+      "رمال وأتربة مثارة",
       "نشاط رياح أحياناً على مناطق متفرقة"
     ],
     "mapsArray": [],
