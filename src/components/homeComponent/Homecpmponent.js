@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef, useState, useEffect } from 'react'
 import './styles.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -24,9 +24,22 @@ const Homecpmponent = () => {
 
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(1)
-
+  const [displayedVideo, setDisplayedVideo] = useState(2)
+  
+  const pauseVideo = ()=>{
+    vidRef.current.pause();
+    setVideoPaused(true)
+  }
   const vidRef = useRef(null);
+  
+  useEffect(
+    () => {
+      let timer1 = setTimeout(() => pauseVideo(), delay * 30000);
+      return () => {
+        clearTimeout(timer1);
+      };
+    },[]
+  );
 
   let slider = useRef()
   const next = () => {
@@ -48,10 +61,7 @@ const Homecpmponent = () => {
   };
      
 
-  const pauseVideo = ()=>{
-    vidRef.current.pause();
-    setVideoPaused(true)
-  }
+  
 
   const srcVideo = displayedVideo == 1? bgVideo_One : displayedVideo == 2? bgVideo_Two : displayedVideo == 3? bgVideo_Three : bgVideo_Two
 
@@ -59,7 +69,7 @@ const Homecpmponent = () => {
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay loop muted  ref={vidRef}>
+        <video autoPlay muted  ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
