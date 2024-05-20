@@ -58,11 +58,11 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 29,
-            "minTemp": 18,
+            "icon": "مشمس",
+            "maxTemp": 38,
+            "minTemp": 27,
             "wind": 25,
-            "date": "الثلاثاء 14 مايو 2024",
+            "date": "الثلاثاء 21 مايو 2024",
             "notes": "",
             "_id": "6364162fee90783cda08aba3"
           },
@@ -81,7 +81,7 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "غائم جزئي",
+            "icon": "مشمس",
             "maxTemp": 0,
             "minTemp": 21,
             "wind": 26,
@@ -165,11 +165,11 @@ function App() {
         "weatherData": [
           {
             "ms": {
-              "windStart": 30,
-              "windEnd": 40,
+              "windStart": 20,
+              "windEnd": 30,
               "windDirection": 300,
-              "waveStart": "1.5",
-              "waveEnd": "2.25"
+              "waveStart": "1",
+              "waveEnd": "1.75"
             },
             "rs": {
               "windStart": 0,
@@ -178,9 +178,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 24,
-            "minTemp": 16,
+            "icon": "مشمس",
+            "maxTemp": 33,
+            "minTemp": 23,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "0",
@@ -302,9 +302,9 @@ function App() {
               "waveStart": "2",
               "waveEnd": "3"
             },
-             "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 24,
-            "minTemp": 18,
+             "icon": "مشمس",
+            "maxTemp": 31,
+            "minTemp": 22,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "40",
@@ -421,14 +421,14 @@ function App() {
             },
             "rs": {
               "windStart": 30,
-              "windEnd": 45,
+              "windEnd": 40,
               "windDirection": 300,
               "waveStart": "1.5",
-              "waveEnd": "2.5"
+              "waveEnd": "2"
             },
-             "icon": "نشاط رياح + غائم جزئي",
-            "maxTemp": 32,
-            "minTemp": 22,
+             "icon": "مشمس",
+            "maxTemp": 40,
+            "minTemp": 27,
             "wind": 26,
             "date": "الثلاثاء 30 ابريل 2024",
             "notes": "طقس حـــار نهاراً، لطيف ليلاً وفي الصباح البــاكر",
@@ -548,8 +548,8 @@ function App() {
               "waveEnd": "2.5"
             },
              "icon": "مشمس",
-            "maxTemp": 30,
-            "minTemp": 18,
+            "maxTemp": 42,
+            "minTemp": 25,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "notes": "شبورة مائية مع طقس مائل للبرودة فى الصباح الباكر، وطقس معتدل الحرارة نهاراً،  بارد ليلاً",
@@ -668,8 +668,8 @@ function App() {
               "waveEnd": "2.5"
             },
              "icon": "مشمس",
-            "maxTemp": 34,
-            "minTemp": 23,
+            "maxTemp": 44,
+            "minTemp": 29,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "20",
