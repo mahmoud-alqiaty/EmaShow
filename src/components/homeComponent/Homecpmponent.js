@@ -24,6 +24,7 @@ const Homecpmponent = () => {
 
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
+  const [videoAutoPlay, setVideoAutoPlay] = useState(false)
   const [displayedVideo, setDisplayedVideo] = useState(2)
   
   const pauseVideo = ()=>{
@@ -34,9 +35,11 @@ const Homecpmponent = () => {
   
   useEffect(
     () => {
-      let timer1 = setTimeout(() => pauseVideo(), 30000);
+      let timer1 = setTimeout(() => setVideoAutoPlay(true), 20000);
+      let timer2 = setTimeout(() => pauseVideo(), 50000);
       return () => {
         clearTimeout(timer1);
+        clearTimeout(timer2);
       };
     },[]
   );
@@ -69,7 +72,7 @@ const Homecpmponent = () => {
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay muted  ref={vidRef}>
+        <video autoPlay={videoAutoPlay} muted  ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
