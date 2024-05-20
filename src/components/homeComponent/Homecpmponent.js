@@ -35,7 +35,7 @@ const Homecpmponent = () => {
   
   useEffect(
     () => {
-      let timer1 = setTimeout(() => setVideoAutoPlay(true), 20000);
+      let timer1 = setTimeout(() => setVideoAutoPlay(true), 40000);
       let timer2 = setTimeout(() => pauseVideo(), 50000);
       return () => {
         clearTimeout(timer1);
