@@ -25,9 +25,9 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159105/pgr5z4aqeipm5wbwrjke.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716228428/zs60imdizsmwfadhwezs.jpg",
         "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159118/nscqt5oc1cdwprzujg7q.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159127/hethng4dcacvmyhmcmwb.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716228492/oyhhswhbjgcch1etz0t5.jpg",
         "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159133/t3fbpfjulyq0d5ox1ozv.jpg"
         
       ]
