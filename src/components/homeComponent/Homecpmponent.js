@@ -32,14 +32,14 @@ const Homecpmponent = () => {
   }
   const vidRef = useRef(null);
   
-  // useEffect(
-  //   () => {
-  //     let timer1 = setTimeout(() => pauseVideo(), 30000);
-  //     return () => {
-  //       clearTimeout(timer1);
-  //     };
-  //   },[]
-  // );
+  useEffect(
+    () => {
+      let timer1 = setTimeout(() => pauseVideo(), 30000);
+      return () => {
+        clearTimeout(timer1);
+      };
+    },[]
+  );
 
   let slider = useRef()
   const next = () => {
