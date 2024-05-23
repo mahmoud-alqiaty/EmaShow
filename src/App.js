@@ -780,15 +780,19 @@ function App() {
 
   useEffect(() => {
     const getallData = async () =>{
-      const headers = {
-                      Accept: 'application/json',
-                      'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
-                       }
-      // axios.get("http://192.168.60.17:8090/getdata")
-      axios.get("/getdata",{headers})
-      // axios.get("https://web-production-9b2e.up.railway.app/mapsAndSats/maps/635259f5f3b78e569fbbeb62")
+      // const headers = {
+      //                 Accept: 'application/json',
+      //                 'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
+      //                  }
+      axios.get("https://212.103.189.111:8090/getdata", {
+        auth: {
+          username: "abdou",
+          password: "abdou"
+        }
+      })
       .then(res=>{
         console.log("res: ", res);
+        console.log("res: ", res.data);
         setAllData(res.data)
       })
       .catch(err=>{        
