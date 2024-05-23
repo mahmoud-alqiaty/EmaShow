@@ -780,11 +780,12 @@ function App() {
 
   useEffect(() => {
     const getallData = async () =>{
-      // const headers = {
-      //                 Accept: 'application/json',
-      //                 'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
-      //                  }
+      const headers = {
+                      Accept: 'application/json',
+                      'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
+                       }
       axios.get("https://212.103.189.111:8090/getdata", {
+        headers,
         auth: {
           username: "abdou",
           password: "abdou"
