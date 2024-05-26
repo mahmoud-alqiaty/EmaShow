@@ -47,7 +47,7 @@
     }
     to {
         top: 15%;
-        right: 30%;
+        right: 40%;
         opacity: 1;
     }
 } 
@@ -69,11 +69,11 @@
 
 .state-list{
     list-style-type: none;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 50%;
     position: absolute;
     top: 23%;
-    right: 30%;
+    right: 40%;
     transform: translateX(50%);
     padding-top: 0;
     padding: 0 !important;
@@ -83,7 +83,6 @@
 .state-list li{
     width: 100%;
     margin-bottom: 10px;
-    border-bottom: 3px solid rgb(230, 230, 236, 0.6); 
     background-image: linear-gradient(to left, rgb(31, 3, 43), rgb(103, 13, 141), transparent );
     padding: 10px 15px;
     opacity: 0;
@@ -110,13 +109,30 @@
     margin-bottom: 0 !important;
     border-bottom: none;
 }
-.state-list li p{
+.state-list.showen li p{
     margin-bottom: 0 !important;
     font-weight: bold;
     font-size: 2.3rem;
     color: white;
     font-family: "Almarai-Bold";
+    opacity: 0;
+    animation-name: p-showen;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;    
+    transform: translateX(-60%);
 }
+
+@keyframes p-showen {
+    0% {
+      opacity: 0;
+      transform: translateX(-40%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+} 
 
 .hint{
     color: #FDD807;

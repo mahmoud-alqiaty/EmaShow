@@ -29,7 +29,7 @@ const Home = () => {
             show === "doc"? <DocCompnent /> : <CityComponent />
           }
         </div>
-        <Sidebar onClick={onClick} />
+        {/* <Sidebar onClick={onClick} /> */}
         <div className='copyright'>
           <p>الهيئة العامة للأرصاد الجوية  &copy; 2022</p>
         </div>

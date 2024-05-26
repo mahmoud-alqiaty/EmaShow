@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './styles.css'
 
-import homeIcon from '../../images/sidebar-icons/home.svg'
+import homeIcon from '../../images/sidebar-icons/home.png'
 import mapIcon from '../../images/sidebar-icons/dribbble.svg'
 import docIcon from '../../images/sidebar-icons/copy.svg'
 import cityIcon from '../../images/sidebar-icons/chart-pie-alt.svg'

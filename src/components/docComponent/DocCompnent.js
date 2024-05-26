@@ -20,11 +20,13 @@ import nextIcon from '../../images/arrow-icons/left-circle.svg';
 import prevtIcon from '../../images/arrow-icons/right-circle.svg';
 import window from '../../images/arrow-icons/window.svg';
 import warning from '../../images/arrow-icons/warning-alt.svg';
-import homeIcon from '../../images/sidebar-icons/home.svg'
+import homeIcon from '../../images/sidebar-icons/home.png'
+import locationIcon from '../../images/sidebar-icons/location.png'
 
 import { AllDataContext } from '../../App';
 import Overlay from '../overlay/Overlay'
 import Homecpmponent from '../homeComponent/Homecpmponent'
+import CityComponent from '../cityComponent/CityComponent'
 
 
 const DocCompnent = () => {
@@ -62,11 +64,13 @@ const DocCompnent = () => {
             i == 1 ? (
               <img src={spacCasePage?.spcMaps[1]} alt='' />
               ) : i == 2 ? (
-              <img src={thunderBg} alt='' />
-            ) : i == 3 ?(
               <img src={egyptMap} alt='' />
+            ) : i == 3 ?(
+              <img src={thunderBg} alt='' />
             ) : i==4 ? (
               <img src={warning} alt='' />
+            ) : i==5? (
+              <img src={locationIcon} alt='' />
             ) : null
           }
           
@@ -138,24 +142,11 @@ const DocCompnent = () => {
             spacCasePage?.spcMaps.map((singleMap, index)=> 
               <div 
                 className={`${imgFullScreenIndex==-1? "map-img-outer-container": imgFullScreenIndex == index? "map-img-outer-container img-full-screen" : "map-img-outer-container not-img-full-screen"}`} key={index} 
-                onClick={(e)=>handleZoomeInOut(e, index)}
-                // onClick={(e)=>{
-                //   imgFullScreenIndex == index? setZoomin(!zoomin) : setImgFullScreenIndex(index)
-                //   setClientX(e.clientX);
-                //   setClientY(e.clientY);
-                //   // setZoomin(false)
-                // }}
-                // onClick={()=>{
-                //   imgFullScreenIndex == index? setImgFullScreenIndex(-1) : setImgFullScreenIndex(index)
-                //   setZoomin(false)
-                // }}
-                // style={{height: `{$(2/spcMaps.length)*100}%`}}
-                
+                onClick={(e)=>handleZoomeInOut(e, index)}                
               >
                 <img 
                   src={singleMap} 
                   alt='' 
-                  // onDoubleClick={()=>setZoomin(!zoomin)} 
                   className={(imgFullScreenIndex == index && zoomin)? "zoomIn":"zoomOut"} 
                   style={{transformOrigin: `${clientX}px ${clientY}px`}}
                   
@@ -166,6 +157,90 @@ const DocCompnent = () => {
           }
           <img src={window} alt='' className='window-icon' width='70' height='70' onClick={()=>setImgFullScreenIndex(-1)} />
         </div>
+
+        {
+          (regionsTempPage && regionsTempPage.length>0)? (
+          <div className='outer-doc-container'>
+            <div className='d-flex justify-content-between h-100'>
+              <div className='day-container'>
+                <p className='date'>
+                  {regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay]?.date}
+                </p>
+              </div>
+              <div className='egy-map-container mx-auto'>
+                <img src={egyptMap} alt="egyptMap" />
+                <div className='ms' style={{animationDelay: "44s"}}>
+                  <div className='ms-B'>
+                    <div className='ms-wind-group'>
+                      <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windDirection}deg)`}} />
+                      <span>
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windStart} {" "}
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windEnd? `: ${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windEnd}` : null} {" "}
+                         كم/س
+                        </span>
+                    </div>
+                    <div className='ms-wave-group'>
+                      <img src={weatherIcons.waveIcon} alt='' />
+                      <span> 
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveStart} {" "}
+                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveEnd? `: ${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveEnd}` : null} {" "} متر</span>
+                    </div>
+                  </div>
+                  <div className='ms-C d-none'>
+                    <div className='ms-wind-group'>
+                      <img src={weatherIcons.navigationIcon} alt='' />
+                      <span>25 : 30 كم/س</span>
+                    </div>
+                    <div className='ms-wave-group'>
+                      <img src={weatherIcons.waveIcon} alt='' />
+                      <span>1 : 1.5 متر</span>
+                    </div>
+                  </div>
+                </div>
+                <div className='rs' style={{animationDelay: "50s"}}>
+                  <div className='ms-wind-group'>
+                    <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windDirection}deg)`}} />
+                    <span>
+                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windStart} {" "}
+                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windEnd? `: ${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windEnd}` : null} {" "}
+                         كم/س
+                    </span>
+                  </div>
+                  <div className='ms-wave-group'>
+                    <img src={weatherIcons.waveIcon} alt='' />
+                    <span>
+                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveStart} {" "}
+                        {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveEnd? `: ${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveEnd}` : null} {" "} متر
+                    </span>
+                  </div>
+                </div>
+                <div className='region region-one' style={{animationDelay: "2s"}} >
+                  {/* {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[0]?.name)} */}
+                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], "القاهرة الكبرى")}
+                </div>
+                <div className='region region-two' style={{animationDelay: "9s"}}>
+                {/* {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[1]?.name)} */}
+                {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], "السواحل الشمالية الغربية")}
+                </div>
+                <div className='region region-three' style={{animationDelay: "16s"}}>
+                {/* {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[2]?.name)} */}
+                {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], "السواحل الشمالية الشرقية")}
+                </div>
+                <div className='region region-four' style={{animationDelay: "23s"}}>
+                {drowtempAndIcon(regionsTempPage[3]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[3]?.name)}
+                </div>
+                <div className='region region-five' style={{animationDelay: "30s"}}>
+                {drowtempAndIcon(regionsTempPage[4]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[4]?.name)}
+                </div>
+                <div className='region region-six' style={{animationDelay: "37s"}}>
+                {drowtempAndIcon(regionsTempPage[5]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[5]?.name)}
+                </div>
+              </div>
+            </div>
+          </div>
+          ) : null
+        }
+
 
         {
           (spacCasePage?.allSpcWeatherPoints && spacCasePage?.allSpcWeatherPoints.length>0)? (
@@ -203,92 +278,6 @@ const DocCompnent = () => {
           ):null
         }
 
-       
-        
-        {
-          (regionsTempPage && regionsTempPage.length>0)? (
-          <div className='outer-doc-container'>
-            <div className='d-flex justify-content-between h-100'>
-              <div className='day-container'>
-                <p className='date'>
-                  {regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay]?.date}
-                </p>
-              </div>
-              <div className='egy-map-container mx-auto'>
-                <img src={egyptMap} alt="egyptMap" />
-                <div className='ms' style={{animationDelay: "18s"}}>
-                  <div className='ms-B'>
-                    <div className='ms-wind-group'>
-                      <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windDirection}deg)`}} />
-                      <span>
-                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windStart} {" "}
-                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windEnd? `: ${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.windEnd}` : null} {" "}
-                         كم/س
-                        </span>
-                    </div>
-                    <div className='ms-wave-group'>
-                      <img src={weatherIcons.waveIcon} alt='' />
-                      <span> 
-                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveStart} {" "}
-                        {regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveEnd? `: ${regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay].ms.waveEnd}` : null} {" "} متر</span>
-                    </div>
-                  </div>
-                  <div className='ms-C d-none'>
-                    <div className='ms-wind-group'>
-                      <img src={weatherIcons.navigationIcon} alt='' />
-                      <span>25 : 30 كم/س</span>
-                    </div>
-                    <div className='ms-wave-group'>
-                      <img src={weatherIcons.waveIcon} alt='' />
-                      <span>1 : 1.5 متر</span>
-                    </div>
-                  </div>
-                </div>
-                <div className='rs' style={{animationDelay: "20s"}}>
-                  <div className='ms-wind-group'>
-                    <img src={weatherIcons.navigationIcon} alt='' style={{transform: `rotateZ(${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windDirection}deg)`}} />
-                    <span>
-                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windStart} {" "}
-                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windEnd? `: ${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.windEnd}` : null} {" "}
-                         كم/س
-                    </span>
-                  </div>
-                  <div className='ms-wave-group'>
-                    <img src={weatherIcons.waveIcon} alt='' />
-                    <span>
-                      {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveStart} {" "}
-                        {regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveEnd? `: ${regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay].rs.waveEnd}` : null} {" "} متر
-                    </span>
-                  </div>
-                </div>
-                <div className='region region-one' style={{animationDelay: "1s"}} >
-                  {/* {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[0]?.name)} */}
-                  {drowtempAndIcon(regionsTempPage[0]?.weatherData[spacCasePage?.StartingDay], "القاهرة الكبرى")}
-                </div>
-                <div className='region region-two' style={{animationDelay: "3.5s"}}>
-                {/* {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[1]?.name)} */}
-                {drowtempAndIcon(regionsTempPage[1]?.weatherData[spacCasePage?.StartingDay], "السواحل الشمالية الغربية")}
-                </div>
-                <div className='region region-three' style={{animationDelay: "6s"}}>
-                {/* {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[2]?.name)} */}
-                {drowtempAndIcon(regionsTempPage[2]?.weatherData[spacCasePage?.StartingDay], "السواحل الشمالية الشرقية")}
-                </div>
-                <div className='region region-four' style={{animationDelay: "9s"}}>
-                {drowtempAndIcon(regionsTempPage[3]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[3]?.name)}
-                </div>
-                <div className='region region-five' style={{animationDelay: "12s"}}>
-                {drowtempAndIcon(regionsTempPage[4]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[4]?.name)}
-                </div>
-                <div className='region region-six' style={{animationDelay: "15s"}}>
-                {drowtempAndIcon(regionsTempPage[5]?.weatherData[spacCasePage?.StartingDay], regionsTempPage[5]?.name)}
-                </div>
-              </div>
-            </div>
-          </div>
-          ) : null
-        }
-
-
         {
           (spacCasePage?.allSpcWarningPoints && spacCasePage?.allSpcWarningPoints.length>0)? (
             <div className='outer-doc-container'>
@@ -322,20 +311,10 @@ const DocCompnent = () => {
         }
         
 
-      </Slider>
-      
+        <CityComponent />
 
-      <div className='arrow-controller' style={{display: showSidebar? "flex":"none"}} >
-        <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
-        {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
-        <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
-        <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
-      </div>
-      <div className='arrow-controller' style={{ display: showSidebar? "flex":"none",  left: "10%"}}>
-          <input type='number' min={1} max={3} 
-          // onChange={e=> setDisplayedVideo(e.target.value)} 
-          />
-        </div>
+      </Slider>
+     
     </div>
   )
 }

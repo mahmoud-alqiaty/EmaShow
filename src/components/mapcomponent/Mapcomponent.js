@@ -75,13 +75,6 @@ const Mapcomponent = () => {
           }
         </Slider>
 
-        
-        <div className='arrow-controller' style={{display: showSidebar? "flex":"none"}} >
-          <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
-          {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
-          <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
-          <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
-        </div>
       </div>
   )
 }

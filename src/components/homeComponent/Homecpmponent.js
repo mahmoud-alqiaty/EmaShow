@@ -9,14 +9,10 @@ import bg from '../../images/emaOne.jpg'
 import bgVideo_One from '../../images/bg/video/first/Clouds-three.mp4'
 import bgVideo_Two from '../../images/bg/video/first/africa.mp4'
 import bgVideo_Three from '../../images/bg/video/first/global2.mp4'
+import bgVideo_Four from '../../images/bg/video/first/global3.mp4'
 import { AllDataContext } from '../../App'
 // import bgVideo from '../../images/bg/video/first/Cloud-four.mp4'
 
-import nextIcon from '../../images/arrow-icons/left-circle.svg';
-import prevtIcon from '../../images/arrow-icons/right-circle.svg';
-import MainInfoItem from '../cityComponent/InfoItem';
-import FirstDay from './FirstDay';
-import { citiesBgImages } from '../cityComponent/data';
 
 
 const Homecpmponent = () => {
@@ -25,7 +21,7 @@ const Homecpmponent = () => {
   const {generalWeatherState} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
   const [videoAutoPlay, setVideoAutoPlay] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(2)
+  const [displayedVideo, setDisplayedVideo] = useState(4)
   
   const pauseVideo = ()=>{
     vidRef.current.pause();
@@ -35,8 +31,8 @@ const Homecpmponent = () => {
   
   useEffect(
     () => {
-      let timer1 = setTimeout(() => setVideoAutoPlay(true), 120000);
-      let timer2 = setTimeout(() => pauseVideo(), 130000);
+      let timer1 = setTimeout(() => setVideoAutoPlay(true), 1000);
+      let timer2 = setTimeout(() => pauseVideo(), 15000);
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
@@ -44,29 +40,7 @@ const Homecpmponent = () => {
     },[]
   );
 
-  let slider = useRef()
-  const next = () => {
-    slider.slickNext();
-  }
-  const previous = () => {
-    slider.slickPrev();
-  }
-  const settings = {
-      dots: false,
-      infinite: false,
-      speed: 800,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      touchMove: true,
-      // nextArrow: <NextArrow />,
-      // prevArrow: <PrevArrow />
-  };
-     
-
-  
-
-  const srcVideo = displayedVideo == 1? bgVideo_One : displayedVideo == 2? bgVideo_Two : displayedVideo == 3? bgVideo_Three : bgVideo_Two
+  const srcVideo = displayedVideo == 1? bgVideo_One : displayedVideo == 2? bgVideo_Two : displayedVideo == 3? bgVideo_Three : displayedVideo == 4? bgVideo_Four : bgVideo_Two
 
   return (
     <div>
@@ -75,6 +49,7 @@ const Homecpmponent = () => {
         <video autoPlay={videoAutoPlay} muted  ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
+
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
           <span>الحالة</span>
           <span>الجوية</span>
@@ -84,8 +59,8 @@ const Homecpmponent = () => {
             <ul className={`state-list ${videoPaused? 'showen' : ""}`}>
           {
             generalWeatherState.map((state, index)=>
-            <li key={index} style={{animationDelay: `${index + 1}s`}}>
-              <p key={index} className="">
+            <li key={index} style={{animationDelay: `${(index*2) + 2}s`}}>
+              <p key={index} className="" style={{animationDelay: `${(index*2) + 2}s`}}>
                 {state}
               </p>
             </li>
@@ -94,34 +69,6 @@ const Homecpmponent = () => {
         </ul>
           ) : null
         }
-
-        <div className='arrow-controller d-none' >
-        <img src={prevtIcon} alt='prevtIcon' width='75' height='75' />
-        {/* <div className='' style={{width: '50px', height: '7px', background: '#000'}}></div> */}
-        <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
-        <img src={nextIcon} alt='nextIcon' width='75' height='75' />
-        </div>
-
-        {/* <div className='home-settings'>
-          <input type='number' min={1} max={3} onChange={e=> setDisplayedVideo(e.target.value)} />
-        </div> */}
-        
-      </div>
-
-      {/* <div className='first-days-container'>
-        {
-          regionsTempPage?.map(({name, weatherData}, index)=>
-            <FirstDay weatherDay={weatherData[0]} weatherNight={weatherData[1]} name={name} bg={citiesBgImages[index]} />
-          )
-        }
-      </div> */}
-
-
-      <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'calc(60% - 320px)', transform: 'translateX(-50%)', alignItems: 'center', flexDirection: 'row',  zIndex: "2000", display: showSidebar? "none":"none"}}>
-        <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
-        <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
-        {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}
-        <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
       </div>
       
     </div>

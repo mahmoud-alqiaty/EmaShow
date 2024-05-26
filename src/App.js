@@ -773,17 +773,15 @@ function App() {
     "__v": 0
   }
 
-// console.log("commoing_data: ", commoing_data);
-  // const [allData, setAllData] = useState({...commoing_data})
   const [allData, setAllData] = useState({...commoing_data})
   const [showSidebar, setShowSidebar] = useState(true)
 
   useEffect(() => {
     const getallData = async () =>{
       const headers = {
-                      Accept: 'application/json',
-                      'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
-                       }
+        Accept: 'application/json',
+        'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
+      }
       axios.get("https://212.103.189.111:8090/getdata", {
         headers,
         auth: {
@@ -792,90 +790,24 @@ function App() {
         }
       })
       .then(res=>{
-        console.log("res: ", res);
-        console.log("res: ", res.data);
+        console.log("res.data: ", res.data);
         setAllData(res.data)
       })
       .catch(err=>{        
         console.log(err.message);
       })
 
-      // fetch('http://192.168.60.17:8080/getdata', {
-      //   mode: "no-cors",
-      //   method: "GET",
-      //   headers: {
-      //     "Accept": "application/json"
-      //   }
-      // }).then((response) => {
-      //   console.log("response: ", response); // null
-       
-      // })
-      // .catch(error => { console.log('request failed', error); });
-
-
-
-      // fetch('http://192.168.60.17:8080/getdata', {
-      //     mode: "no-cors",
-      //     method: "GET",
-      //     headers: {
-      //       "Accept": "application/json"
-      //     }
-      //   })
-      //   .then(response => response.text())
-      //   .then((response) => {
-      //     console.log("response: ", response); // returns empty string
-         
-      //   })
-      //   .catch(error => { console.log('request failed', error); });
-
-
-      // fetch('http://192.168.60.17:8080/getdata', {
-      //     // mode: 'no-cors',
-      //     method: 'GET',
-      //     // headers: {
-      //     //   Accept: 'application/json',
-      //     //   // 'Access-Control-Allow-Origin': '*',
-      //     // },
-      //   },
-      //   ).then(response => {
-      //     if (response.ok) {
-      //       response.json().then(json => {
-      //         console.log(json);
-      //       });
-      //     }
-      //   });
-
-
-      // fetch('http://192.168.60.17:8080/getdata', {
-      //       // mode: 'no-cors',
-      //       method: 'GET',
-      //       headers: {
-      //         Accept: 'application/json',
-      //         'Content-Type': 'application/json',
-      //         'Access-Control-Allow-Origin': '*',
-      //       },
-      //     },)
-      //   .then((response) => {
-      //       return response.json();
-      //   })
-      //   .then((myJson) => {
-      //       this.setState({
-      //         isLoaded: true,
-      //         posts: myJson,
-      //       });
-      //       console.log(myJson);
-      //   });
     }
 
-    getallData()
+    // getallData()
   }, [])
 
   return (
     <AllDataContext.Provider value={{...allData, showSidebar, setShowSidebar}}>
       <div className="App">
-        {
+        {/*{
           allData? allData.data : "no"
-        }
+        }*/}
       <Header />
       <Home />
       </div>
