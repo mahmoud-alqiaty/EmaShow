@@ -19,7 +19,7 @@ import Overlay from '../overlay/Overlay';
 
 const CityComponent = () => {
   const {regionsTempPage, showSidebar} = useContext(AllDataContext)
-  console.log("regionsTempPage: ", regionsTempPage);
+  // console.log("regionsTempPage: ", regionsTempPage);
   const regionCities = {
     'القاهرة وجنوب الوجه البحري ومدن القناة' : "القاهرة - الجيزة - القليوبية - المنوفية - الغربية - الشرقية - الإسماعلية - السويس",
     'السواحل الشمالية الغر بية وشمال الوجه البحري': "الإسكندرية - مطروح - البحيرة - كفر الشيخ - الدقهلية",
@@ -47,7 +47,7 @@ const CityComponent = () => {
       // prevArrow: <PrevArrow />
   };
   const name = 'القاهرة وجنوب الوجه البحري ومدن القناة'
-     console.log("city: ", regionCities[name]);
+    //  console.log("city: ", regionCities[name]);
   return (
     <div className='mapComponent-container'>
       {

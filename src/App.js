@@ -780,7 +780,8 @@ function App() {
     const getallData = async () =>{
       const headers = {
         Accept: 'application/json',
-        'Access-Control-Allow-Origin': 'https://ema-show-new.on.fleek.co/',
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,OPTIONS,DELETE,PUT",
       }
       axios.get("https://212.103.189.111:8090/getdata", {
         headers,
@@ -799,7 +800,7 @@ function App() {
 
     }
 
-    // getallData()
+    getallData()
   }, [])
 
   return (
