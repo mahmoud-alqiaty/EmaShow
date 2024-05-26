@@ -799,7 +799,7 @@ function App() {
 
     }
 
-    // getallData()
+    getallData()
   }, [])
 
   return (
