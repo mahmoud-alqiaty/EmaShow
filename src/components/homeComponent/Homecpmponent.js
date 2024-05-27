@@ -32,7 +32,7 @@ const Homecpmponent = () => {
   useEffect(
     () => {
       let timer1 = setTimeout(() => setVideoAutoPlay(true), 1000);
-      let timer2 = setTimeout(() => pauseVideo(), 15000);
+      let timer2 = setTimeout(() => pauseVideo(), 30000);
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
@@ -46,14 +46,18 @@ const Homecpmponent = () => {
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay={videoAutoPlay} muted  ref={vidRef}>
+        <video autoPlay={videoAutoPlay} muted loop ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
 
-        <p className={`head  ${videoPaused? 'moved' : ""}`}>
+        <p className={`head  ${true? 'moved' : ""}`}>
           <span>الحالة</span>
           <span>الجوية</span>
         </p>
+        {/* <p className={`head  ${videoPaused? 'moved' : ""}`}>
+          <span>الحالة</span>
+          <span>الجوية</span>
+        </p> */}
         {
           generalWeatherState? (
             <ul className={`state-list ${videoPaused? 'showen' : ""}`}>

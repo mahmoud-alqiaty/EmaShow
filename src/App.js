@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createContext, useEffect, useState } from 'react';
 import Header from './components/header/Header';
 import Home from './screens/Home/Home';
+import swal from 'sweetalert';
+
 
 export const AllDataContext = createContext()
 
@@ -25,18 +27,18 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716228428/zs60imdizsmwfadhwezs.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159118/nscqt5oc1cdwprzujg7q.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716228492/oyhhswhbjgcch1etz0t5.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716159133/t3fbpfjulyq0d5ox1ozv.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754507/uicjjmuvm3pvuqjmwlnr.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754514/vwzw1rbmtcdo5zbro3lp.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754525/qsekxttzqiruiexf9jd9.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754533/sjxwfofykefnelajkyqa.jpg"
         
       ]
     },
     "_id": "635259f5f3b78e569fbbeb62",
     "generalWeatherState": [
-      "استمرار ارتفاع درجات الحرارة",
-      "رمال وأتربة مثارة",
-      "نشاط رياح أحياناً على مناطق متفرقة"
+      "طقس ربيعي حار شمالا شديد الحرارة جنوباً",
+      "نشاط رياح أحياناً على أغلب الأنحاء",
+      "فرص أمطار خفيفة على السواحل الغربية"
     ],
     "mapsArray": [],
     "regionsTempPage": [
@@ -58,11 +60,11 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "مشمس",
-            "maxTemp": 38,
-            "minTemp": 27,
+            "icon": 'نشاط رياح + غائم جزئي',
+            "maxTemp": 32,
+            "minTemp": 21,
             "wind": 25,
-            "date": "الثلاثاء 21 مايو 2024",
+            "date": "الثلاثاء 28 مايو 2024",
             "notes": "",
             "_id": "6364162fee90783cda08aba3"
           },
@@ -178,9 +180,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-            "icon": "مشمس",
-            "maxTemp": 33,
-            "minTemp": 23,
+            "icon": 'نشاط رياح + غائم جزئي',
+            "maxTemp": 25,
+            "minTemp": 18,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "0",
@@ -302,9 +304,9 @@ function App() {
               "waveStart": "2",
               "waveEnd": "3"
             },
-             "icon": "مشمس",
-            "maxTemp": 31,
-            "minTemp": 22,
+             "icon": 'نشاط رياح + غائم جزئي',
+            "maxTemp": 27,
+            "minTemp": 20,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "40",
@@ -427,7 +429,7 @@ function App() {
               "waveEnd": "2"
             },
              "icon": "مشمس",
-            "maxTemp": 40,
+            "maxTemp": 39,
             "minTemp": 27,
             "wind": 26,
             "date": "الثلاثاء 30 ابريل 2024",
@@ -547,9 +549,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-             "icon": "مشمس",
-            "maxTemp": 42,
-            "minTemp": 25,
+             "icon": 'نشاط رياح + مشمس',
+            "maxTemp": 34,
+            "minTemp": 20,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "notes": "شبورة مائية مع طقس مائل للبرودة فى الصباح الباكر، وطقس معتدل الحرارة نهاراً،  بارد ليلاً",
@@ -667,9 +669,9 @@ function App() {
               "waveStart": "1.5",
               "waveEnd": "2.5"
             },
-             "icon": "مشمس",
-            "maxTemp": 44,
-            "minTemp": 29,
+             "icon": 'نشاط رياح + مشمس',
+            "maxTemp": 45,
+            "minTemp": 27,
             "wind": 26,
              "date": "الثلاثاء 30 ابريل 2024",
             "rainPercentage": "20",
@@ -773,7 +775,8 @@ function App() {
     "__v": 0
   }
 
-  const [allData, setAllData] = useState({...commoing_data})
+  // const [allData, setAllData] = useState({...commoing_data})
+  const [allData, setAllData] = useState({})
   const [showSidebar, setShowSidebar] = useState(true)
 
   useEffect(() => {
@@ -793,9 +796,13 @@ function App() {
       .then(res=>{
         console.log("res.data: ", res.data);
         setAllData(res.data)
+        swal("تم استقبال البيانات بنجاح", "", "success");
+
       })
       .catch(err=>{        
         console.log(err.message);
+        swal("فشل استقبال البيانات", "", "error");
+
       })
 
     }

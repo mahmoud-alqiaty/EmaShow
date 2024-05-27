@@ -85,13 +85,13 @@
     margin-bottom: 10px;
     background-image: linear-gradient(to left, rgb(31, 3, 43), rgb(103, 13, 141), transparent );
     padding: 10px 15px;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .state-list.showen li{
-    animation-name: li-showen;
+    /* animation-name: li-showen;
     animation-fill-mode: forwards;
-    animation-duration: 2s;
+    animation-duration: 2s; */
 }
 
 
