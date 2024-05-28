@@ -27,19 +27,15 @@ function App() {
         "القيادة بهدوء على الطرق أثناء تساقط الأمطار"
       ],
       "spcMaps": [
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754507/uicjjmuvm3pvuqjmwlnr.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754514/vwzw1rbmtcdo5zbro3lp.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754525/qsekxttzqiruiexf9jd9.jpg",
-        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716754533/sjxwfofykefnelajkyqa.jpg"
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716886818/kcoyrtxb0vbpg6ouirze.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716886879/zjp2q9w9y8vxehonx6vo.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716886921/qbukgctf9dyiakdkv3xv.jpg",
+        "https://res.cloudinary.com/dryhuprvx/image/upload/v1716886959/m6pgafoorirwqjx7fypv.jpg"
         
       ]
     },
     "_id": "635259f5f3b78e569fbbeb62",
-    "generalWeatherState": [
-      "طقس ربيعي حار شمالا شديد الحرارة جنوباً",
-      "نشاط رياح أحياناً على أغلب الأنحاء",
-      "فرص أمطار خفيفة على السواحل الغربية"
-    ],
+    "generalWeatherState": [],
     "mapsArray": [],
     "regionsTempPage": [
       {
@@ -61,10 +57,10 @@ function App() {
               "waveEnd": "2.5"
             },
             "icon": 'نشاط رياح + غائم جزئي',
-            "maxTemp": 32,
-            "minTemp": 21,
+            "maxTemp": 30,
+            "minTemp": 20,
             "wind": 25,
-            "date": "الثلاثاء 28 مايو 2024",
+            "date": "الأربعاء 29 مايو 2024",
             "notes": "",
             "_id": "6364162fee90783cda08aba3"
           },
@@ -775,8 +771,8 @@ function App() {
     "__v": 0
   }
 
-  // const [allData, setAllData] = useState({...commoing_data})
-  const [allData, setAllData] = useState({})
+  const [allData, setAllData] = useState({...commoing_data})
+  // const [allData, setAllData] = useState({})
   const [showSidebar, setShowSidebar] = useState(true)
 
   useEffect(() => {
