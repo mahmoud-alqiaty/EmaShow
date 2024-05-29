@@ -7,6 +7,7 @@
     /* background-image: url('../../images/bg/bgSix.png'); */
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden !important;
 }
 .map-img-inner-container{
     width: 100% !important;

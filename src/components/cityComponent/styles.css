@@ -1,5 +1,7 @@
 .img-container{
     position: relative;
+    width: 100% !important;
+    height: 100% !important;
 }
 .row{
     --bs-gutter-x: 0 !important;

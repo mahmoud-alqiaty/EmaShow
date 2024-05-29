@@ -49,7 +49,7 @@ const CityComponent = () => {
   const name = 'القاهرة وجنوب الوجه البحري ومدن القناة'
     //  console.log("city: ", regionCities[name]);
   return (
-    <div className='mapComponent-container'>
+    <div className='mapComponent-container w-100 h-100'>
       {
         (regionsTempPage && regionsTempPage.length >0) ? (
           <>
@@ -66,9 +66,9 @@ const CityComponent = () => {
                         {name == "السواحل الشمالية الشرقية"? "السواحل الشمالية الشرقية ووسط سيناء" : name }
                         </span>
                       </div>
-                        <p className='region-cities col-12'>
+                        {/* <p className='region-cities col-12'>
                         {regionCities[name]}
-                        </p>
+                        </p> */}
                     </div>
                     <div className='row items px-0  px-0'>
                       <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>
@@ -93,7 +93,6 @@ const CityComponent = () => {
             <div style={{ textAlign: "center", position:'absolute', bottom:'0', left:'22%', alignItems: 'center', flexDirection: 'row',  zIndex: "2000", display: showSidebar? "flex":"none"}}>
               <img src={prevtIcon} alt='prevtIcon' width='75' height='75' onClick={next} />
               <div className='' style={{height: '60px', width: '7px', background: '#000'}}></div>
-              {/* <div className='' style={{width: '90px', height: '7px', background: '#000'}}></div> */}
               <img src={nextIcon} alt='nextIcon' width='75' height='75' onClick={previous} />
             </div>
           </>

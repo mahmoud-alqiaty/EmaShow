@@ -135,13 +135,13 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                             </div>
                         </div>
                     </div>
-                    {
+                    {/* {
                         weatherDay.notes? (
                             <div className='note mx-1 mx-lg-4 mb-3 h-25'>
                                 <span>{ weatherDay.notes}</span>
                             </div>
                         ):null
-                    }
+                    } */}
 
                 </div>
             </div>

@@ -771,9 +771,10 @@ function App() {
     "__v": 0
   }
 
-  const [allData, setAllData] = useState({...commoing_data})
-  // const [allData, setAllData] = useState({})
+  // const [allData, setAllData] = useState({...commoing_data})
+  const [allData, setAllData] = useState({})
   const [showSidebar, setShowSidebar] = useState(true)
+  const [loadingDataAPI, setloadingDataAPI] = useState(true)
 
   useEffect(() => {
     const getallData = async () =>{
@@ -791,12 +792,13 @@ function App() {
         console.log("res.data: ", res.data);
         setAllData(res.data)
         swal("تم استقبال البيانات بنجاح", "", "success");
+        setloadingDataAPI(false)
 
       })
       .catch(err=>{        
         console.log(err.message);
         swal("فشل استقبال البيانات", "", "error");
-
+        setloadingDataAPI(false)
       })
 
     }
@@ -811,7 +813,7 @@ function App() {
           allData? allData.data : "no"
         }*/}
       <Header />
-      <Home />
+      <Home loadingDataAPI={loadingDataAPI} />
       </div>
     </AllDataContext.Provider>
   );
