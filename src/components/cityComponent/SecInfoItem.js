@@ -23,8 +23,8 @@ const SecInfoItem = ({weatherData}) => {
             </div>
             <div className='icon-container col-4 col-lg-6 d-flex flex-column align-items-end'>
                 <img src={weatherIcons[weatherData?.icon]} alt='icon2' width='30' height='30' />
-                {(weatherData?.icon == "أمطار" || weatherData?.icon == "مطر رعدي")? <span className='rain-percentage' >{weatherData.rainPercentage}%</span> : null }
-                <span style={{color: "#fff", fontSize: "1.3rem"}}>{weatherData?.icon}</span>
+                {/* {(weatherData?.icon == "أمطار" || weatherData?.icon == "مطر رعدي")? <span className='rain-percentage' >{weatherData.rainPercentage}%</span> : null } */}
+                {/* <span style={{color: "#fff", fontSize: "1.3rem"}}>{weatherData?.icon}</span> */}
             </div>
           </div>
       </div>

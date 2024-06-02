@@ -33,7 +33,7 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                                 <img className='weather-icons' src={nightWeatherIcons[weatherNight?.icon]} alt='icon' />
                             </div>
 
-                            <div className='Phenomena-name-container'>
+                            <div className='Phenomena-name-container d-none'>
                                 <p className='Phenomena-name' 
                                     style={{lineHeight: weatherNight?.icon == "أمطار"&& 1}}
                                 >
@@ -85,7 +85,7 @@ const MainInfoItem = ({weatherDay, weatherNight, date, isRegionCairo}) => {
                                 <img className='weather-icons' src={weatherIcons[weatherDay?.icon]} alt='icon' />
                             </div>
 
-                            <div className='Phenomena-name-container' 
+                            <div className='Phenomena-name-container d-none' 
                                >
                                 <p className='Phenomena-name' 
                                 style={{

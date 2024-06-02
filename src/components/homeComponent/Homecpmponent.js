@@ -21,7 +21,7 @@ const Homecpmponent = () => {
   const {generalWeatherState, videoDelay} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
   const [videoAutoPlay, setVideoAutoPlay] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(2)
+  const [displayedVideo, setDisplayedVideo] = useState(4)
   
   const pauseVideo = ()=>{
     if(displayedVideo ==2){

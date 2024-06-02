@@ -5,10 +5,12 @@
     /* background-image: linear-gradient(to left,rgba(5, 5, 36, 0.9), rgba(0, 0, 255, 0.8)); */
     background-image: linear-gradient(to left, #003651, #83c3d3);
     margin-bottom: 20px;
+    margin-top: -15px;
     width: 100%;
     box-shadow: -15px -15px inset #022638;
     /* box-shadow: -10px -10px inset #83c3d3; */
-    height: 30%;
+    /* height: 30%; */
+    min-height: fit-content !important;
 }
 
 .InfoItem-container2:last-child{
