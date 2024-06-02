@@ -791,7 +791,7 @@ function App() {
       .then(res=>{
         console.log("res.data: ", res.data);
         setAllData(res.data)
-        swal("تم استقبال البيانات بنجاح", "", "success");
+        // swal("تم استقبال البيانات بنجاح", "", "success");
         setloadingDataAPI(false)
 
       })

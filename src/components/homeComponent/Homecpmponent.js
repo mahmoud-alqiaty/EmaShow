@@ -18,21 +18,25 @@ import { AllDataContext } from '../../App'
 const Homecpmponent = () => {
   const {regionsTempPage, showSidebar} = useContext(AllDataContext)
 
-  const {generalWeatherState} = useContext(AllDataContext)
+  const {generalWeatherState, videoDelay} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
   const [videoAutoPlay, setVideoAutoPlay] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(4)
+  const [displayedVideo, setDisplayedVideo] = useState(2)
   
   const pauseVideo = ()=>{
-    // vidRef.current.pause();
+    if(displayedVideo ==2){
+      vidRef.current.pause();
+    }
     setVideoPaused(true)
   }
   const vidRef = useRef(null);
+
+  const delayTime = displayedVideo ==2? (+videoDelay*1000) : 0
   
   useEffect(
     () => {
-      let timer1 = setTimeout(() => setVideoAutoPlay(true), 1000);
-      let timer2 = setTimeout(() => pauseVideo(), 2000);
+      let timer1 = setTimeout(() => setVideoAutoPlay(true), delayTime);
+      let timer2 = setTimeout(() => pauseVideo(), (delayTime + 20000));
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
@@ -46,14 +50,19 @@ const Homecpmponent = () => {
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay={videoAutoPlay} muted loop ref={vidRef}>
+        <video autoPlay={videoAutoPlay} muted loop={displayedVideo !=2} ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
 
+      {
+        generalWeatherState? (
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
           <span>الحالة</span>
           <span>الجوية</span>
         </p>
+
+        ):null
+      }
         {
           generalWeatherState? (
             <ul className={`state-list ${videoPaused? 'showen' : ""}`}>
