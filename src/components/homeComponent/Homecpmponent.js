@@ -10,6 +10,7 @@ import bgVideo_One from '../../images/bg/video/first/Clouds-three.mp4'
 import bgVideo_Two from '../../images/bg/video/first/africa.mp4'
 import bgVideo_Three from '../../images/bg/video/first/global2.mp4'
 import bgVideo_Four from '../../images/bg/video/first/global3.mp4'
+
 import { AllDataContext } from '../../App'
 // import bgVideo from '../../images/bg/video/first/Cloud-four.mp4'
 
@@ -18,20 +19,20 @@ import { AllDataContext } from '../../App'
 const Homecpmponent = () => {
   const {regionsTempPage, showSidebar} = useContext(AllDataContext)
 
-  const {generalWeatherState, videoDelay} = useContext(AllDataContext)
+  const {generalWeatherState, videoDelay, videoBackgroundValue} = useContext(AllDataContext)
   const [videoPaused, setVideoPaused] = useState(false)
   const [videoAutoPlay, setVideoAutoPlay] = useState(false)
-  const [displayedVideo, setDisplayedVideo] = useState(4)
+  // const [videoBackgroundValue, setDisplayedVideo] = useState(4)
   
   const pauseVideo = ()=>{
-    if(displayedVideo ==2){
+    if(videoBackgroundValue ==2){
       vidRef.current.pause();
     }
     setVideoPaused(true)
   }
   const vidRef = useRef(null);
 
-  const delayTime = displayedVideo ==2? (+videoDelay*1000) : 0
+  const delayTime = videoBackgroundValue ==2? (+videoDelay*1000) : 0
   
   useEffect(
     () => {
@@ -44,13 +45,13 @@ const Homecpmponent = () => {
     },[]
   );
 
-  const srcVideo = displayedVideo == 1? bgVideo_One : displayedVideo == 2? bgVideo_Two : displayedVideo == 3? bgVideo_Three : displayedVideo == 4? bgVideo_Four : bgVideo_Two
+  const srcVideo = videoBackgroundValue == 1? bgVideo_One : videoBackgroundValue == 2? bgVideo_Two : videoBackgroundValue == 3? bgVideo_Three : videoBackgroundValue == 4? bgVideo_Four : bgVideo_Two
 
   return (
     <div>
       <div className='bg' onClick={pauseVideo}>
         {/* <img src={bg} alt='bg' /> */}
-        <video autoPlay={videoAutoPlay} muted loop={displayedVideo !=2} ref={vidRef}>
+        <video autoPlay={videoAutoPlay} muted loop={videoBackgroundValue !=2} ref={vidRef}>
           <source  src={srcVideo}  type="video/mp4"/>
         </video>
 

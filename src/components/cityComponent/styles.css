@@ -181,7 +181,7 @@
 .sigle-period-container > div .weather-icons{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .sigle-period-container > div p:not(.period-name p){
@@ -204,7 +204,7 @@
 .icon-container img{
     width: 80px;
     height: 80px;
-    object-fit: fill;
+    object-fit: contain;
 }
 
 .temperatureIcon{

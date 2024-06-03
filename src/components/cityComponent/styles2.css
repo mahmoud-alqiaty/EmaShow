@@ -1,6 +1,6 @@
 .InfoItem-container2{
     border-radius: 20px;
-    padding: 10px;
+    padding: 25px;
     /* background-color: rgb(0, 0, 255, 0.3); */
     /* background-image: linear-gradient(to left,rgba(5, 5, 36, 0.9), rgba(0, 0, 255, 0.8)); */
     background-image: linear-gradient(to left, #003651, #83c3d3);
@@ -11,6 +11,21 @@
     /* box-shadow: -10px -10px inset #83c3d3; */
     /* height: 30%; */
     min-height: fit-content !important;
+    /* transform: translateX(-60px); */
+    /* opacity: 0; */
+    animation-name: left-distance;
+    animation-duration: 1s;
+}
+
+@keyframes left-distance {
+    from{
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
 .InfoItem-container2:last-child{
@@ -59,7 +74,7 @@
 .icon-container img{
     width: 90px;
     height: 90px;
-    object-fit: cover;
+    object-fit: contain;
     
 }
 
