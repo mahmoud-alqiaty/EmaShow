@@ -37,12 +37,14 @@ const CityComponent = () => {
   }
   const settings = {
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 800,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       touchMove: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
       // nextArrow: <NextArrow />,
       // prevArrow: <PrevArrow />
   };
@@ -71,7 +73,7 @@ const CityComponent = () => {
                         </p> */}
                     </div>
                     <div className='row items px-0  px-0'>
-                      <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center'>
+                      <div className='col-5 p-0 d-flex flex-column justify-content-between align-items-center mt-2'>
                         <div className='w-100 h-100 d-flex flex-column justify-content-between align-items-center'>
                           <SecInfoItem weatherData={weatherData[2]} />
                           <SecInfoItem weatherData={weatherData[3]} />
