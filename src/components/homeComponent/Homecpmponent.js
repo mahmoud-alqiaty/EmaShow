@@ -45,7 +45,7 @@ const Homecpmponent = () => {
     },[]
   );
 
-  const srcVideo = videoBackgroundValue == 1? bgVideo_One : videoBackgroundValue == 2? bgVideo_Two : videoBackgroundValue == 3? bgVideo_Three : videoBackgroundValue == 4? bgVideo_Four : bgVideo_Two
+  const srcVideo = videoBackgroundValue == 1? bgVideo_One : videoBackgroundValue == 2? bgVideo_Two : videoBackgroundValue == 3? bgVideo_Three : videoBackgroundValue == 4? bgVideo_Four : bgVideo_Three
 
   return (
     <div>
@@ -56,7 +56,7 @@ const Homecpmponent = () => {
         </video>
 
       {
-        generalWeatherState? (
+        generalWeatherState?.length>0? (
         <p className={`head  ${videoPaused? 'moved' : ""}`}>
           <span>الحالة</span>
           <span>الجوية</span>

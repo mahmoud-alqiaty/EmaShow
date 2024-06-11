@@ -3,6 +3,8 @@ import './styles.css'
 
 import earthBg  from '../../images/bg/img/earth.png'
 import thunderBg  from '../../images/bg/img/flash.jpg'
+// import heatWave from '../../images/bg/video/first/heat-wave.mp4'
+import heatWave  from '../../images/bg/img/heat-wave.png'
 
 import {weatherIcons} from '../../constants/weatherIcons'
 
@@ -129,6 +131,7 @@ const DocCompnent = () => {
     }
   }
 
+  console.log("spacCasePage?.spacCaseType:", spacCasePage?.spacCaseType);
   return (
     <div className='docComponent-container'>
       <Overlay />
@@ -246,7 +249,17 @@ const DocCompnent = () => {
           (spacCasePage?.allSpcWeatherPoints && spacCasePage?.allSpcWeatherPoints.length>0)? (
             <div className='outer-doc-container '>
               <div className='img-bg'>
-                <img alt='' src={thunderBg} />
+                {/* {
+                  spacCasePage?.spacCaseType == "heatWave"? ( 
+                    <video autoPlay muted >
+                      <source  src={heatWave}  type="video/mp4"/>
+                    </video>              
+                    ):(
+                    <img alt='' src={spacCasePage?.spacCaseType== "thunder"? thunderBg : spacCasePage?.spacCaseType== "heatWave"? heatWave : ""} />
+                  )
+
+                } */}
+                <img alt='' src={spacCasePage?.spacCaseType== "thunder"? thunderBg : spacCasePage?.spacCaseType== "heatWave"? heatWave : ""} />
               </div>
             <div className='doc-text-overlay'>
               
@@ -263,7 +276,7 @@ const DocCompnent = () => {
                   <ul className='doc-text-body'>
                   {
                     spacCasePage?.allSpcWeatherPoints.map((state, stateIndex)=>
-                    <li key={stateIndex} style={{animationDelay: `${stateIndex*1.5 + 3}s`}}>
+                    <li key={stateIndex} style={{animationDelay: `${stateIndex*4 + 6}s`}}>
                       <p>
                         {state}
                       </p>
@@ -281,10 +294,13 @@ const DocCompnent = () => {
         {
           (spacCasePage?.allSpcWarningPoints && spacCasePage?.allSpcWarningPoints.length>0)? (
             <div className='outer-doc-container'>
+              <div className='img-bg'>
+                <img alt='' src={spacCasePage?.spacCaseType== "thunder"? thunderBg : spacCasePage?.spacCaseType== "heatWave"? heatWave : ""} />
+              </div>
             <div className='doc-text-overlay'>
               <div className='header'>
-                <p className='title'>
-                  تحذيرات
+                <p className='title' style={{animationDelay: "2s"}}>
+                  تحذيرات ونصائح
                 </p>
                 {/* <p className='sub-title'>
                   {subTitle}
@@ -292,10 +308,10 @@ const DocCompnent = () => {
               </div>
               {
                 spacCasePage?.allSpcWarningPoints? (
-                  <ul className='doc-text-body'>
+                  <ul className='doc-text-body' style={{animationDelay: "3s"}}>
                   {
                     spacCasePage?.allSpcWarningPoints.map((state, stateIndex)=>
-                    <li key={stateIndex} style={{animationDelay: `${stateIndex + 1}s`}}>
+                    <li key={stateIndex} style={{animationDelay: `${stateIndex*3 + 5}s`}}>
                       <p>
                         {state}
                       </p>

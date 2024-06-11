@@ -1,5 +1,5 @@
 .docComponent-container{
-    background-image: url('../../images/bg/img/flash.jpg');
+    /* background-image: url('../../images/bg/img/flash.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -90,7 +90,7 @@
  animation-name: trnaslateTitle;
  animation-duration: 1.5s;
  animation-fill-mode: forwards;
- animation-delay: 1s;
+ animation-delay: 2s;
 }
 
 @keyframes trnaslateTitle {
@@ -110,15 +110,19 @@
  text-align: center;
  font-family: "MarkaziText-Bold";
 }
-
+.img-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .slick-slide.slick-active.slick-current .doc-text-overlay .doc-text-body{
  list-style-type: none;
  padding: 20px 40px;
- background-image: linear-gradient(to left, rgb(22, 8, 83), rgba(15, 36, 156, 0.3));
+ background-image: linear-gradient(to left, rgb(0, 0, 0, 8), rgba(0, 0, 0, 0.3));
  animation-name: doc-text-body-showen;
  animation-duration: 2s;
  animation-fill-mode: forwards;
- animation-delay: 1.5s;
+ animation-delay: 4s;
  /* opacity: 0; */
  transform: scale(0, 0);
  transform-origin: right top;
@@ -145,7 +149,7 @@
     opacity: 0;
 
 }
-.doc-text-overlay .doc-text-body li:last-child{
+.slick-slide.slick-active.slick-current .doc-text-overlay .doc-text-body li:last-child{
     border-bottom: none;
     margin-bottom: 0;
 }
